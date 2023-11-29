@@ -6,6 +6,14 @@
     <description>Recent content in Articles on Bumcheol&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 29 Nov 2023 17:04:53 +0900</lastBuildDate>
     <atom:link href="https://example.org/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test1</title>
+      <link>https://example.org/articles/test1/</link>
+      <pubDate>Wed, 29 Nov 2023 17:04:53 +0900</pubDate>
+      <guid>https://example.org/articles/test1/</guid>
+      <description>Test Post</description>
+    </item>
   </channel>
 </rss>
