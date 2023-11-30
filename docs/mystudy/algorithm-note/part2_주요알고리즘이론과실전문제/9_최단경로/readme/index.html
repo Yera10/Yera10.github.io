@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="최단 경로#가장 짧은 경로를 찾는 알고리즘, &ldquo;길찾기&rdquo; 문제라고도 불림. 최단 경로 알고리즘 유형에도 다양한 종류가 있음. 예를 들어 &lsquo;한 지점에서 다른 특정 지점까지의 최단 경로 구하기&rsquo; 또는 &lsquo;모든 지점에서 다른 모든 지점까지의 최단 경로 구하기&rsquo; 등.. 최단 경로 문제는 보통 그래프를 이용해 표현하며, 그래프는 &ldquo;노드&quot;와 &ldquo;간선&quot;으로 구성된다. 최단 거리 알고리즘#다익스트라 최단 경로 플로이드 워셜 벨만 포드 알고리즘 (최단 거리 알고리즘은 그리디, 다이나믹 프로그래밍 알고리즘의 한 유형이다.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="최단 경로#가장 짧은 경로를 찾는 알고리즘, &ldquo;길찾기&rdquo; 문제라고도 불림. 최단 경로 알고리즘 유형에도 다양한 종류가 있음. 예를 들어 &lsquo;한 지점에서 다른 특정 지점까지의 최단 경로 구하기&rsquo; 또는 &lsquo;모든 지점에서 다른 모든 지점까지의 최단 경로 구하기&rsquo; 등.. 최단 경로 문제는 보통 그래프를 이용해 표현하며, 그래프는 &ldquo;노드&quot;와 &ldquo;간선&quot;으로 구성된다. 최단 거리 알고리즘#다익스트라 최단 경로 플로이드 워셜 벨만 포드 알고리즘 (최단 거리 알고리즘은 그리디, 다이나믹 프로그래밍 알고리즘의 한 유형이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/readme/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Readme | 범철이의 Blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.b9485541ffc79fe6b22f16746b7eeaa06ec4647451d8ebad6bc992c62ea8e557.js" integrity="sha256-uUhVQf/Hn&#43;ayLxZ0a37qoG7EZHRR2Outa8mSxi6o5Vc=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>범철이의 Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/" class="">My Study</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-832a7f1ec9ad296779bb7571a47543a6" class="toggle"  />
+    <label for="section-832a7f1ec9ad296779bb7571a47543a6" class="flex justify-between">
+      <a role="button" class="">Command</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/command/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/command/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-58fc894b574437fe14022c5b25f1f586" class="toggle" checked />
+    <label for="section-58fc894b574437fe14022c5b25f1f586" class="flex justify-between">
+      <a role="button" class="">Algorithm Note</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-70d2bcd4e7d8bfed4d4abff26ea254dd" class="toggle" checked />
+    <label for="section-70d2bcd4e7d8bfed4d4abff26ea254dd" class="flex justify-between">
+      <a role="button" class="">Part 2</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34fd73234f14b7e088c2787605d25926" class="toggle"  />
+    <label for="section-34fd73234f14b7e088c2787605d25926" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/3_%EA%B7%B8%EB%A6%AC%EB%94%94/" class="">3. 그리디 알고리즘</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/3_%EA%B7%B8%EB%A6%AC%EB%94%94/1%EC%9D%B4%EB%90%A0%EB%95%8C%EA%B9%8C%EC%A7%80/" class="">1이될때까지</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/" class="">숫자카드게임</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%ED%81%B0%EC%88%98%EC%9D%98%EB%B2%95%EC%B9%99/" class="">큰수의법칙</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6bd13fd9c8b82a77bdae5902a58bd079" class="toggle"  />
+    <label for="section-6bd13fd9c8b82a77bdae5902a58bd079" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/4_%EA%B5%AC%ED%98%84/" class="">4. 구현</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/" class="">게임 개발</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/" class="">상하좌우</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/" class="">시각</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/" class="">왕실의나이트</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba5a19ff6380b65b97794b78c8b1ad52" class="toggle"  />
+    <label for="section-ba5a19ff6380b65b97794b78c8b1ad52" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/5_dfs_bfs/" class="">5. DFS &amp; BFS</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/5_dfs_bfs/datastructure/" class="">Data Structure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/" class="">미로탈출</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/" class="">음료수 얼려 먹기</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-66d9577b9e87eb821333e97ca29fd9f5" class="toggle"  />
+    <label for="section-66d9577b9e87eb821333e97ca29fd9f5" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/" class="">6. 정렬</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/%EA%B3%84%EC%88%98%EC%A0%95%EB%A0%AC/" class="">계수정렬</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/%EB%AC%B8%EC%A0%9C_%EC%84%B1%EC%A0%81%EC%9D%B4%EB%82%AE%EC%9D%80%EC%88%9C%EC%84%9C%EB%A1%9C/" class="">문제 성적이낮은순서로</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/%EB%AC%B8%EC%A0%9C_%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/" class="">문제 위에서아래로</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/" class="">삽입정렬</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/" class="">선택정렬</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/6_%EC%A0%95%EB%A0%AC/%ED%80%B5%EC%A0%95%EB%A0%AC/" class="">퀵정렬</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8294992b9abd6a29cb95690a9e8ca668" class="toggle"  />
+    <label for="section-8294992b9abd6a29cb95690a9e8ca668" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/" class="">7. 이진탐색</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%AC%B8%EC%A0%9C_%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="">문제 떡볶이떡만들기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%AC%B8%EC%A0%9C_%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/" class="">문제 부품찾기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/" class="">징검다리건너기</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-834f294e551e3d5447de891b85462eaa" class="toggle"  />
+    <label for="section-834f294e551e3d5447de891b85462eaa" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="">8. DP</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%AC%B8%EC%A0%9C_1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="">문제 1로만들기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%AC%B8%EC%A0%9C_%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/" class="">문제 개미전사</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%AC%B8%EC%A0%9C_%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/" class="">문제 바닥공사</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%AC%B8%EC%A0%9C_%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/" class="">문제 효율적인화폐구성</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-64df09499bf3ed7d061a8b5ac2919364" class="toggle" checked />
+    <label for="section-64df09499bf3ed7d061a8b5ac2919364" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" class="">9. 최단경로</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c62936f9ef6bd9f287d21033bbf6e252" class="toggle"  />
+    <label for="section-c62936f9ef6bd9f287d21033bbf6e252" class="flex justify-between">
+      <a role="button" class="">Part 3</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b3a449b75e55ea300be60e82fe5be813" class="toggle"  />
+    <label for="section-b3a449b75e55ea300be60e82fe5be813" class="flex justify-between">
+      <a role="button" class="">그리디 알고리즘</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9C%A0%ED%98%95%EB%B3%84%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/" class="">곱하기 혹은 더하기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9C%A0%ED%98%95%EB%B3%84%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/" class="">만들수없는금액</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9C%A0%ED%98%95%EB%B3%84%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/" class="">모험가길드</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9C%A0%ED%98%95%EB%B3%84%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/" class="">볼링공고르기</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9370f1a5d0248572ac505e0c6d4ad190" class="toggle"  />
+    <label for="section-9370f1a5d0248572ac505e0c6d4ad190" class="flex justify-between">
+      <a role="button" class="">Shortcodes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Readme</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#최단-거리-알고리즘">최단 거리 알고리즘</a></li>
+        <li><a href="#다익스트라-최단-경로">다익스트라 최단 경로</a></li>
+        <li><a href="#다익스트라-최단-경로의-순서">다익스트라 최단 경로의 순서</a></li>
+        <li><a href="#다익스트라-최단-경로의-특징">다익스트라 최단 경로의 특징</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="최단-경로">
+  최단 경로
+  <a class="anchor" href="#%ec%b5%9c%eb%8b%a8-%ea%b2%bd%eb%a1%9c">#</a>
+</h1>
+<ul>
+<li>가장 짧은 경로를 찾는 알고리즘, <!-- raw HTML omitted -->&ldquo;길찾기&rdquo; 문제<!-- raw HTML omitted -->라고도 불림.</li>
+<li>최단 경로 알고리즘 유형에도 다양한 종류가 있음.
+<ul>
+<li>예를 들어 &lsquo;한 지점에서 다른 특정 지점까지의 최단 경로 구하기&rsquo;</li>
+<li>또는 &lsquo;모든 지점에서 다른 모든 지점까지의 최단 경로 구하기&rsquo; 등..</li>
+</ul>
+</li>
+<li>최단 경로 문제는 <!-- raw HTML omitted -->보통 그래프를 이용해 표현<!-- raw HTML omitted -->하며, 그래프는 &ldquo;노드&quot;와 &ldquo;간선&quot;으로 구성된다.</li>
+</ul>
+<h3 id="최단-거리-알고리즘">
+  최단 거리 알고리즘
+  <a class="anchor" href="#%ec%b5%9c%eb%8b%a8-%ea%b1%b0%eb%a6%ac-%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98">#</a>
+</h3>
+<ol>
+<li>다익스트라 최단 경로</li>
+<li>플로이드 워셜</li>
+<li>벨만 포드 알고리즘</li>
+</ol>
+<p>(최단 거리 알고리즘은 그리디, 다이나믹 프로그래밍 알고리즘의 한 유형이다.)</p>
+<h3 id="다익스트라-최단-경로">
+  다익스트라 최단 경로
+  <a class="anchor" href="#%eb%8b%a4%ec%9d%b5%ec%8a%a4%ed%8a%b8%eb%9d%bc-%ec%b5%9c%eb%8b%a8-%ea%b2%bd%eb%a1%9c">#</a>
+</h3>
+<ul>
+<li>특정한 노드에서 출발하여 다른 노드로 가는 각각의 최단 경로를 구해주는 알고리즘</li>
+<li>&lsquo;음의 간선&rsquo;이 없을 때 정상적으로 동작됨<br>
+(&lsquo;음의 간선&rsquo;: 0보다 작은 값을 가지는 간선)</li>
+<li>현실세계의 길은 음의 간선으로 표현되지 않기 때문에 <!-- raw HTML omitted -->실제로 GPS 소프트웨어 기본 알고리즘<!-- raw HTML omitted -->으로 채택됨</li>
+<li>그리디 알고리즘으로 분류</li>
+</ul>
+<h3 id="다익스트라-최단-경로의-순서">
+  다익스트라 최단 경로의 순서
+  <a class="anchor" href="#%eb%8b%a4%ec%9d%b5%ec%8a%a4%ed%8a%b8%eb%9d%bc-%ec%b5%9c%eb%8b%a8-%ea%b2%bd%eb%a1%9c%ec%9d%98-%ec%88%9c%ec%84%9c">#</a>
+</h3>
+<ol>
+<li>출발 노드 설정</li>
+<li>최단 거리 테이블 초기화</li>
+<li>방문하지 않은 노드 중 최단거리가 가장 짧은 노드 선택</li>
+<li>해당 노드를 거쳐 다른 노드로 가는 비용을 계산하여 최단 거리 테이블 갱신</li>
+<li>3,4번을 반복</li>
+</ol>
+<h3 id="다익스트라-최단-경로의-특징">
+  다익스트라 최단 경로의 특징
+  <a class="anchor" href="#%eb%8b%a4%ec%9d%b5%ec%8a%a4%ed%8a%b8%eb%9d%bc-%ec%b5%9c%eb%8b%a8-%ea%b2%bd%eb%a1%9c%ec%9d%98-%ed%8a%b9%ec%a7%95">#</a>
+</h3>
+<ul>
+<li>최단 경로를 구하는 과정에서 <!-- raw HTML omitted -->&lsquo;각 노드에 대한 현재까지의 최단 거리&rsquo; 정보를 항상 1차원 리스트에 저장<!-- raw HTML omitted -->하며 리스트를 계속 갱신</li>
+<li>매번 현재 처리하고 있는 노드를 기준으로 주변 간선 확인</li>
+<li>데이크스트라와 같은 알고리즘</li>
+<li><strong>방문하지 않은 노드 중에서 가장 최단 거리가 짧은 노드를 선택하는 과정을 반복</strong>
+<ul>
+<li>위 과정에서 선택된 노드는 &lsquo;최단거리&rsquo;가 완전히 선택된 노드이므로, 더 이상 알고리즘을 반복해도 최단 거리가 줄어들지 않는다. (&raquo;정말?)</li>
+<li>&gt;&gt;한 단계당 하나의 노드에 대한 최단 거리를 확실히 찾는 것으로 이해할 수 있음.</li>
+<li>&gt; 그렇기 때문에 사실 마지막 노드에 대해서는 해당 노드를 거쳐 다른 노드로 가는 경우를 확인할 필요가 없다.</li>
+</ul>
+</li>
+</ul>
+<p>다익스트라 소스코드</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>INF <span style="color:#f92672">=</span> int(<span style="color:#ae81ff">1e9</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Dijkstra</span>(g, N, start):
+</span></span><span style="display:flex;"><span>    distance <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> [INF] <span style="color:#f92672">*</span> (N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    not_visited <span style="color:#f92672">=</span> {i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N)}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> not_visited:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 최단거리가 가장 짧은 노드 선택</span>
+</span></span><span style="display:flex;"><span>        v <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>       
+</span></span><span style="display:flex;"><span>        mind <span style="color:#f92672">=</span> INF
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> nv <span style="color:#f92672">in</span> not_visited:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> distance[nv] <span style="color:#f92672">&lt;</span> mind:
+</span></span><span style="display:flex;"><span>                v <span style="color:#f92672">=</span> nv
+</span></span><span style="display:flex;"><span>                mind <span style="color:#f92672">=</span> distance[nv]
+</span></span><span style="display:flex;"><span>        not_visited<span style="color:#f92672">.</span>remove(v)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 최단거리 테이블 갱신</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i,d <span style="color:#f92672">in</span> enumerate(g[v]):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (d <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">and</span> (mind <span style="color:#f92672">+</span> d <span style="color:#f92672">&lt;</span> distance[i]):
+</span></span><span style="display:flex;"><span>                distance[i] <span style="color:#f92672">=</span> mind <span style="color:#f92672">+</span> d
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> distance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TEST</span>
+</span></span><span style="display:flex;"><span>N <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], 
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>], 
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], 
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>print(Dijkstra(g, N, <span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#최단-거리-알고리즘">최단 거리 알고리즘</a></li>
+        <li><a href="#다익스트라-최단-경로">다익스트라 최단 경로</a></li>
+        <li><a href="#다익스트라-최단-경로의-순서">다익스트라 최단 경로의 순서</a></li>
+        <li><a href="#다익스트라-최단-경로의-특징">다익스트라 최단 경로의 특징</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
