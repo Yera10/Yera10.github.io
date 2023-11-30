@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CS study on Bumcheol&#39;s Blog</title>
+    <title>CS study on 범철이의 Blog</title>
     <link>https://yera10.github.io/csstudy/</link>
-    <description>Recent content in CS study on Bumcheol&#39;s Blog</description>
+    <description>Recent content in CS study on 범철이의 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Nov 2023 11:13:35 +0900</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>https://yera10.github.io/csstudy/test2/</link>
       <pubDate>Thu, 30 Nov 2023 11:13:35 +0900</pubDate>
       <guid>https://yera10.github.io/csstudy/test2/</guid>
-      <description>CS study </description>
+      <description>CS study#</description>
     </item>
   </channel>
 </rss>
