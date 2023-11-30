@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bumcheol&#39;s Blog</title>
-    <link>https://yera10.github.io/</link>
-    <description>Recent content on Bumcheol&#39;s Blog</description>
+    <title>CSstudies on Bumcheol&#39;s Blog</title>
+    <link>https://yera10.github.io/csstudy/</link>
+    <description>Recent content in CSstudies on Bumcheol&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Nov 2023 11:13:35 +0900</lastBuildDate>
-    <atom:link href="https://yera10.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yera10.github.io/csstudy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test2</title>
       <link>https://yera10.github.io/csstudy/test2/</link>
       <pubDate>Thu, 30 Nov 2023 11:13:35 +0900</pubDate>
       <guid>https://yera10.github.io/csstudy/test2/</guid>
       <description>CS study </description>
-    </item>
-    <item>
-      <title>Test1</title>
-      <link>https://yera10.github.io/commands/test1/</link>
-      <pubDate>Wed, 29 Nov 2023 17:04:53 +0900</pubDate>
-      <guid>https://yera10.github.io/commands/test1/</guid>
-      <description>Test Post</description>
     </item>
   </channel>
 </rss>
