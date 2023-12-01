@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>5. DFS &amp; BFS on 범철이의 Blog</title>
+    <title>5. DFS &amp; BFS on 이세상의 모든 노트</title>
     <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/5_dfs_bfs/</link>
-    <description>Recent content in 5. DFS &amp; BFS on 범철이의 Blog</description>
+    <description>Recent content in 5. DFS &amp; BFS on 이세상의 모든 노트</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2_%EC%A3%BC%EC%9A%94%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%A1%A0%EA%B3%BC%EC%8B%A4%EC%A0%84%EB%AC%B8%EC%A0%9C/5_dfs_bfs/index.xml" rel="self" type="application/rss+xml" />
