@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Implementation#구현? 머릿속에 있는 알고리즘을 소스코드로 바꾸는 과정 어떤 문제를 풀든 소스코드를 작성하는 과정은 필수이기 때문에 구현 문제는 모든 범위의 문제 유형을 포함한다. 취업 코딩테스트에서는 자주 출제됨 문제에 대한 정확한 풀이 방법이 떠오르면, 프로그래밍 언어로 정확히 구현해내야 함.
+프로그래밍 언어의 문법을 정확히 알고 있어야 하며, 문제의 요구사항에 어긋나지 않는 답안 코드를 작성해야함 구현 유형 문제 : 풀이를 떠올리는 것은 쉽지만, 소스코드로 옮기기 어려운 문제 흔히 개발할 때 프로그래밍 언어의 문법에 능숙하고 코드 작성속도가 빠른 사람을 보고 &ldquo;피지컬이 좋다&quot;고 한다.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="4. 구현" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/" />
+
+<title>4. 구현 | 이세상의 모든 노트</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.75bb2b513c916ea970fe0455815db26f02d00ce4a0c47f3bcfe8e6cee98e4c9c.js" integrity="sha256-dbsrUTyRbqlw/gRVgV2ybwLQDOSgxH87z&#43;jmzumOTJw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/index.xml" title="이세상의 모든 노트" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>이세상의 모든 노트</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/" class="">My Study</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-832a7f1ec9ad296779bb7571a47543a6" class="toggle"  />
+    <label for="section-832a7f1ec9ad296779bb7571a47543a6" class="flex justify-between">
+      <a role="button" class="">Command</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/command/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/command/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-58fc894b574437fe14022c5b25f1f586" class="toggle" checked />
+    <label for="section-58fc894b574437fe14022c5b25f1f586" class="flex justify-between">
+      <a role="button" class="">Algorithm Note</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1e75b983b0c0ae94e61cd0216d4b17b4" class="toggle" checked />
+    <label for="section-1e75b983b0c0ae94e61cd0216d4b17b4" class="flex justify-between">
+      <a role="button" class="">Part 2</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-27b18a3105a86ff5267791a1f9a266d5" class="toggle"  />
+    <label for="section-27b18a3105a86ff5267791a1f9a266d5" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/" class="">3. 그리디 알고리즘</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/1%EC%9D%B4%EB%90%A0%EB%95%8C%EA%B9%8C%EC%A7%80/" class="">1이될때까지</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/" class="">숫자카드게임</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%ED%81%B0%EC%88%98%EC%9D%98%EB%B2%95%EC%B9%99/" class="">큰수의법칙</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fdd914078db00724cc0dbb3e4bd9596a" class="toggle" checked />
+    <label for="section-fdd914078db00724cc0dbb3e4bd9596a" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/" class="active">4. 구현</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/" class="">게임 개발</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/" class="">상하좌우</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/" class="">시각</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/" class="">왕실의나이트</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-daf303d7d6cb80ddf1cbab873234ba79" class="toggle"  />
+    <label for="section-daf303d7d6cb80ddf1cbab873234ba79" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/5_dfs_bfs/" class="">5. DFS &amp; BFS</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/" class="">Data Structure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/" class="">미로탈출</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/" class="">음료수 얼려 먹기</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a9bcd1b1eda6489baa1f5be05a33c66a" class="toggle"  />
+    <label for="section-a9bcd1b1eda6489baa1f5be05a33c66a" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/" class="">6. 정렬</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EA%B3%84%EC%88%98%EC%A0%95%EB%A0%AC/" class="">계수정렬</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/" class="">삽입정렬</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/" class="">선택정렬</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%84%B1%EC%A0%81%EC%9D%B4%EB%82%AE%EC%9D%80%EC%88%9C%EC%84%9C%EB%A1%9C/" class="">성적이낮은순서로</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/" class="">위에서아래로</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%ED%80%B5%EC%A0%95%EB%A0%AC/" class="">퀵정렬</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-272928fe3909806eb9caa1656eb333db" class="toggle"  />
+    <label for="section-272928fe3909806eb9caa1656eb333db" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/" class="">7. 이진탐색</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="">떡볶이떡만들기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/" class="">부품찾기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/" class="">징검다리건너기</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3845c016ad78684dc4c62b9ba5d8fdea" class="toggle"  />
+    <label for="section-3845c016ad78684dc4c62b9ba5d8fdea" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="">8. DP</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="">1로만들기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/" class="">개미전사</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/" class="">바닥공사</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/" class="">효율적인화폐구성</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7bb752c81e98a01db39dc44606af7428" class="toggle"  />
+    <label for="section-7bb752c81e98a01db39dc44606af7428" class="flex justify-between">
+      <a href="/docs/mystudy/algorithm-note/part2/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/" class="">9. 최단경로</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9745f3d5cacde06709c284e151f6a1fc" class="toggle"  />
+    <label for="section-9745f3d5cacde06709c284e151f6a1fc" class="flex justify-between">
+      <a role="button" class="">Part 3</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ee551e150b9c2fcce288d1dd4c42830f" class="toggle"  />
+    <label for="section-ee551e150b9c2fcce288d1dd4c42830f" class="flex justify-between">
+      <a role="button" class="">그리디 알고리즘</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/" class="">곱하기 혹은 더하기</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/" class="">만들수없는금액</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/" class="">모험가길드</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/" class="">볼링공고르기</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9370f1a5d0248572ac505e0c6d4ad190" class="toggle"  />
+    <label for="section-9370f1a5d0248572ac505e0c6d4ad190" class="flex justify-between">
+      <a role="button" class="">Shortcodes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>4. 구현</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#구현-시-고려해야-할-메모리-제약-사항">구현 시 고려해야 할 메모리 제약 사항</a>
+      <ul>
+        <li><a href="#ccjava-정수형-표현-범위">C/C++/JAVA 정수형 표현 범위</a></li>
+        <li><a href="#python에서-리스트-크기에-따른-메모리-사용량">Python에서 리스트 크기에 따른 메모리 사용량</a></li>
+        <li><a href="#채점환경">채점환경</a></li>
+        <li><a href="#문제">문제</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="implementation">
+  Implementation
+  <a class="anchor" href="#implementation">#</a>
+</h1>
+<ul>
+<li>구현? <!-- raw HTML omitted --><strong>머릿속에 있는 알고리즘을 소스코드로 바꾸는 과정</strong><!-- raw HTML omitted --></li>
+<li>어떤 문제를 풀든 소스코드를 작성하는 과정은 필수이기 때문에 구현 문제는 모든 범위의 문제 유형을 포함한다.</li>
+<li>취업 코딩테스트에서는 자주 출제됨</li>
+<li>문제에 대한 정확한 풀이 방법이 떠오르면, 프로그래밍 언어로 정확히 구현해내야 함.<br>
+프로그래밍 언어의 문법을 정확히 알고 있어야 하며, 문제의 요구사항에 어긋나지 않는 답안 코드를 작성해야함</li>
+<li>구현 유형 문제 : 풀이를 떠올리는 것은 쉽지만, 소스코드로 옮기기 어려운 문제</li>
+<li>흔히 개발할 때 프로그래밍 언어의 문법에 능숙하고 코드 작성속도가 빠른 사람을 보고 &ldquo;피지컬이 좋다&quot;고 한다. <br>
+그런 의미에서 구현 유형의 문제는 <!-- raw HTML omitted --><strong>&ldquo;피지컬을 요구하는&rdquo;</strong><!-- raw HTML omitted --> 문제라고도 할 수 있다.</li>
+<li>대체로 <!-- raw HTML omitted -->사소한 조건 설정이 많은 문제<!-- raw HTML omitted -->일수록 코드로 구현하기 까다로움</li>
+<li>문법을 정확하게 숙지하지 못했거나, 라이브러리 사용 경험이 부족하면 구현 유형에 불리</li>
+<li>&lsquo;구현&rsquo; 유형으로 풀 수 있는 문제
+<ul>
+<li>완전탐색 : 모든 경우의 수를 주저 없이 다 계산하는 해결 방법</li>
+<li>시뮬레이션 : 문제에서 제시한 알고리즘을 한 단계씩 차례대로 직접 수행하는 방법</li>
+</ul>
+</li>
+<li>C/C++/JAVA 보다 파이썬에서 상대적으로 쉽게 해결할 수 있다.</li>
+</ul>
+<h2 id="구현-시-고려해야-할-메모리-제약-사항">
+  구현 시 고려해야 할 메모리 제약 사항
+  <a class="anchor" href="#%ea%b5%ac%ed%98%84-%ec%8b%9c-%ea%b3%a0%eb%a0%a4%ed%95%b4%ec%95%bc-%ed%95%a0-%eb%a9%94%eb%aa%a8%eb%a6%ac-%ec%a0%9c%ec%95%bd-%ec%82%ac%ed%95%ad">#</a>
+</h2>
+<h3 id="ccjava-정수형-표현-범위">
+  C/C++/JAVA 정수형 표현 범위
+  <a class="anchor" href="#ccjava-%ec%a0%95%ec%88%98%ed%98%95-%ed%91%9c%ed%98%84-%eb%b2%94%ec%9c%84">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>정수형 종류</th>
+<th>자료형의 크기</th>
+<th>자료형의 범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>4bytes</td>
+<td>-2,147,483,648~2,147,438,647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8bytes</td>
+<td>-9,223,372,036,854,775,808~9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>BigInterger (클래스)</td>
+<td>가변적</td>
+<td>제한 없음</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>대체로 long 에서 다룰 수 있는 수보다 더 큰 정수를 처리하는 문제는 잘 출제되지 않는다.</li>
+<li>python에서는 직접 자료형을 지정할 필요가 없고, 매우 큰 수의 연산을 기본으로 지원</li>
+<li>python에서 실수형 변수는 유효숫자에 따라서 연산 결과가 원하는 값이 나오지 않을 수 있다  (???)</li>
+</ul>
+<h3 id="python에서-리스트-크기에-따른-메모리-사용량">
+  Python에서 리스트 크기에 따른 메모리 사용량
+  <a class="anchor" href="#python%ec%97%90%ec%84%9c-%eb%a6%ac%ec%8a%a4%ed%8a%b8-%ed%81%ac%ea%b8%b0%ec%97%90-%eb%94%b0%eb%a5%b8-%eb%a9%94%eb%aa%a8%eb%a6%ac-%ec%82%ac%ec%9a%a9%eb%9f%89">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>리스트의 길이 (int 자료형일때)</th>
+<th>메모리 사용량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,000</td>
+<td>약 4KB</td>
+</tr>
+<tr>
+<td>1,000,000</td>
+<td>약 4MB</td>
+</tr>
+<tr>
+<td>10,000,000</td>
+<td>약 40MB</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>대체로 코딩테스트에서는 128~512MB로 메모리 제한</li>
+<li>리스트 중 크기가 1,000만 이상인 리스트가 있다면 메모리 용량 제한으로 문제를 풀 수 없을 수도 있다. (드뭄)</li>
+</ul>
+<h3 id="채점환경">
+  채점환경
+  <a class="anchor" href="#%ec%b1%84%ec%a0%90%ed%99%98%ea%b2%bd">#</a>
+</h3>
+<ul>
+<li>일반적으로 시간제한 및 메모리 제한 정보가 적혀있음.</li>
+<li>python3.7 기준으로 <!-- raw HTML omitted --><strong>1초에 2,000만번의 연산</strong><!-- raw HTML omitted -->을 수행한다고 가정하면 큰 무리 없음</li>
+<li>시간제한이 1초이고, 데이터 개수가 100만개인 문제가 있다면 시간 복잡도 $O(Nlog_2 N)$ 내에 풀어야 한다. ($log_2 1,000,000$)</li>
+<li>시간 제한과 데이터의 개수를 먼저 확인하고, 어느 정도의 <!-- raw HTML omitted --><strong>시간복잡도</strong><!-- raw HTML omitted --> 알고리즘을 작성해야할지 <!-- raw HTML omitted --><strong>예측</strong><!-- raw HTML omitted -->할 수 있어야 한다.</li>
+</ul>
+<h3 id="문제">
+  문제
+  <a class="anchor" href="#%eb%ac%b8%ec%a0%9c">#</a>
+</h3>
+<ul>
+<li><a href="%ec%83%81%ed%95%98%ec%a2%8c%ec%9a%b0">상하좌우</a></li>
+<li><a href="%ea%b2%8c%ec%9e%84-%ea%b0%9c%eb%b0%9c">게임개발</a></li>
+<li><a href="%ec%8b%9c%ea%b0%81">시각</a></li>
+<li><a href="%ec%99%95%ec%8b%a4%ec%9d%98%eb%82%98%ec%9d%b4%ed%8a%b8">왕실의나이트</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#구현-시-고려해야-할-메모리-제약-사항">구현 시 고려해야 할 메모리 제약 사항</a>
+      <ul>
+        <li><a href="#ccjava-정수형-표현-범위">C/C++/JAVA 정수형 표현 범위</a></li>
+        <li><a href="#python에서-리스트-크기에-따른-메모리-사용량">Python에서 리스트 크기에 따른 메모리 사용량</a></li>
+        <li><a href="#채점환경">채점환경</a></li>
+        <li><a href="#문제">문제</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

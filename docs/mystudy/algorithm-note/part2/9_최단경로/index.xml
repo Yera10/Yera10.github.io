@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>9. 최단경로 on 이세상의 모든 노트</title>
+    <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/</link>
+    <description>Recent content in 9. 최단경로 on 이세상의 모든 노트</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/9_%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/readme/</guid>
+      <description>최단 경로#가장 짧은 경로를 찾는 알고리즘, &amp;ldquo;길찾기&amp;rdquo; 문제라고도 불림. 최단 경로 알고리즘 유형에도 다양한 종류가 있음. 예를 들어 &amp;lsquo;한 지점에서 다른 특정 지점까지의 최단 경로 구하기&amp;rsquo; 또는 &amp;lsquo;모든 지점에서 다른 모든 지점까지의 최단 경로 구하기&amp;rsquo; 등.. 최단 경로 문제는 보통 그래프를 이용해 표현하며, 그래프는 &amp;ldquo;노드&amp;quot;와 &amp;ldquo;간선&amp;quot;으로 구성된다. 최단 거리 알고리즘#다익스트라 최단 경로 플로이드 워셜 벨만 포드 알고리즘 (최단 거리 알고리즘은 그리디, 다이나믹 프로그래밍 알고리즘의 한 유형이다.</description>
+    </item>
+  </channel>
+</rss>
