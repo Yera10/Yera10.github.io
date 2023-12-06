@@ -1,53 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>8. DP on 이세상의 모든 노트</title>
-    <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
-    <description>Recent content in 8. DP on 이세상의 모든 노트</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
-      <description>1로 만들기#정수 X에 대해 4가지 연산을 사용해 1을 만들려고 함. 최소한의 연산횟수를 구하기.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>8. DP on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link><description>Recent content in 8. DP on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>1로 만들기 # 정수 X에 대해 4가지 연산을 사용해 1을 만들려고 함. 최소한의 연산횟수를 구하기.
 연산
-X가 5로 나누어 떨어지면, 5로 나눈다. X가 3로 나누어 떨어지면, 3으로 나눈다. X가 2로 나누어 떨어지면, 2로 나눈다. X에서 1을 뺀다. INPUT#첫째줄 정수 X 1 &amp;lt;= X &amp;lt;= 30,000 OUTPUT#최소한의 연산 횟수 My Solution#연산1이 항상 연산2보다 좋다고 할 수 없음.
-(연산2가 항상 연산3보다 좋을 수 없으며, 연산3이 항상 연산4보다 좋을 수 없음.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/readme/</guid>
-      <description>다이나믹 프로그래밍#중복되는 연산을 줄이자#최적의 해를 구하기에 시간이 매우 많이 필요하거나 메모리 공간이 매우 많이 필요한문제는 컴퓨터로도 해결하기 어렵다. 연산 속도와 메모리 공간을 최대한으로 활용할 수 있는 효율적인 알고리즘 작성 필요 메모리 공간을 약간 더 사용하면서 연산 속도를 비약적으로 증가시키는 대표적인 방법 Dynamic Programming 동적 계획법이라고 표현하기도 한다. 다이나믹 프로그래밍으로 해결할 수 있는 대표적인 예시: 피보나치 수열 ** 파이썬의 경우 기본 자료형인 리스트 자료형이 연결 리스트 기능을 포함하고 있음.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</guid>
-      <description>개미전사#메뚜기 마을의 식량창고는 일직선상에 있음. 개미전사가 메뚜기의 식량창고를 선택적으로 약탈하여 식량을 뺏을 예정
+X가 5로 나누어 떨어지면, 5로 나눈다. X가 3로 나누어 떨어지면, 3으로 나눈다. X가 2로 나누어 떨어지면, 2로 나눈다. X에서 1을 뺀다. INPUT # 첫째줄 정수 X 1 &amp;lt;= X &amp;lt;= 30,000 OUTPUT # 최소한의 연산 횟수 My Solution # 연산1이 항상 연산2보다 좋다고 할 수 없음.
+(연산2가 항상 연산3보다 좋을 수 없으며, 연산3이 항상 연산4보다 좋을 수 없음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</guid><description>개미전사 # 메뚜기 마을의 식량창고는 일직선상에 있음. 개미전사가 메뚜기의 식량창고를 선택적으로 약탈하여 식량을 뺏을 예정
 하지만, 메뚜기들은 인접한 식량창고가 털리면 바로 알아챔. 고로, 최소 한 칸 이상 떨어진 식량창고를 약탈할 수 있음. 최대한 많이 얻을 수 있는 식량은?
-INPUT#첫째줄에 식량창고의 개수 N, 3 &amp;lt;= N &amp;lt;= 100 둘째줄에 공백으로 구분된 식량창고에 저장된 식량의 개수 K 0 &amp;lt;= K &amp;lt;= 1000 OUTPUT#개미전사가 얻을 수 있는 식량의 최댓값 Example#입력 출력 41 3 1 5 8 My Solution#def solution(N, arr): dp_arr = arr[:2] + [0]*(N-2) for i in range(2, N): dp_arr[i] = max(dp_arr[i-1], dp_arr[i-2] + arr[i]) return dp_arr[-1] # INPUT N = int(input()) arr = list(map(int, input().</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</guid>
-      <description>바닥공사#세로 x 가로가 2 x N인 바닥에 1x2 2x1 2x2 인 타일을 덮는 경우의 수 구하기
-INPUT#가로길이 N 1 &amp;lt;= N &amp;lt;= 1,000 OUTPUT#바닥을 채우는 방법의 수를 796,796으로 나눈 나머지 구하기 My Solution#세로가 무조건 2니까 2x2 공간을 덮는 경우의 수는 3가지 하지만 무조건 2칸으로 다 나눌 수는 없다! 개미전사 문제처럼 앞에서부터 한칸씩 풀면 될까? 가로가 N일때 경우의 수는 (N-1일 때 방법의 수) + (N-2일 때 방법의 수)*2 def solution(N): arr = [0]*N arr[0] = 1 arr[1] = 3 for i in range(2, N): arr[i] = (arr[i-1] + 2*arr[i-2]) % 796796 return arr[-1] # INPUT &amp;amp; OUTPUT N = int(input()) print(solution(N)) </description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</guid>
-      <description>효율적인 화폐 구성#N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
-INPUT#화폐의 종류 수 N 1 &amp;lt;= N &amp;lt;= 100 만들려는 목표 금액 M 1 &amp;lt;= M &amp;lt;= 10,000 OUTPUT#M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution#def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c &amp;gt;= 0 and d[i-c] &amp;gt;= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!</description>
-    </item>
-  </channel>
-</rss>
+INPUT # 첫째줄에 식량창고의 개수 N, 3 &amp;lt;= N &amp;lt;= 100 둘째줄에 공백으로 구분된 식량창고에 저장된 식량의 개수 K 0 &amp;lt;= K &amp;lt;= 1000 OUTPUT # 개미전사가 얻을 수 있는 식량의 최댓값 Example # 입력 출력 41 3 1 5 8 My Solution # def solution(N, arr): dp_arr = arr[:2] + [0]*(N-2) for i in range(2, N): dp_arr[i] = max(dp_arr[i-1], dp_arr[i-2] + arr[i]) return dp_arr[-1] # INPUT N = int(input()) arr = list(map(int, input().</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</guid><description> 바닥공사 # 세로 x 가로가 2 x N인 바닥에 1x2 2x1 2x2 인 타일을 덮는 경우의 수 구하기
+INPUT # 가로길이 N 1 &amp;lt;= N &amp;lt;= 1,000 OUTPUT # 바닥을 채우는 방법의 수를 796,796으로 나눈 나머지 구하기 My Solution # 세로가 무조건 2니까 2x2 공간을 덮는 경우의 수는 3가지 하지만 무조건 2칸으로 다 나눌 수는 없다! 개미전사 문제처럼 앞에서부터 한칸씩 풀면 될까? 가로가 N일때 경우의 수는 (N-1일 때 방법의 수) + (N-2일 때 방법의 수)*2 def solution(N): arr = [0]*N arr[0] = 1 arr[1] = 3 for i in range(2, N): arr[i] = (arr[i-1] + 2*arr[i-2]) % 796796 return arr[-1] # INPUT &amp;amp; OUTPUT N = int(input()) print(solution(N))</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</guid><description>효율적인 화폐 구성 # N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
+INPUT # 화폐의 종류 수 N 1 &amp;lt;= N &amp;lt;= 100 만들려는 목표 금액 M 1 &amp;lt;= M &amp;lt;= 10,000 OUTPUT # M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution # def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c &amp;gt;= 0 and d[i-c] &amp;gt;= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!</description></item></channel></rss>
