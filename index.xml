@@ -1,364 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on 이세상의 모든 노트</title><link>https://yera10.github.io/</link><description>Recent content in Introduction on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://yera10.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Creating a New Theme</title><link>https://yera10.github.io/posts/creating-a-new-theme/</link><pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/creating-a-new-theme/</guid><description>Introduction
-#
-This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description></item><item><title>Migrate to Hugo from Jekyll</title><link>https://yera10.github.io/posts/migrate-from-jekyll/</link><pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/migrate-from-jekyll/</guid><description>Move static content to static
-#
-Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/
-▾ images/
-logo.png
-should become
-▾ &amp;lt;root&amp;gt;/
-▾ static/
-▾ images/
-logo.png
-Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description></item><item><title>(Hu)go Template Primer</title><link>https://yera10.github.io/posts/goisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/goisforlovers/</guid><description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description></item><item><title>Getting Started with Hugo</title><link>https://yera10.github.io/posts/hugoisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/hugoisforlovers/</guid><description>Step 1. Install Hugo
-#
-Go to Hugo releases and download the appropriate version for your OS and architecture.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on 이세상의 모든 노트</title><link>https://yera10.github.io/</link><description>Recent content in Introduction on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Creating a New Theme</title><link>https://yera10.github.io/posts/creating-a-new-theme/</link><pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/creating-a-new-theme/</guid><description>Introduction # This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description></item><item><title>Migrate to Hugo from Jekyll</title><link>https://yera10.github.io/posts/migrate-from-jekyll/</link><pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/migrate-from-jekyll/</guid><description>Move static content to static # Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description></item><item><title>(Hu)go Template Primer</title><link>https://yera10.github.io/posts/goisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/goisforlovers/</guid><description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description></item><item><title>Getting Started with Hugo</title><link>https://yera10.github.io/posts/hugoisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><guid>https://yera10.github.io/posts/hugoisforlovers/</guid><description>Step 1. Install Hugo # Go to Hugo releases and download the appropriate version for your OS and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at Install Hugo
-Step 2. Build the Docs
-#
-Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/1%EC%9D%B4%EB%90%A0%EB%95%8C%EA%B9%8C%EC%A7%80/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/1%EC%9D%B4%EB%90%A0%EB%95%8C%EA%B9%8C%EC%A7%80/</guid><description>1이 될 때까지
-#
-INPUT
-#
-2 &amp;lt;= N &amp;lt;= 100,000 2 &amp;lt;= K &amp;lt;= 100,000 N &amp;gt;= K OUTPUT
-#
-N이 1이 될 때까지 수행해야 하는 과정의 최소 횟수 출력 Rule
-#
-둘 중 하나의 과정을 반복적으로 수행 2번 과정은 N이 K로 나누어 떨어질 때만 선택 가능 N에서 1을 뺀다. N을 K로 나눈다. Example
-#
-입력 출력 25 5 2 17 4 3 My Solution
-#
-2번이 가능하면 2번을 수행하는 게 가장 빠른 방법 연상되는 이유는 더 크게 줄어들기 때문에 1번을 선택했을 때, 2번보다 빠르려면, 1번을 수행한 수가 K로 나누어 떨어질 때 =&amp;gt; 그러려면 K가 1이어야 한다?</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/</guid><description>숫자 카드 게임
-#
-Input
-#
-N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐 1 &amp;lt;= N, M &amp;lt;= 100 각 카드에 적힌 숫자들, 둘째줄부터 주어짐 1 &amp;lt;= 각 숫자 &amp;lt;= 10,000 Output
-#
-게임의 룰에 맞게 선택한 카드에 적힌 숫자 Rule
-#
-숫자카드들이 N x M 형태로 놓여있음 뽑고자 하는 카드가 포함되어 있는 행 선택 선택된 행에서 가장 작은 숫자카드를 뽑음 어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까?</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%ED%81%B0%EC%88%98%EC%9D%98%EB%B2%95%EC%B9%99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%ED%81%B0%EC%88%98%EC%9D%98%EB%B2%95%EC%B9%99/</guid><description>큰 수의 법칙
-#
-Input
-#
-N : 2 $\leq$ N $\leq$ 1,000, 배열의 크기 M : 1 $\leq$ M $\leq$ 10,000, 숫자가 더해지는 횟수 K : 1 $\leq$ K $\leq$ 10,000, 특정 인덱스의 수가 연속해서 더해질 수 있는 횟수 array : 주어진 배열 항상 K &amp;lt;= M 큰 수의 법칙
-#
-배열의 숫자들을 M 번 더하여 가장 큰 수를 만드는 법칙 특정한 인덱스에 해당하는 수가 연속해서 K번을 초과하여 더해질 수 없다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</guid><description>게임 개발
-#
-Input
-#
-N, M : 세로 크기, 가로 크기 (3 &amp;lt;= N,M &amp;lt;= 50) A, B, d : 게임 캐릭터가 있는 칸의 좌표 (A, B), 캐릭터가 바라보는 방향 d d 값 : 0 : 북 1 : 동 2 : 남 3 : 서 맵의 정보 : 육지인지 바다인지 N x M 으로 나타내줌 0 : 육지 1 : 바다 맵의 외곽은 항상 바다 게임 캐릭터가 처음 위치한 칸의 정보는 항상 육지 Output
-#
-첫째 줄에 이동을 마친 후 캐릭터가 방문한 칸의 수 Rule
-#
-현재 위치에서 현재 방향을 기준으로 반시계방향부터 차례대로 갈 곳을 정함 캐릭터의 왼쪽 방향(반시계 방향)에 가보지 않은 칸이 있다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한칸 전진.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</guid><description>상하좌우
-#
-Input
-#
-N : 공간의 크기, N x N 크기의 정사각형 공간 이동할 계획서 : 여행가가 N x N 공간에서 이동할 계획, (1&amp;lt;= 이동횟수 &amp;lt;=100) Output
-#
-여행가가 최종적으로 도착할 지점의 좌표를 공백으로 구분하여 출력 이동할 때, N x N의 정사각형을 벗어나는 움직임은 무시됨 예를 들어, (1,1)에서 L 혹은 U의 움직임은 무시 Example
-#
-입력 출력 5 R R R U D D 3 4 My Solution
-#
-def solution(N, moves): now = [1, 1] moves = moves.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</guid><description>시각
-#
-Input
-#
-N : 정수, 0&amp;lt;= N &amp;lt;= 23 Output
-#
-00시 00분 00초부터 N시 59분 59초 까지의 모든 시각 중 3이 하나라도 포함되는 모든 경우의수 출력 Example
-#
-입력 출력 5 11475 My Solution
-#
-def solution(N): res = 0 for h in range(N+1): if &amp;#39;3&amp;#39; in str(h): res += 60*60 continue for m in range(60): if &amp;#39;3&amp;#39; in str(m): res += 60 continue for s in range(60): if &amp;#39;3&amp;#39; in str(s): res += 1 return res N = 5 print(solution(N)) 문제 해설
-#
-하루는 86,400초로 모든 경우는 86,400가지밖에 존재하지 않음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</guid><description>
-왕실의 나이트
-#
-Input
-#
-8 x 8 좌표평면에서 나이트가 현재 위치한 곳의 좌표 두문자로 구성된 문자열 Output
-#
-나이트가 이동할 수 있는 경우의 수 Example
-#
-입력 출력 a1 2 My Solution
-#
-moves = [(2, 1), (2, -1), (-2, 1), (-2, 1), (1, 2), (1, -2), (-1, 2), (-1, -2)] def solution(x): c, r = ord(x[0])-96, int(x[1]) nx = [1 for m in moves if (0 &amp;lt; (c+m[0]) &amp;lt; 9) and (0 &amp;lt; (r+m[1]) &amp;lt; 9)] return sum(nx) x = input() print(solution(x)) 문제 해설
-#
-# 현재 나이트 위치 입력 input_data = input() row = int(inpu_data[1]) column = int(ord(input_data[0])) - int(ord(&amp;#39;a&amp;#39;)) + 1 # 8가지 이동 steps = [(2, 1), (2, -1), (-2, 1), (-2, 1), (1, 2), (1, -2), (-1, 2), (-1, -2)] # 이동가능 여부 확인 result = 0 for step in steps: nrow = row + step[0] ncol = col + step[1] if 1 &amp;lt;= nrow &amp;lt;= 8 and 1&amp;lt;= ncol &amp;lt;= 8: result += 1 # 출력 print(result)</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</guid><description>자료구조 기초
-#
-탐색
-#
-많은 양의 데이터 중 원하는 데이터를 찾는 과정 그래프, 트리 등의 자료구조 안에서 탐색하는 문제를 자주 다룸. 대표적인 탐색 알고리즘으로 DFS, BFS를 꼽을 수 있다. 자료구조
-#
-데이터를 표현하고 관리하고 처리하기 위한 구조 스택과 큐는 자료구조의 기초개념으로 &amp;ldquo;삽입&amp;rdquo;, &amp;ldquo;삭제&amp;rdquo; 의 두 핵심 함수로 구성됨 스택 : 선입후출 / 후입선출 큐 : 선입선출 구조 재귀함수 컴퓨터 내부에서 재귀함수의 수행은 스택 자료구조를 이용 (가장 마지막에 호출한 함수가 먼저 수행을 끝내야 그 앞의 함수 호출이 종료되기 때문에) 스택 자료구조를 활용해야 하는 상당 수 알고리즘은 재귀 함수를 이용해 간편하게 구현될 수 있다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</guid><description>미로탈출
-#
-Input
-#
-두 정수 N, M : 4 &amp;lt;= N, M &amp;lt;= 200 N개의 줄, M개의 정수로 미로정보 주어짐 공백 X 시작과 마지막은 항상 1 Output
-#
-최소 이동 칸의 개수 Rule
-#
-N x M 크기의 직사각형 미로에 갇혀있다. 미로에 여러 마리의 괴물을 피해 탈출해야 함. 출발지점 (1,1)
+Step 2. Build the Docs # Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/1%EC%9D%B4%EB%90%A0%EB%95%8C%EA%B9%8C%EC%A7%80/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/1%EC%9D%B4%EB%90%A0%EB%95%8C%EA%B9%8C%EC%A7%80/</guid><description>1이 될 때까지 # INPUT # 2 &amp;lt;= N &amp;lt;= 100,000 2 &amp;lt;= K &amp;lt;= 100,000 N &amp;gt;= K OUTPUT # N이 1이 될 때까지 수행해야 하는 과정의 최소 횟수 출력 Rule # 둘 중 하나의 과정을 반복적으로 수행 2번 과정은 N이 K로 나누어 떨어질 때만 선택 가능 N에서 1을 뺀다. N을 K로 나눈다. Example # 입력 출력 25 5 2 17 4 3 My Solution # 2번이 가능하면 2번을 수행하는 게 가장 빠른 방법 연상되는 이유는 더 크게 줄어들기 때문에 1번을 선택했을 때, 2번보다 빠르려면, 1번을 수행한 수가 K로 나누어 떨어질 때 =&amp;gt; 그러려면 K가 1이어야 한다?</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/</guid><description>숫자 카드 게임 # Input # N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐 1 &amp;lt;= N, M &amp;lt;= 100 각 카드에 적힌 숫자들, 둘째줄부터 주어짐 1 &amp;lt;= 각 숫자 &amp;lt;= 10,000 Output # 게임의 룰에 맞게 선택한 카드에 적힌 숫자 Rule # 숫자카드들이 N x M 형태로 놓여있음 뽑고자 하는 카드가 포함되어 있는 행 선택 선택된 행에서 가장 작은 숫자카드를 뽑음 어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까?</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%ED%81%B0%EC%88%98%EC%9D%98%EB%B2%95%EC%B9%99/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%ED%81%B0%EC%88%98%EC%9D%98%EB%B2%95%EC%B9%99/</guid><description>큰 수의 법칙 # Input # N : 2 $\leq$ N $\leq$ 1,000, 배열의 크기 M : 1 $\leq$ M $\leq$ 10,000, 숫자가 더해지는 횟수 K : 1 $\leq$ K $\leq$ 10,000, 특정 인덱스의 수가 연속해서 더해질 수 있는 횟수 array : 주어진 배열 항상 K &amp;lt;= M 큰 수의 법칙 # 배열의 숫자들을 M 번 더하여 가장 큰 수를 만드는 법칙 특정한 인덱스에 해당하는 수가 연속해서 K번을 초과하여 더해질 수 없다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</guid><description>게임 개발 # Input # N, M : 세로 크기, 가로 크기 (3 &amp;lt;= N,M &amp;lt;= 50) A, B, d : 게임 캐릭터가 있는 칸의 좌표 (A, B), 캐릭터가 바라보는 방향 d d 값 : 0 : 북 1 : 동 2 : 남 3 : 서 맵의 정보 : 육지인지 바다인지 N x M 으로 나타내줌 0 : 육지 1 : 바다 맵의 외곽은 항상 바다 게임 캐릭터가 처음 위치한 칸의 정보는 항상 육지 Output # 첫째 줄에 이동을 마친 후 캐릭터가 방문한 칸의 수 Rule # 현재 위치에서 현재 방향을 기준으로 반시계방향부터 차례대로 갈 곳을 정함 캐릭터의 왼쪽 방향(반시계 방향)에 가보지 않은 칸이 있다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한칸 전진.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</guid><description>상하좌우 # Input # N : 공간의 크기, N x N 크기의 정사각형 공간 이동할 계획서 : 여행가가 N x N 공간에서 이동할 계획, (1&amp;lt;= 이동횟수 &amp;lt;=100) Output # 여행가가 최종적으로 도착할 지점의 좌표를 공백으로 구분하여 출력 이동할 때, N x N의 정사각형을 벗어나는 움직임은 무시됨 예를 들어, (1,1)에서 L 혹은 U의 움직임은 무시 Example # 입력 출력 5 R R R U D D 3 4 My Solution # def solution(N, moves): now = [1, 1] moves = moves.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</guid><description>시각 # Input # N : 정수, 0&amp;lt;= N &amp;lt;= 23 Output # 00시 00분 00초부터 N시 59분 59초 까지의 모든 시각 중 3이 하나라도 포함되는 모든 경우의수 출력 Example # 입력 출력 5 11475 My Solution # def solution(N): res = 0 for h in range(N+1): if &amp;#39;3&amp;#39; in str(h): res += 60*60 continue for m in range(60): if &amp;#39;3&amp;#39; in str(m): res += 60 continue for s in range(60): if &amp;#39;3&amp;#39; in str(s): res += 1 return res N = 5 print(solution(N)) 문제 해설 # 하루는 86,400초로 모든 경우는 86,400가지밖에 존재하지 않음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</guid><description> 왕실의 나이트 # Input # 8 x 8 좌표평면에서 나이트가 현재 위치한 곳의 좌표 두문자로 구성된 문자열 Output # 나이트가 이동할 수 있는 경우의 수 Example # 입력 출력 a1 2 My Solution # moves = [(2, 1), (2, -1), (-2, 1), (-2, 1), (1, 2), (1, -2), (-1, 2), (-1, -2)] def solution(x): c, r = ord(x[0])-96, int(x[1]) nx = [1 for m in moves if (0 &amp;lt; (c+m[0]) &amp;lt; 9) and (0 &amp;lt; (r+m[1]) &amp;lt; 9)] return sum(nx) x = input() print(solution(x)) 문제 해설 # # 현재 나이트 위치 입력 input_data = input() row = int(inpu_data[1]) column = int(ord(input_data[0])) - int(ord(&amp;#39;a&amp;#39;)) + 1 # 8가지 이동 steps = [(2, 1), (2, -1), (-2, 1), (-2, 1), (1, 2), (1, -2), (-1, 2), (-1, -2)] # 이동가능 여부 확인 result = 0 for step in steps: nrow = row + step[0] ncol = col + step[1] if 1 &amp;lt;= nrow &amp;lt;= 8 and 1&amp;lt;= ncol &amp;lt;= 8: result += 1 # 출력 print(result)</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</guid><description>자료구조 기초 # 탐색 # 많은 양의 데이터 중 원하는 데이터를 찾는 과정 그래프, 트리 등의 자료구조 안에서 탐색하는 문제를 자주 다룸. 대표적인 탐색 알고리즘으로 DFS, BFS를 꼽을 수 있다. 자료구조 # 데이터를 표현하고 관리하고 처리하기 위한 구조 스택과 큐는 자료구조의 기초개념으로 &amp;ldquo;삽입&amp;rdquo;, &amp;ldquo;삭제&amp;rdquo; 의 두 핵심 함수로 구성됨 스택 : 선입후출 / 후입선출 큐 : 선입선출 구조 재귀함수 컴퓨터 내부에서 재귀함수의 수행은 스택 자료구조를 이용 (가장 마지막에 호출한 함수가 먼저 수행을 끝내야 그 앞의 함수 호출이 종료되기 때문에) 스택 자료구조를 활용해야 하는 상당 수 알고리즘은 재귀 함수를 이용해 간편하게 구현될 수 있다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</guid><description>미로탈출 # Input # 두 정수 N, M : 4 &amp;lt;= N, M &amp;lt;= 200 N개의 줄, M개의 정수로 미로정보 주어짐 공백 X 시작과 마지막은 항상 1 Output # 최소 이동 칸의 개수 Rule # N x M 크기의 직사각형 미로에 갇혀있다. 미로에 여러 마리의 괴물을 피해 탈출해야 함. 출발지점 (1,1)
 출구위치 (N, M)
-괴물이 있는 부분 : 0 \ 괴물이 없는 부분 : 1 \ 한번에 한칸씩 이동할 수 있음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</guid><description>음료수 얼려 먹기
-#
-Input
-#
-얼음 틀의 세로길이 N, 가로길이 M (1 &amp;lt;= N, M &amp;lt;= 1,000) 두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐 구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1 Output
-#
-한 번에 만들 수 있는 아이스크림의 갯수 구하기 Example
-#
-입력 출력 15 14 00000111100000 11111101111110 11011101101110 11011101100000 11011111111111 11011111111100 11000000011111 01111111111111 00000000011111 01111111111000 00011111111000 00000001111000 11111111110011 1110001111111111100011111111 8 My Solution
-#
-# INPUT n, m = map(int, input().</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%84%B1%EC%A0%81%EC%9D%B4%EB%82%AE%EC%9D%80%EC%88%9C%EC%84%9C%EB%A1%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%84%B1%EC%A0%81%EC%9D%B4%EB%82%AE%EC%9D%80%EC%88%9C%EC%84%9C%EB%A1%9C/</guid><description>성적이 낮은 순서로 학생 출력하기
-#
-INPUT
-#
-첫번째 줄 - 학생 수 N (1&amp;lt;=N&amp;lt;=100,000) 학생의 이름 문자열 A, 학생의 성적 B가 공백으로 구분되어 입력 학생의 성적 B는 100이하의 자연수 학생의 이름 A는 100 이하의 길이 OUTPUT
-#
-모든 학생의 이름을 성적이 낮은 순서대로 출력 성적이 동일한 학생의 순서는 자유롭게 출력 My Solution
-#
-# SOLUTION def solution(scores): sorted_list = [[] for _ in range(101)] for n, s in scores: sorted_list[s].</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/</guid><description>위에서 아래로
-#
-INPUT
-#
-첫째줄 - 수열에 속해있는 수의 개수 N, (1 &amp;lt;= N &amp;lt;= 500) 둘째줄부터 N개의 수 입력됨 (범위 1~100,000의 자연수) OUTPUT
-#
-입력으로 주어진 수열이 내림차순으로 정렬된 결과를 공백으로 구분하여 출력 Example
-#
-INPUT OUTPUT 3152712 27 15 12 My Solution
-#
-# SOLUTION def solution(arr): cnt_list = [0 for _ in range(100001)] for v in arr: cnt_list[v] += 1 for i in range(100000, -1, -1): for _ in range(cnt_list[i]): print(i, end=&amp;#39; &amp;#39;) # TEST N = int(input()) arr = [] for _ in range(N): arr.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B3%84%EC%88%98%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B3%84%EC%88%98%EC%A0%95%EB%A0%AC/</guid><description>계수 정렬
-#
-특정한 조건이 부합할 때만 사용할 수 있지만, 매우 빠른 정렬 알고리즘 데이터가 모두 양의 정수이며, 데이터의 개수가 N, 최댓값이 K일 때, 계수 정렬은 최악의 경우에도 수행시간 $O(N+K)$을 보장함 매우 빠르게 동작하며, 매우 간단한 원리 데이터의 크기 범위가 제한되어 정수 형태로 표현할 수 있을 때만 사용 가능 실수형 데이터로 주어질 때 사용하기 어려움 일반적으로는 가장 큰 데이터와 가장 작은 데이터의 차이가 1,000,000을 넘지 않을 때 효과적 데이터의 범위가 너무 크면 계수정렬을 사용할 수 없음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/</guid><description>삽입정렬
-#
-데이터를 하나씩 확인하며, 각 데이터의 적절한 위치에 삽입하면 어떨까? 선택정렬에 비해 구현 난이도가 높은 편이지만, 실행 시간 측면에서 더 효율적인 알고리즘 특히 삽입 정렬은 필요할 때만 위치를 바꾸기 때문에 &amp;ldquo;데이터가 거의 정렬되어 있을 때&amp;rdquo; 효율적 특정한 데이터를 적절한 위치에 &amp;ldquo;삽입&amp;quot;한다는 의미 삽입정렬 방법 특정한 데이터가 적절한 위치에 들어가기 이전에 그 앞까지의 데이터는 이미 정렬되어 있다고 가정 정렬되어 있는 리스트에 적절한 위치를 찾은 뒤, 그 위치에 삽입 특정 데이터가 삽입될 위치를 선정할 때(왼쪽으로 한 칸씩 이동하며 탐색할 때), 삽입될 데이터보다 작은 데이터를 만나면, 그 위치에서 멈춤 삽입정렬 소스코드</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/</guid><description>선택 정렬
-#
-매번 가장 작은 것을 선택한다는 의미의 알고리즘 가장 작은 데이터를 맨 앞에 있는 데이터와 바꾸고,
-그 다음 작은 데이터를 두 번째 데이터와 바꾸고 &amp;hellip; 이런 과정을 반복 # INPUT arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8] # SOLUTION def select_sorting(arr): for i in range(len(arr)): min_i = i for j in range(i+1, len(arr)): if arr[j] &amp;lt; arr[min_i]: min_i = j arr[i], arr[min_i] = arr[min_i], arr[i] # OUTPUT select_sorting(arr) print(arr) 선택 정렬의 시간복잡도는 $N + (N-1) + \dots + 2$ 로 $O(N^2)$ 이다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%80%B5%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%80%B5%EC%A0%95%EB%A0%AC/</guid><description>퀵 정렬
-#
-정렬 알고리즘 중 가장 많이 사용되는 알고리즘
+괴물이 있는 부분 : 0 \ 괴물이 없는 부분 : 1 \ 한번에 한칸씩 이동할 수 있음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</guid><description>음료수 얼려 먹기 # Input # 얼음 틀의 세로길이 N, 가로길이 M (1 &amp;lt;= N, M &amp;lt;= 1,000) 두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐 구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1 Output # 한 번에 만들 수 있는 아이스크림의 갯수 구하기 Example # 입력 출력 15 14 00000111100000 11111101111110 11011101101110 11011101100000 11011111111111 11011111111100 11000000011111 01111111111111 00000000011111 01111111111000 00011111111000 00000001111000 11111111110011 1110001111111111100011111111 8 My Solution # # INPUT n, m = map(int, input().</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%84%B1%EC%A0%81%EC%9D%B4%EB%82%AE%EC%9D%80%EC%88%9C%EC%84%9C%EB%A1%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%84%B1%EC%A0%81%EC%9D%B4%EB%82%AE%EC%9D%80%EC%88%9C%EC%84%9C%EB%A1%9C/</guid><description>성적이 낮은 순서로 학생 출력하기 # INPUT # 첫번째 줄 - 학생 수 N (1&amp;lt;=N&amp;lt;=100,000) 학생의 이름 문자열 A, 학생의 성적 B가 공백으로 구분되어 입력 학생의 성적 B는 100이하의 자연수 학생의 이름 A는 100 이하의 길이 OUTPUT # 모든 학생의 이름을 성적이 낮은 순서대로 출력 성적이 동일한 학생의 순서는 자유롭게 출력 My Solution # # SOLUTION def solution(scores): sorted_list = [[] for _ in range(101)] for n, s in scores: sorted_list[s].</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/</guid><description>위에서 아래로 # INPUT # 첫째줄 - 수열에 속해있는 수의 개수 N, (1 &amp;lt;= N &amp;lt;= 500) 둘째줄부터 N개의 수 입력됨 (범위 1~100,000의 자연수) OUTPUT # 입력으로 주어진 수열이 내림차순으로 정렬된 결과를 공백으로 구분하여 출력 Example # INPUT OUTPUT 3152712 27 15 12 My Solution # # SOLUTION def solution(arr): cnt_list = [0 for _ in range(100001)] for v in arr: cnt_list[v] += 1 for i in range(100000, -1, -1): for _ in range(cnt_list[i]): print(i, end=&amp;#39; &amp;#39;) # TEST N = int(input()) arr = [] for _ in range(N): arr.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B3%84%EC%88%98%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EA%B3%84%EC%88%98%EC%A0%95%EB%A0%AC/</guid><description>계수 정렬 # 특정한 조건이 부합할 때만 사용할 수 있지만, 매우 빠른 정렬 알고리즘 데이터가 모두 양의 정수이며, 데이터의 개수가 N, 최댓값이 K일 때, 계수 정렬은 최악의 경우에도 수행시간 $O(N+K)$을 보장함 매우 빠르게 동작하며, 매우 간단한 원리 데이터의 크기 범위가 제한되어 정수 형태로 표현할 수 있을 때만 사용 가능 실수형 데이터로 주어질 때 사용하기 어려움 일반적으로는 가장 큰 데이터와 가장 작은 데이터의 차이가 1,000,000을 넘지 않을 때 효과적 데이터의 범위가 너무 크면 계수정렬을 사용할 수 없음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/</guid><description>삽입정렬 # 데이터를 하나씩 확인하며, 각 데이터의 적절한 위치에 삽입하면 어떨까? 선택정렬에 비해 구현 난이도가 높은 편이지만, 실행 시간 측면에서 더 효율적인 알고리즘 특히 삽입 정렬은 필요할 때만 위치를 바꾸기 때문에 &amp;ldquo;데이터가 거의 정렬되어 있을 때&amp;rdquo; 효율적 특정한 데이터를 적절한 위치에 &amp;ldquo;삽입&amp;quot;한다는 의미 삽입정렬 방법 특정한 데이터가 적절한 위치에 들어가기 이전에 그 앞까지의 데이터는 이미 정렬되어 있다고 가정 정렬되어 있는 리스트에 적절한 위치를 찾은 뒤, 그 위치에 삽입 특정 데이터가 삽입될 위치를 선정할 때(왼쪽으로 한 칸씩 이동하며 탐색할 때), 삽입될 데이터보다 작은 데이터를 만나면, 그 위치에서 멈춤 삽입정렬 소스코드</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/</guid><description>선택 정렬 # 매번 가장 작은 것을 선택한다는 의미의 알고리즘 가장 작은 데이터를 맨 앞에 있는 데이터와 바꾸고,
+그 다음 작은 데이터를 두 번째 데이터와 바꾸고 &amp;hellip; 이런 과정을 반복 # INPUT arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8] # SOLUTION def select_sorting(arr): for i in range(len(arr)): min_i = i for j in range(i+1, len(arr)): if arr[j] &amp;lt; arr[min_i]: min_i = j arr[i], arr[min_i] = arr[min_i], arr[i] # OUTPUT select_sorting(arr) print(arr) 선택 정렬의 시간복잡도는 $N + (N-1) + \dots + 2$ 로 $O(N^2)$ 이다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%80%B5%EC%A0%95%EB%A0%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%80%B5%EC%A0%95%EB%A0%AC/</guid><description>퀵 정렬 # 정렬 알고리즘 중 가장 많이 사용되는 알고리즘
 퀵 정렬과 비교할만큼 빠른 알고리즘으로 &amp;lsquo;병합 정렬&amp;rsquo;이 있음.
 퀵 정렬과 병합 정렬은 대부분의 프로그래밍 언어에서 정렬 라이브러리의 근간이 되는 알고리즘이기도 함.
 기준을 설정한 다음 큰 수와 작은 수를 교환한 후 리스트를 반으로 나누는 방식으로 동작
 퀵 정렬에서는 피벗(Pivot)이 사용된다.
 큰 숫자와 작은 숫자를 교환할 때, 교환하기 위한 &amp;lsquo;기준&amp;rsquo;을 피벗이라고 표현
-피벗을 어떻게 설정하고 리스트를 분할하는지에 따라 여러 가지 방식의 퀵 정렬이 있다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>떡볶이 떡 만들기
-#
-INPUT
-#
-첫째줄: N, M = 떡의 개수, 요청한 떡의 길이
-($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$) 둘째줄: 떡의 개별 높이 떡의 개별 높이의 총합은 항상 M 이상. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0 OUTPUT
-#
-적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값 Example
-#
-문제
-#
-절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</guid><description>부품 찾기
-#
-INPUT
-#
-$N$ : 탐색할 배열의 크기 ($1 \le N \le 1,000,000$) 공백으로 구분된 N개의 정수: 탐색할 배열, $1 &amp;lt; 정수 \le 1,000,000$ $M$ : 찾으려는 숫자의 갯수 ($1 \le M \le 100,000$) 공백으로 구분된 M개의 정수: 탐색할 값, ($1 &amp;lt; N \le 1,000,000$) OUTPUT
-#
-찾으려는 값들의 존재 여부를 yes, no로 출력 Example
-#
-Input Output 58 3 7 9 235 7 9 no yes yes My Solution
-#
-# SOLUTION def binary_search(arr, target, s, e): if e &amp;lt; s: return -1 m = (s+e)//2 if arr[m] &amp;lt; target: return binary_search(arr, target, m+1, e) elif arr[m] &amp;gt; target: return binary_search(arr, target, s, m-1) else: return arr[m] def solution(arr, targets, N): arr.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</guid><description>프로그래머스 - 징검다리 건너기
-#
-문제 링크 : 링크
-Input
-#
-디딤돌에 적힌 숫자가 순서대로 담긴 배열 stones 한 번에 건너뛸 수 있는 디딤돌의 최대 칸수 k 디딤돌에는 모두 숫자가 적혀 있으며 디딤돌의 숫자는 한 번 밟을 때마다 1씩 줄어듭니다. 디딤돌의 숫자가 0이 되면 더 이상 밟을 수 없으며 이때는 그 다음 디딤돌로 한번에 여러 칸을 건너 뛸 수 있습니다. 단, 다음으로 밟을 수 있는 디딤돌이 여러 개인 경우 무조건 가장 가까운 디딤돌로만 건너뛸 수 있습니다 Output
-#
-최대 몇 명까지 징검다리를 건널 수 있는지 return 입력과 출력 예
-#
-stones k result [2, 4, 5, 3, 2, 1, 4, 2, 5, 1] 3 3 나의 풀이 코드
-#
-통과 (313.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>1로 만들기
-#
-정수 X에 대해 4가지 연산을 사용해 1을 만들려고 함. 최소한의 연산횟수를 구하기.
+피벗을 어떻게 설정하고 리스트를 분할하는지에 따라 여러 가지 방식의 퀵 정렬이 있다.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>떡볶이 떡 만들기 # INPUT # 첫째줄: N, M = 떡의 개수, 요청한 떡의 길이
+($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$) 둘째줄: 떡의 개별 높이 떡의 개별 높이의 총합은 항상 M 이상. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0 OUTPUT # 적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값 Example # 문제 # 절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</guid><description>부품 찾기 # INPUT # $N$ : 탐색할 배열의 크기 ($1 \le N \le 1,000,000$) 공백으로 구분된 N개의 정수: 탐색할 배열, $1 &amp;lt; 정수 \le 1,000,000$ $M$ : 찾으려는 숫자의 갯수 ($1 \le M \le 100,000$) 공백으로 구분된 M개의 정수: 탐색할 값, ($1 &amp;lt; N \le 1,000,000$) OUTPUT # 찾으려는 값들의 존재 여부를 yes, no로 출력 Example # Input Output 58 3 7 9 235 7 9 no yes yes My Solution # # SOLUTION def binary_search(arr, target, s, e): if e &amp;lt; s: return -1 m = (s+e)//2 if arr[m] &amp;lt; target: return binary_search(arr, target, m+1, e) elif arr[m] &amp;gt; target: return binary_search(arr, target, s, m-1) else: return arr[m] def solution(arr, targets, N): arr.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</guid><description>프로그래머스 - 징검다리 건너기 # 문제 링크 : 링크
+Input # 디딤돌에 적힌 숫자가 순서대로 담긴 배열 stones 한 번에 건너뛸 수 있는 디딤돌의 최대 칸수 k 디딤돌에는 모두 숫자가 적혀 있으며 디딤돌의 숫자는 한 번 밟을 때마다 1씩 줄어듭니다. 디딤돌의 숫자가 0이 되면 더 이상 밟을 수 없으며 이때는 그 다음 디딤돌로 한번에 여러 칸을 건너 뛸 수 있습니다. 단, 다음으로 밟을 수 있는 디딤돌이 여러 개인 경우 무조건 가장 가까운 디딤돌로만 건너뛸 수 있습니다 Output # 최대 몇 명까지 징검다리를 건널 수 있는지 return 입력과 출력 예 # stones k result [2, 4, 5, 3, 2, 1, 4, 2, 5, 1] 3 3 나의 풀이 코드 # 통과 (313.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>1로 만들기 # 정수 X에 대해 4가지 연산을 사용해 1을 만들려고 함. 최소한의 연산횟수를 구하기.
 연산
-X가 5로 나누어 떨어지면, 5로 나눈다. X가 3로 나누어 떨어지면, 3으로 나눈다. X가 2로 나누어 떨어지면, 2로 나눈다. X에서 1을 뺀다. INPUT
-#
-첫째줄 정수 X 1 &amp;lt;= X &amp;lt;= 30,000 OUTPUT
-#
-최소한의 연산 횟수 My Solution
-#
-연산1이 항상 연산2보다 좋다고 할 수 없음.
-(연산2가 항상 연산3보다 좋을 수 없으며, 연산3이 항상 연산4보다 좋을 수 없음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</guid><description>개미전사
-#
-메뚜기 마을의 식량창고는 일직선상에 있음. 개미전사가 메뚜기의 식량창고를 선택적으로 약탈하여 식량을 뺏을 예정
+X가 5로 나누어 떨어지면, 5로 나눈다. X가 3로 나누어 떨어지면, 3으로 나눈다. X가 2로 나누어 떨어지면, 2로 나눈다. X에서 1을 뺀다. INPUT # 첫째줄 정수 X 1 &amp;lt;= X &amp;lt;= 30,000 OUTPUT # 최소한의 연산 횟수 My Solution # 연산1이 항상 연산2보다 좋다고 할 수 없음.
+(연산2가 항상 연산3보다 좋을 수 없으며, 연산3이 항상 연산4보다 좋을 수 없음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EA%B0%9C%EB%AF%B8%EC%A0%84%EC%82%AC/</guid><description>개미전사 # 메뚜기 마을의 식량창고는 일직선상에 있음. 개미전사가 메뚜기의 식량창고를 선택적으로 약탈하여 식량을 뺏을 예정
 하지만, 메뚜기들은 인접한 식량창고가 털리면 바로 알아챔. 고로, 최소 한 칸 이상 떨어진 식량창고를 약탈할 수 있음. 최대한 많이 얻을 수 있는 식량은?
-INPUT
-#
-첫째줄에 식량창고의 개수 N, 3 &amp;lt;= N &amp;lt;= 100 둘째줄에 공백으로 구분된 식량창고에 저장된 식량의 개수 K 0 &amp;lt;= K &amp;lt;= 1000 OUTPUT
-#
-개미전사가 얻을 수 있는 식량의 최댓값 Example
-#
-입력 출력 41 3 1 5 8 My Solution
-#
-def solution(N, arr): dp_arr = arr[:2] + [0]*(N-2) for i in range(2, N): dp_arr[i] = max(dp_arr[i-1], dp_arr[i-2] + arr[i]) return dp_arr[-1] # INPUT N = int(input()) arr = list(map(int, input().</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</guid><description>
-바닥공사
-#
-세로 x 가로가 2 x N인 바닥에 1x2 2x1 2x2 인 타일을 덮는 경우의 수 구하기
-INPUT
-#
-가로길이 N 1 &amp;lt;= N &amp;lt;= 1,000 OUTPUT
-#
-바닥을 채우는 방법의 수를 796,796으로 나눈 나머지 구하기 My Solution
-#
-세로가 무조건 2니까 2x2 공간을 덮는 경우의 수는 3가지 하지만 무조건 2칸으로 다 나눌 수는 없다! 개미전사 문제처럼 앞에서부터 한칸씩 풀면 될까? 가로가 N일때 경우의 수는 (N-1일 때 방법의 수) + (N-2일 때 방법의 수)*2 def solution(N): arr = [0]*N arr[0] = 1 arr[1] = 3 for i in range(2, N): arr[i] = (arr[i-1] + 2*arr[i-2]) % 796796 return arr[-1] # INPUT &amp;amp; OUTPUT N = int(input()) print(solution(N))</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</guid><description>효율적인 화폐 구성
-#
-N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
-INPUT
-#
-화폐의 종류 수 N 1 &amp;lt;= N &amp;lt;= 100 만들려는 목표 금액 M 1 &amp;lt;= M &amp;lt;= 10,000 OUTPUT
-#
-M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution
-#
-def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c &amp;gt;= 0 and d[i-c] &amp;gt;= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</guid><description>곱하기 혹은 더하기
-#
-Input
-#
-S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 &amp;lt;= S의 길이 &amp;lt;= 20) Output
-#
-만들어질 수 있는 가장 큰 수 Rule
-#
-왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &amp;ldquo;x&amp;rdquo; 혹은 &amp;ldquo;+&amp;rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기 연산 순서는 &amp;ldquo;x&amp;rdquo;, &amp;ldquo;+&amp;rdquo; 상관 없이 무조건 왼쪽부터 순서대로 Example
-#
-입력 출력 02984 576 567 210 My Solution
-#
-def solution(S): S = list(S) res = int(S.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</guid><description>만들 수 없는 금액
-#
-Input
-#
-첫째 줄: 에 입력되는 동전의 개수 N (1 &amp;lt;= N &amp;lt;= 1,000) 둘째 줄: 각 동전의 화폐 단위를 나타나는 N개의 자연수, Output
-#
-첫째 줄에 주어진 동전들로 만들 수 없는 양의 정수 금액 중 최솟값 Rule
-#
-N개의 동전을 이용하여 만들 수 없는 양의 정수 금액 중 최솟값을 구하는 프로그램 작성 Example
-#
-입력 출력 5 3 2 1 1 9 8 My Solution
-#
-import heapq def solution(coins): coins.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</guid><description>
-모험가 길드
-#
-Input
-#
-N : 첫째 줄에 주어지는 모험가의 수 1 &amp;lt;= N &amp;lt;= 100,000 각 모험가의 공포도 : 둘째 줄에 주어지는 N이하의 자연수 값들, 공백으로 구분됨 Output
-#
-여행을 떠날 수 있는 그룹 수의 최대값 Rule
-#
-공포도가 X인 모험가는 반드시 X명 이상으로 구성한 모험가 그룹에 참여해야 여행을 떠날 수 있음 최대로 만들 수 있는 모험감의 그룹? Example
-#
-입력 출력 5 2 3 1 2 2 2</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</guid><description>볼링공 고르기
-#
-Input
-#
-첫째줄 N, M : 볼링공의 갯수 N, 공의 최대 무게 M 둘째줄 각 볼링공의 무게 K : 순서대로 자연수 1 &amp;lt;= N &amp;lt;= 1,000, 1 &amp;lt;= M &amp;lt;=10 1 &amp;lt;= K &amp;lt;= M Output
-#
-두 사람이 볼링공을 고르는 경우의 수 출력 Rule
-#
-두 사람이 서로 다른 무게의 볼링공을 고르도록 한다. Example
-#
-입력 출력 5 3 1 3 2 3 2 8 8 5 1 5 4 3 2 4 5 2 25 My Solution
-#
-from collections import Counter def solution(N, data): cnt = Counter(data) res = N * (N-1) for k,v in cnt.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/hidden/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hidden/</guid><description>This page is hidden in menu
-#
-Quondam non pater est dignior ille Eurotas
-#
-Latent te facies
-#
-Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
-Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor Cum honorum Latona
-#
-O fallor in sustinui iussorum equidem.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/buttons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/buttons/</guid><description>
-Buttons
-#
-Buttons are styled links that can lead to local page or external link.
-Example
-#
-{{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}} Get Home
-Contribute</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/columns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/columns/</guid><description>Columns
-#
-Columns help organize shorter pieces of content horizontally for readability.
-{{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}} Example
-#
-Left Content
-#
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/details/</guid><description>
-Details
-#
-Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
-Example
-#
-{{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} Title
-Markdown content
-#
-Lorem markdownum insigne&amp;hellip;</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/expand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/expand/</guid><description>Expand
-#
-Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
-Example
-#
-Default
-#
-{{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}} Expand
-↕
-Markdown content
-#
-Lorem markdownum insigne&amp;hellip;
-With Custom Label
-#
-{{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}} Custom Label
-...
-Markdown content
-#
-Lorem markdownum insigne.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/hints/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/hints/</guid><description>Hints
-#
-Hint shortcode can be used as hint/alerts/notification block.
+INPUT # 첫째줄에 식량창고의 개수 N, 3 &amp;lt;= N &amp;lt;= 100 둘째줄에 공백으로 구분된 식량창고에 저장된 식량의 개수 K 0 &amp;lt;= K &amp;lt;= 1000 OUTPUT # 개미전사가 얻을 수 있는 식량의 최댓값 Example # 입력 출력 41 3 1 5 8 My Solution # def solution(N, arr): dp_arr = arr[:2] + [0]*(N-2) for i in range(2, N): dp_arr[i] = max(dp_arr[i-1], dp_arr[i-2] + arr[i]) return dp_arr[-1] # INPUT N = int(input()) arr = list(map(int, input().</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%B0%94%EB%8B%A5%EA%B3%B5%EC%82%AC/</guid><description> 바닥공사 # 세로 x 가로가 2 x N인 바닥에 1x2 2x1 2x2 인 타일을 덮는 경우의 수 구하기
+INPUT # 가로길이 N 1 &amp;lt;= N &amp;lt;= 1,000 OUTPUT # 바닥을 채우는 방법의 수를 796,796으로 나눈 나머지 구하기 My Solution # 세로가 무조건 2니까 2x2 공간을 덮는 경우의 수는 3가지 하지만 무조건 2칸으로 다 나눌 수는 없다! 개미전사 문제처럼 앞에서부터 한칸씩 풀면 될까? 가로가 N일때 경우의 수는 (N-1일 때 방법의 수) + (N-2일 때 방법의 수)*2 def solution(N): arr = [0]*N arr[0] = 1 arr[1] = 3 for i in range(2, N): arr[i] = (arr[i-1] + 2*arr[i-2]) % 796796 return arr[-1] # INPUT &amp;amp; OUTPUT N = int(input()) print(solution(N))</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/</guid><description>효율적인 화폐 구성 # N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
+INPUT # 화폐의 종류 수 N 1 &amp;lt;= N &amp;lt;= 100 만들려는 목표 금액 M 1 &amp;lt;= M &amp;lt;= 10,000 OUTPUT # M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution # def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c &amp;gt;= 0 and d[i-c] &amp;gt;= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</guid><description>곱하기 혹은 더하기 # Input # S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 &amp;lt;= S의 길이 &amp;lt;= 20) Output # 만들어질 수 있는 가장 큰 수 Rule # 왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &amp;ldquo;x&amp;rdquo; 혹은 &amp;ldquo;+&amp;rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기 연산 순서는 &amp;ldquo;x&amp;rdquo;, &amp;ldquo;+&amp;rdquo; 상관 없이 무조건 왼쪽부터 순서대로 Example # 입력 출력 02984 576 567 210 My Solution # def solution(S): S = list(S) res = int(S.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</guid><description>만들 수 없는 금액 # Input # 첫째 줄: 에 입력되는 동전의 개수 N (1 &amp;lt;= N &amp;lt;= 1,000) 둘째 줄: 각 동전의 화폐 단위를 나타나는 N개의 자연수, Output # 첫째 줄에 주어진 동전들로 만들 수 없는 양의 정수 금액 중 최솟값 Rule # N개의 동전을 이용하여 만들 수 없는 양의 정수 금액 중 최솟값을 구하는 프로그램 작성 Example # 입력 출력 5 3 2 1 1 9 8 My Solution # import heapq def solution(coins): coins.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</guid><description> 모험가 길드 # Input # N : 첫째 줄에 주어지는 모험가의 수 1 &amp;lt;= N &amp;lt;= 100,000 각 모험가의 공포도 : 둘째 줄에 주어지는 N이하의 자연수 값들, 공백으로 구분됨 Output # 여행을 떠날 수 있는 그룹 수의 최대값 Rule # 공포도가 X인 모험가는 반드시 X명 이상으로 구성한 모험가 그룹에 참여해야 여행을 떠날 수 있음 최대로 만들 수 있는 모험감의 그룹? Example # 입력 출력 5 2 3 1 2 2 2</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</guid><description>볼링공 고르기 # Input # 첫째줄 N, M : 볼링공의 갯수 N, 공의 최대 무게 M 둘째줄 각 볼링공의 무게 K : 순서대로 자연수 1 &amp;lt;= N &amp;lt;= 1,000, 1 &amp;lt;= M &amp;lt;=10 1 &amp;lt;= K &amp;lt;= M Output # 두 사람이 볼링공을 고르는 경우의 수 출력 Rule # 두 사람이 서로 다른 무게의 볼링공을 고르도록 한다. Example # 입력 출력 5 3 1 3 2 3 2 8 8 5 1 5 4 3 2 4 5 2 25 My Solution # from collections import Counter def solution(N, data): cnt = Counter(data) res = N * (N-1) for k,v in cnt.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/hidden/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hidden/</guid><description>This page is hidden in menu # Quondam non pater est dignior ille Eurotas # Latent te facies # Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
+Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor Cum honorum Latona # O fallor in sustinui iussorum equidem.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/buttons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/buttons/</guid><description> Buttons # Buttons are styled links that can lead to local page or external link.
+Example # {{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}} Get Home Contribute</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/columns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/columns/</guid><description>Columns # Columns help organize shorter pieces of content horizontally for readability.
+{{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}} Example # Left Content # Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/details/</guid><description>Details # Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
+Example # {{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} Title Markdown content # Lorem markdownum insigne&amp;hellip;</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/expand/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/expand/</guid><description>Expand # Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
+Example # Default # {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}} Expand ↕ Markdown content # Lorem markdownum insigne&amp;hellip;
+With Custom Label # {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}} Custom Label ... Markdown content # Lorem markdownum insigne.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/hints/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/hints/</guid><description>Hints # Hint shortcode can be used as hint/alerts/notification block.
 There are 3 colors to choose: info, warning and danger.
-{{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}} Example
-#
-Markdown content
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-Markdown content</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/katex/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/katex/</guid><description>KaTeX
-#
-KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
-Example
-#
-{{&amp;lt;/* katex [display] [class=&amp;#34;text-center&amp;#34;] */&amp;gt;}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{&amp;lt;/* /katex */&amp;gt;}} Display Mode Example
-#
-Here is some inline example: \(\pi(x)\)
-, rendered in the same line. And below is display example, having display: block \[
-f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-\]
-Text continues here.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/mermaid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/mermaid/</guid><description>Mermaid Chart
-#
-MermaidJS is library for generating svg charts and diagrams from text.
+{{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}} Example # Markdown content
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa Markdown content</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/katex/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/katex/</guid><description>KaTeX # KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
+Example # {{&amp;lt;/* katex [display] [class=&amp;#34;text-center&amp;#34;] */&amp;gt;}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{&amp;lt;/* /katex */&amp;gt;}} Display Mode Example # Here is some inline example: \(\pi(x)\) , rendered in the same line. And below is display example, having display: block \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\] Text continues here.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/mermaid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/mermaid/</guid><description>Mermaid Chart # MermaidJS is library for generating svg charts and diagrams from text.
 Override Mermaid Initialization Config
 To override the initialization config for Mermaid, create a mermaid.json file in your assets folder!
-Example
-#
-{{&amp;lt;/* mermaid [class=&amp;#34;text-center&amp;#34;]*/&amp;gt;}} stateDiagram-v2 State1: The state with a note note right of State1 Important information! You can write notes. end note State1 --&amp;gt; State2 note left of State2 : This is the note to the left.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/section/first-page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/section/first-page/</guid><description>First page
-#
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/section/second-page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/section/second-page/</guid><description>Second Page
-#
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/tabs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/tabs/</guid><description>Tabs
-#
-Tabs let you organize content by context, for example installation instructions for each supported platform.
-{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example
-#
-MacOS
-MacOS
-#
-This is tab MacOS content.
+Example # {{&amp;lt;/* mermaid [class=&amp;#34;text-center&amp;#34;]*/&amp;gt;}} stateDiagram-v2 State1: The state with a note note right of State1 Important information! You can write notes. end note State1 --&amp;gt; State2 note left of State2 : This is the note to the left.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/section/first-page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/section/first-page/</guid><description>First page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/section/second-page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/section/second-page/</guid><description>Second Page # Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description></item><item><title/><link>https://yera10.github.io/docs/shortcodes/tabs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/shortcodes/tabs/</guid><description>Tabs # Tabs let you organize content by context, for example installation instructions for each supported platform.
+{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example # MacOS MacOS # This is tab MacOS content.
 Lorem markdownum insigne. Olympo signis Delphis!</description></item></channel></rss>
