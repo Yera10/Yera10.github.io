@@ -1,21 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>commands on 범철이의 Blog</title>
-    <link>https://yera10.github.io/commands/</link>
-    <description>Recent content in commands on 범철이의 Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 29 Nov 2023 17:04:53 +0900</lastBuildDate>
-    <atom:link href="https://yera10.github.io/commands/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git 최초설정</title>
-      <link>https://yera10.github.io/commands/git_initial_setup/</link>
-      <pubDate>Wed, 29 Nov 2023 17:04:53 +0900</pubDate>
-      <guid>https://yera10.github.io/commands/git_initial_setup/</guid>
-      <description>모든 설정값 확인#git config --list 특정값 확인
-git config user.name 모든 설정값과 해당 위치 확인#git config --list --show-origin 사용자 이름 및 이메일 설정#git config --global user.name &amp;#34;Yera&amp;#34; git config --global user.email &amp;lt;이메일&amp;gt; * global 옵션을 전달할 경우 한번만 수행해도 된다.
-설정값 지우기#git config --unset user.name git config --unset user.email git config --unset --global user.name git config --unset --global user.email * global로 설정한 경우, global로 지워야 한다.</description>
-    </item>
-  </channel>
-</rss>
