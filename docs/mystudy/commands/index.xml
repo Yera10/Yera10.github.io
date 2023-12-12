@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>내가 자꾸 까먹는 명령어들 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/commands/</link><description>Recent content in 내가 자꾸 까먹는 명령어들 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/commands/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/commands/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/commands/readme/</guid><description>Git 관련 # commit 취소
+credentail 관련
+clone 관련
+최초 설정 관련
+Linux # 파일 생성/이동/복사/삭제
+백그라운드 관련 명령어
+Ubuntu Screen 명령어
+GPU 관련
+압축해제
+conda # 가상환경 관련
+Poetry # Poetry 시작하기
+가상환경 관련
+의존성 관련
+내보내기(requirements.txt)
+기타 # python3의 venv 사용법
+python3 서버열기
+python의 인자값 받기
+Docker 명령어
+VSCode 단축키
+터미널 테마</description></item></channel></rss>
