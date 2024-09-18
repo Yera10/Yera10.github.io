@@ -1,20 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>자주 쓰는 명령어들 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/commands/</link><description>Recent content in 자주 쓰는 명령어들 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/commands/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/memo/commands/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/readme/</guid><description>Git 관련 # commit 취소
-credentail 관련
-clone 관련
-최초 설정 관련
-Linux # 파일 생성/이동/복사/삭제
-백그라운드 관련 명령어
-Ubuntu Screen 명령어
-GPU 관련
-압축해제
-conda # 가상환경 관련
-Poetry # Poetry 시작하기
-가상환경 관련
-의존성 관련
-내보내기(requirements.txt)
-기타 # python3의 venv 사용법
-python3 서버열기
-python의 인자값 받기
-Docker 명령어
-VSCode 단축키
-터미널 테마</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>자주 쓰는 명령어들 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/commands/</link><description>Recent content in 자주 쓰는 명령어들 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/commands/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/memo/commands/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/readme/</guid><description>&lt;h1 id="git-관련">
+ Git 관련
+ &lt;a class="anchor" href="#git-%ea%b4%80%eb%a0%a8">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="Git/cancel.md">commit 취소&lt;/a>&lt;br>
+&lt;a href="Git/credential.md">credentail 관련&lt;/a>&lt;br>
+&lt;a href="Git/clone.md">clone 관련&lt;/a>&lt;br>
+&lt;a href="Git/Initial_setup.md">최초 설정 관련&lt;/a>&lt;/p>
+&lt;h1 id="linux">
+ Linux
+ &lt;a class="anchor" href="#linux">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="Linux/file_dir.md">파일 생성/이동/복사/삭제&lt;/a>&lt;br>
+&lt;a href="Linux/background.md">백그라운드 관련 명령어&lt;/a>&lt;br>
+&lt;a href="Linux/screen.md">Ubuntu Screen 명령어&lt;/a>&lt;br>
+&lt;a href="Linux/gpu.md">GPU 관련&lt;/a>&lt;br>
+&lt;a href="zip_tar_gz.md">압축해제&lt;/a>&lt;/p>
+&lt;h1 id="conda">
+ conda
+ &lt;a class="anchor" href="#conda">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="conda/virtual_env.md">가상환경 관련&lt;/a>&lt;/p>
+&lt;h1 id="poetry">
+ Poetry
+ &lt;a class="anchor" href="#poetry">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="Poetry/poetry_start.md">Poetry 시작하기&lt;/a>&lt;br>
+&lt;a href="Poetry/virtual_env.md">가상환경 관련&lt;/a>&lt;br>
+&lt;a href="Poetry/dependency.md">의존성 관련&lt;/a>&lt;br>
+&lt;a href="Poetry/export.md">내보내기(requirements.txt)&lt;/a>&lt;/p>
+&lt;h1 id="기타">
+ 기타
+ &lt;a class="anchor" href="#%ea%b8%b0%ed%83%80">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="Etc/python-venv.md">python3의 venv 사용법&lt;/a>&lt;br>
+&lt;a href="Etc/python-server.md">python3 서버열기&lt;/a>&lt;br>
+&lt;a href="Etc/python-parameter.md">python의 인자값 받기&lt;/a>&lt;br>
+&lt;a href="Etc/docker.md">Docker 명령어&lt;/a>&lt;br>
+&lt;a href="Etc/vscode_shortcuts.md">VSCode 단축키&lt;/a>&lt;br>
+&lt;a href="Etc/terminal_theme.md">터미널 테마&lt;/a>&lt;/p></description></item></channel></rss>

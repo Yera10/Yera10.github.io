@@ -1,1 +1,166 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>알고리즘 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/</link><description>Recent content in 알고리즘 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/index.xml" rel="self" type="application/rss+xml"/><item><title>데이터 구조</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/data_structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/data_structure/</guid><description>데이터 구조 생각해보기 # 전화번호부 정보는 어떻게 저장하면 좋을까? 은행 번호표 정보는 어떻게 처리하면 좋을까? 서적 정보는 어떻게 관리하면 좋을까? 창고에 쌓인 수화물의 위치를 역순으로 찾을 땐? Python의 기본 데이터 구조 # 스택 &amp;amp; 큐 튜플 &amp;amp; 집합 사전 (dict) collections 모듈 Stack (스택) # 나중에 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조 Last In First Out (LIFO) - 리포구조 Data 입력을 push, 출력을 pop이라고 함 collections 모듈에서 deque 사용 예제 : 입력된 문자열을 역순으로 출력 Queue (큐) # 먼저 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조 First In First Out (FIFO) - 피포구조 Stack과 반대되는 개념 Tuple (튜플) # 값의 변경이 불가능한 리스트 선언시 &amp;ldquo;[ ]&amp;rdquo; 가 아닌 &amp;ldquo;( )&amp;ldquo;를 사용 프로그램이 작동하는 동안 변경되지 않는 데이터 저장할 때 사용</description></item><item><title>소수 관련 코드</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/prime_number_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/prime_number_code/</guid><description> 소수 여부 확인 # def is_prime(n): if n==1: return False for d in range(2, int(n**0.5)+1): if n%d==0: return False return True 약수 구하기 # def solution(n): answer = set() for d in range(1, int(n**0.5)+1): if n%d==0: answer.add(d) answer.add(n//d) return sorted(list(answer)) 최대공약수와 최소공배수 # math 사용 import math math.gcd(a, b) # 최대공약수 math.lcm(a, b) # 최소공배수 직접 구현 # 자연수 a, b의 최대공약수 구하는 함수 def gcd(a, b): if b==0: return a else: return gcd(b, a%b) # 자연수 a, b의 최소공배수 구하는 함수 def lcm(a, b): return a*b//gcd(a,b)</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>알고리즘 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/</link><description>Recent content in 알고리즘 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/index.xml" rel="self" type="application/rss+xml"/><item><title>데이터 구조</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/data_structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/data_structure/</guid><description>&lt;h3 id="데이터-구조-생각해보기">
+ 데이터 구조 생각해보기
+ &lt;a class="anchor" href="#%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b5%ac%ec%a1%b0-%ec%83%9d%ea%b0%81%ed%95%b4%eb%b3%b4%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>전화번호부 정보는 어떻게 저장하면 좋을까?&lt;/li>
+&lt;li>은행 번호표 정보는 어떻게 처리하면 좋을까?&lt;/li>
+&lt;li>서적 정보는 어떻게 관리하면 좋을까?&lt;/li>
+&lt;li>창고에 쌓인 수화물의 위치를 역순으로 찾을 땐?&lt;/li>
+&lt;/ul>
+&lt;h1 id="python의-기본-데이터-구조">
+ Python의 기본 데이터 구조
+ &lt;a class="anchor" href="#python%ec%9d%98-%ea%b8%b0%eb%b3%b8-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b5%ac%ec%a1%b0">#&lt;/a>
+&lt;/h1>
+&lt;ul>
+&lt;li>스택 &amp;amp; 큐&lt;/li>
+&lt;li>튜플 &amp;amp; 집합&lt;/li>
+&lt;li>사전 (dict)&lt;/li>
+&lt;li>collections 모듈&lt;/li>
+&lt;/ul>
+&lt;h2 id="stack-스택">
+ Stack (스택)
+ &lt;a class="anchor" href="#stack-%ec%8a%a4%ed%83%9d">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>나중에 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조&lt;/li>
+&lt;li>Last In First Out (LIFO) - 리포구조&lt;/li>
+&lt;li>Data 입력을 push, 출력을 pop이라고 함&lt;/li>
+&lt;li>collections 모듈에서 deque 사용&lt;/li>
+&lt;li>예제 : 입력된 문자열을 역순으로 출력&lt;/li>
+&lt;/ul>
+&lt;h2 id="queue-큐">
+ Queue (큐)
+ &lt;a class="anchor" href="#queue-%ed%81%90">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>먼저 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조&lt;/li>
+&lt;li>First In First Out (FIFO) - 피포구조&lt;/li>
+&lt;li>Stack과 반대되는 개념&lt;/li>
+&lt;/ul>
+&lt;h2 id="tuple-튜플">
+ Tuple (튜플)
+ &lt;a class="anchor" href="#tuple-%ed%8a%9c%ed%94%8c">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>값의 변경이 불가능한 리스트&lt;/li>
+&lt;li>선언시 &amp;ldquo;[ ]&amp;rdquo; 가 아닌 &amp;ldquo;( )&amp;ldquo;를 사용&lt;/li>
+&lt;li>프로그램이 작동하는 동안 변경되지 않는 데이터 저장할 때 사용&lt;br>
+예) 학번, 이름, 우편번호 등등&lt;/li>
+&lt;li>함수의 반환 값 등 사용자의 실수에 의한 에러 사전에 방지&lt;/li>
+&lt;/ul>
+&lt;h2 id="set-집합">
+ Set (집합)
+ &lt;a class="anchor" href="#set-%ec%a7%91%ed%95%a9">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>값의 순서없이 저장&lt;/li>
+&lt;li>중복 불허하는 자료형&lt;/li>
+&lt;li>&lt;code>set( [1,2,3,4,5] )&lt;/code> 혹은 &lt;code>{1,2,3,4,5}&lt;/code> 로 선언&lt;/li>
+&lt;/ul>
+&lt;h2 id="dict-사전">
+ Dict (사전)
+ &lt;a class="anchor" href="#dict-%ec%82%ac%ec%a0%84">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>구분을 위한 데이터 고유 값을 Identifier 또는 key라고 한다&lt;/li>
+&lt;li>Key값을 활용하여, 데이터 값 (Value)를 관리함&lt;/li>
+&lt;li>다른 언어에서는 Hash Table이라는 용어를 사용&lt;/li>
+&lt;/ul>
+&lt;h2 id="collections-모듈">
+ collections 모듈
+ &lt;a class="anchor" href="#collections-%eb%aa%a8%eb%93%88">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>deque
+&lt;ul>
+&lt;li>rotate, reverse등 Linked List의 특성을 지원함&lt;/li>
+&lt;li>기존 list 형태의 함수를 모두 지원함&lt;/li>
+&lt;li>pop, push 외에 다양한 method들: rotate, extend, extendleft&lt;/li>
+&lt;li>기존의 list보다 효율적인 자료구조 제공&lt;/li>
+&lt;li>효율적 메모리 구조로 처리속도 향상&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>OrderedDict
+&lt;ul>
+&lt;li>Dict와 달리 데이터를 입력한 순서대로 dict 반환&lt;/li>
+&lt;li>python 3.6버전 부터는 기본dict 도 순서를 보장하여 출력한다&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>defaultdict
+&lt;ul>
+&lt;li>Dict type의 값에 기본 값을 지정하여 초기값 정해줌&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Counter
+&lt;ul>
+&lt;li>Sequence type의 데이터 원소의 갯수를 dict 형태로 반환&lt;/li>
+&lt;li>Set 의 연산들을 지원&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>namedtuple
+&lt;ul>
+&lt;li>Tuple 형태로 Data 구조체를 저장하는 방법&lt;/li>
+&lt;li>저장되는 data의 variable을 사전에 지정해서 저장(?)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="외-기타-알면-좋은-python">
+ 외 기타 알면 좋은 python
+ &lt;a class="anchor" href="#%ec%99%b8-%ea%b8%b0%ed%83%80-%ec%95%8c%eb%a9%b4-%ec%a2%8b%ec%9d%80-python">#&lt;/a>
+&lt;/h2>
+&lt;pre tabindex="0">&lt;code>%timeit &amp;lt;FUNC_NAME&amp;gt;()
+&lt;/code>&lt;/pre>&lt;p>위 함수를 여러번 돌려봐서 평균소요시간과 분산까지 알려줌&lt;/p></description></item><item><title>소수 관련 코드</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/prime_number_code/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/prime_number_code/</guid><description>&lt;h3 id="소수-여부-확인">
+ 소수 여부 확인
+ &lt;a class="anchor" href="#%ec%86%8c%ec%88%98-%ec%97%ac%eb%b6%80-%ed%99%95%ec%9d%b8">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">is_prime&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>: 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> d &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">2&lt;/span>, int(n&lt;span style="color:#f92672">**&lt;/span>&lt;span style="color:#ae81ff">0.5&lt;/span>)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n&lt;span style="color:#f92672">%&lt;/span>d&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p> &lt;/p>
+&lt;h3 id="약수-구하기">
+ 약수 구하기
+ &lt;a class="anchor" href="#%ec%95%bd%ec%88%98-%ea%b5%ac%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> answer &lt;span style="color:#f92672">=&lt;/span> set()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> d &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">1&lt;/span>, int(n&lt;span style="color:#f92672">**&lt;/span>&lt;span style="color:#ae81ff">0.5&lt;/span>)&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n&lt;span style="color:#f92672">%&lt;/span>d&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> answer&lt;span style="color:#f92672">.&lt;/span>add(d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> answer&lt;span style="color:#f92672">.&lt;/span>add(n&lt;span style="color:#f92672">//&lt;/span>d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> sorted(list(answer))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p> &lt;/p>
+&lt;h3 id="최대공약수와-최소공배수">
+ 최대공약수와 최소공배수
+ &lt;a class="anchor" href="#%ec%b5%9c%eb%8c%80%ea%b3%b5%ec%95%bd%ec%88%98%ec%99%80-%ec%b5%9c%ec%86%8c%ea%b3%b5%eb%b0%b0%ec%88%98">#&lt;/a>
+&lt;/h3>
+
+
+
+
+&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-gcd-lcm" id="tabs-gcd-lcm-0" checked="checked" />
+ &lt;label for="tabs-gcd-lcm-0">math 사용&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> math
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>math&lt;span style="color:#f92672">.&lt;/span>gcd(a, b) &lt;span style="color:#75715e"># 최대공약수&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>math&lt;span style="color:#f92672">.&lt;/span>lcm(a, b) &lt;span style="color:#75715e"># 최소공배수&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;input type="radio" class="toggle" name="tabs-gcd-lcm" id="tabs-gcd-lcm-1" />
+ &lt;label for="tabs-gcd-lcm-1">직접 구현&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 자연수 a, b의 최대공약수 구하는 함수&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">gcd&lt;/span>(a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> b&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> gcd(b, a&lt;span style="color:#f92672">%&lt;/span>b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 자연수 a, b의 최소공배수 구하는 함수&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">lcm&lt;/span>(a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> a&lt;span style="color:#f92672">*&lt;/span>b&lt;span style="color:#f92672">//&lt;/span>gcd(a,b)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;/div></description></item></channel></rss>

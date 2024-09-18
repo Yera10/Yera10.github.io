@@ -1,5 +1,85 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="곱하기 혹은 더하기 # Input # S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 <= S의 길이 <= 20) Output # 만들어질 수 있는 가장 큰 수 Rule # 왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &ldquo;x&rdquo; 혹은 &ldquo;+&rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기 연산 순서는 &ldquo;x&rdquo;, &ldquo;+&rdquo; 상관 없이 무조건 왼쪽부터 순서대로 Example # 입력 출력 02984 576 567 210 My Solution # def solution(S): S = list(S) res = int(S."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="곱하기 혹은 더하기 # Input # S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 <= S의 길이 <= 20) Output # 만들어질 수 있는 가장 큰 수 Rule # 왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &ldquo;x&rdquo; 혹은 &ldquo;+&rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기 연산 순서는 &ldquo;x&rdquo;, &ldquo;+&rdquo; 상관 없이 무조건 왼쪽부터 순서대로 Example # 입력 출력 02984 576 567 210 My Solution # def solution(S): S = list(S) res = int(S."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/"><meta property="article:section" content="docs"><title>곱하기 혹은 더하기 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  곱하기 혹은 더하기
+  #
+
+
+  Input
+  #
+
+
+S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 <= S의 길이 <= 20)
+
+
+  Output
+  #
+
+
+만들어질 수 있는 가장 큰 수
+
+
+  Rule
+  #
+
+
+왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &ldquo;x&rdquo; 혹은 &ldquo;+&rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기
+연산 순서는 &ldquo;x&rdquo;, &ldquo;+&rdquo; 상관 없이 무조건 왼쪽부터 순서대로
+
+
+  Example
+  #
+
+
+  
+      
+          입력
+          출력
+      
+  
+  
+      
+          02984
+          576
+      
+      
+          567
+          210
+      
+  
+
+
+  My Solution
+  #
+
+def solution(S):
+    S = list(S)
+    res = int(S.pop(0))
+    for n in S:
+        res = max(res+int(n), res*int(n))
+    
+    return res
+
+S = input()
+print(solution(S))
+
+  Answer
+  #
+
+data = input()
+
+# 첫 번째 문자를 숫자로 변경하여 대입
+result = int(data[0])
+
+for i in range(1, len(data)):
+    # 두 수 중에서 하나라도 '0' 혹은 '1'인 경우, 곱하기보다는 더하기 수행
+    num = int(data[i])
+    if num <= 1 or result <= 1:
+        result += num
+    else:
+        result *= num
+
+print(result)
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" 곱하기 혹은 더하기 # Input # S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 <= S의 길이 <= 20) Output # 만들어질 수 있는 가장 큰 수 Rule # 왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 “x” 혹은 “+” 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기 연산 순서는 “x”, “+” 상관 없이 무조건 왼쪽부터 순서대로 Example # 입력 출력 02984 576 567 210 My Solution # def solution(S): S = list(S) res = int(S.pop(0)) for n in S: res = max(res+int(n), res*int(n)) return res S = input() print(solution(S)) Answer # data = input() # 첫 번째 문자를 숫자로 변경하여 대입 result = int(data[0]) for i in range(1, len(data)): # 두 수 중에서 하나라도 '0' 혹은 '1'인 경우, 곱하기보다는 더하기 수행 num = int(data[i]) if num <= 1 or result <= 1: result += num else: result *= num print(result) "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>곱하기 혹은 더하기 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -38,7 +118,7 @@
 <a class=anchor href=#input>#</a></h3><ul><li>S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 &lt;= S의 길이 &lt;= 20)</li></ul><h3 id=output>Output
 <a class=anchor href=#output>#</a></h3><ul><li>만들어질 수 있는 가장 큰 수</li></ul><h3 id=rule>Rule
 <a class=anchor href=#rule>#</a></h3><ul><li>왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &ldquo;x&rdquo; 혹은 &ldquo;+&rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기</li><li>연산 순서는 &ldquo;x&rdquo;, &ldquo;+&rdquo; 상관 없이 무조건 왼쪽부터 순서대로</li></ul><h3 id=example>Example
-<a class=anchor href=#example>#</a></h3><table><thead><tr><th>입력</th><th>출력</th></tr></thead><tbody><tr><td>02984</td><td>576</td></tr><tr><td>567</td><td>210</td></tr></tbody></table><h3 id=my-solution>My Solution
+<a class=anchor href=#example>#</a></h3><table><thead><tr><th style=text-align:left>입력</th><th style=text-align:left>출력</th></tr></thead><tbody><tr><td style=text-align:left>02984</td><td style=text-align:left>576</td></tr><tr><td style=text-align:left>567</td><td style=text-align:left>210</td></tr></tbody></table><h3 id=my-solution>My Solution
 <a class=anchor href=#my-solution>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>solution</span>(S):
 </span></span><span style=display:flex><span>    S <span style=color:#f92672>=</span> list(S)
 </span></span><span style=display:flex><span>    res <span style=color:#f92672>=</span> int(S<span style=color:#f92672>.</span>pop(<span style=color:#ae81ff>0</span>))

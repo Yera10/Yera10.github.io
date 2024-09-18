@@ -1,7 +1,66 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="선택 정렬 # 매번 가장 작은 것을 선택한다는 의미의 알고리즘 가장 작은 데이터를 맨 앞에 있는 데이터와 바꾸고,
-그 다음 작은 데이터를 두 번째 데이터와 바꾸고 &mldr; 이런 과정을 반복 # INPUT arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8] # SOLUTION def select_sorting(arr): for i in range(len(arr)): min_i = i for j in range(i+1, len(arr)): if arr[j] < arr[min_i]: min_i = j arr[i], arr[min_i] = arr[min_i], arr[i] # OUTPUT select_sorting(arr) print(arr) 선택 정렬의 시간복잡도는 $N + (N-1) + \dots + 2$ 로 $O(N^2)$ 이다."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="선택 정렬 # 매번 가장 작은 것을 선택한다는 의미의 알고리즘 가장 작은 데이터를 맨 앞에 있는 데이터와 바꾸고,
-그 다음 작은 데이터를 두 번째 데이터와 바꾸고 &mldr; 이런 과정을 반복 # INPUT arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8] # SOLUTION def select_sorting(arr): for i in range(len(arr)): min_i = i for j in range(i+1, len(arr)): if arr[j] < arr[min_i]: min_i = j arr[i], arr[min_i] = arr[min_i], arr[i] # OUTPUT select_sorting(arr) print(arr) 선택 정렬의 시간복잡도는 $N + (N-1) + \dots + 2$ 로 $O(N^2)$ 이다."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/"><meta property="article:section" content="docs"><title>선택정렬 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  선택 정렬
+  #
+
+
+매번 가장 작은 것을 선택한다는 의미의 알고리즘
+가장 작은 데이터를 맨 앞에 있는 데이터와 바꾸고,
+그 다음 작은 데이터를 두 번째 데이터와 바꾸고 &mldr; 
+이런 과정을 반복
+
+# INPUT
+arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+
+# SOLUTION
+def select_sorting(arr):
+
+    for i in range(len(arr)):
+        min_i = i
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_i]:
+                min_i = j
+        arr[i], arr[min_i] = arr[min_i], arr[i]
+
+# OUTPUT
+select_sorting(arr)
+print(arr)
+
+선택 정렬의 시간복잡도는 $N + (N-1) + \dots + 2$ 로 $O(N^2)$ 이다.
+만약 정렬해야할 개수가 100배 늘어마녀 이론적으로 수행시간은 10,000배 늘어난다.
+선택 정렬은 기본 라이브러리를 포함해 다른 알고리즘과 비교했을 때 매우 비효율적
+
+
+  
+      
+          데이터의 개수(N)
+          선택정렬
+          퀵 정렬
+          기본 정렬 라이브러리
+      
+  
+  
+      
+          N = 100
+          0.0123s
+          0.00156s
+          0.00000753s
+      
+      
+          N = 1,000
+          0.354s
+          0.00343s
+          0.0000365
+      
+      
+          N = 10,000
+          15.475s
+          0.0312
+          0.00028s
+      
+  
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" 선택 정렬 # 매번 가장 작은 것을 선택한다는 의미의 알고리즘 가장 작은 데이터를 맨 앞에 있는 데이터와 바꾸고,
+그 다음 작은 데이터를 두 번째 데이터와 바꾸고 … 이런 과정을 반복 # INPUT arr = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8] # SOLUTION def select_sorting(arr): for i in range(len(arr)): min_i = i for j in range(i+1, len(arr)): if arr[j] < arr[min_i]: min_i = j arr[i], arr[min_i] = arr[min_i], arr[i] # OUTPUT select_sorting(arr) print(arr) 선택 정렬의 시간복잡도는 $N + (N-1) + \dots + 2$ 로 $O(N^2)$ 이다. 만약 정렬해야할 개수가 100배 늘어마녀 이론적으로 수행시간은 10,000배 늘어난다. 선택 정렬은 기본 라이브러리를 포함해 다른 알고리즘과 비교했을 때 매우 비효율적 데이터의 개수(N) 선택정렬 퀵 정렬 기본 정렬 라이브러리 N = 100 0.0123s 0.00156s 0.00000753s N = 1,000 0.354s 0.00343s 0.0000365 N = 10,000 15.475s 0.0312 0.00028s "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>선택정렬 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle checked>

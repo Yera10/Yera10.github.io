@@ -1,13 +1,61 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="poetry 설치 (Windows) # pip으로 설치
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  poetry 설치 (Windows)
+  #
+
+pip으로 설치
+pip install --user poetry
+powershell에서 아래 명령어로 설치
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+
+  poetry 환경변수 등록
+  #
+
+windows
+
+C:\Users\SEJONG\AppData\Roaming\Python\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\Python\Python311\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\pypoetry\venv\Scripts\ 에 poetry 가 있는지 확인
+poetry가 있는 주소를 환경변수에 등록
+
+
+  poetry 시작
+  #
+
+poetry init
+각 입력사항에 맞게 입력하면, pyproject.toml 생성됨
+
+  poetry config
+  #
+
+# poetry 설정값 확인
+poetry config --list
+
+# 프로젝트 폴더 내에 가상환경을 저장
+poetry config virtualenvs.in-project true 
+
+  poetry 의존성 추가
+  #
+
+poetry add "<패키지><버전표기>"
+# 예
+poetry add "selenium^4.10.0"
+
+# 가장 최신 버전 설치할 때 
+poetry add {패키지}@latest
+
+  스크립트 실행
+  #
+
+poetry run python {실행파일}
+
+
+  Ref
+  #
+
+https://python-poetry.org/docs/cli/'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/poetry/poetry_start/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="Poetry 시작하기"><meta property="og:description" content=' poetry 설치 (Windows) # pip으로 설치
 pip install --user poetry powershell에서 아래 명령어로 설치
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py - poetry 환경변수 등록 # windows
 C:\Users\SEJONG\AppData\Roaming\Python\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\Python\Python311\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\pypoetry\venv\Scripts\ 에 poetry 가 있는지 확인 poetry가 있는 주소를 환경변수에 등록 poetry 시작 # poetry init 각 입력사항에 맞게 입력하면, pyproject.toml 생성됨
-poetry config # # poetry 설정값 확인 poetry config --list # 프로젝트 폴더 내에 가상환경을 저장 poetry config virtualenvs."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content="Poetry 시작하기"><meta property="og:description" content="poetry 설치 (Windows) # pip으로 설치
-pip install --user poetry powershell에서 아래 명령어로 설치
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py - poetry 환경변수 등록 # windows
-C:\Users\SEJONG\AppData\Roaming\Python\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\Python\Python311\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\pypoetry\venv\Scripts\ 에 poetry 가 있는지 확인 poetry가 있는 주소를 환경변수에 등록 poetry 시작 # poetry init 각 입력사항에 맞게 입력하면, pyproject.toml 생성됨
-poetry config # # poetry 설정값 확인 poetry config --list # 프로젝트 폴더 내에 가상환경을 저장 poetry config virtualenvs."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/poetry/poetry_start/"><meta property="article:section" content="docs"><title>Poetry 시작하기 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+poetry config # # poetry 설정값 확인 poetry config --list # 프로젝트 폴더 내에 가상환경을 저장 poetry config virtualenvs.in-project true poetry 의존성 추가 # poetry add "<패키지><버전표기>" # 예 poetry add "selenium^4.10.0" # 가장 최신 버전 설치할 때 poetry add {패키지}@latest 스크립트 실행 # poetry run python {실행파일} Ref # https://python-poetry.org/docs/cli/'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Poetry 시작하기 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>

@@ -1,5 +1,80 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="위에서 아래로 # INPUT # 첫째줄 - 수열에 속해있는 수의 개수 N, (1 <= N <= 500) 둘째줄부터 N개의 수 입력됨 (범위 1~100,000의 자연수) OUTPUT # 입력으로 주어진 수열이 내림차순으로 정렬된 결과를 공백으로 구분하여 출력 Example # INPUT OUTPUT 3152712 27 15 12 My Solution # # SOLUTION def solution(arr): cnt_list = [0 for _ in range(100001)] for v in arr: cnt_list[v] += 1 for i in range(100000, -1, -1): for _ in range(cnt_list[i]): print(i, end=' ') # TEST N = int(input()) arr = [] for _ in range(N): arr."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="위에서 아래로 # INPUT # 첫째줄 - 수열에 속해있는 수의 개수 N, (1 <= N <= 500) 둘째줄부터 N개의 수 입력됨 (범위 1~100,000의 자연수) OUTPUT # 입력으로 주어진 수열이 내림차순으로 정렬된 결과를 공백으로 구분하여 출력 Example # INPUT OUTPUT 3152712 27 15 12 My Solution # # SOLUTION def solution(arr): cnt_list = [0 for _ in range(100001)] for v in arr: cnt_list[v] += 1 for i in range(100000, -1, -1): for _ in range(cnt_list[i]): print(i, end=' ') # TEST N = int(input()) arr = [] for _ in range(N): arr."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/"><meta property="article:section" content="docs"><title>위에서아래로 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  위에서 아래로
+  #
+
+
+  INPUT
+  #
+
+
+첫째줄 - 수열에 속해있는 수의 개수 N, (1 <= N <= 500)
+둘째줄부터 N개의 수 입력됨 (범위 1~100,000의 자연수)
+
+
+  OUTPUT
+  #
+
+
+입력으로 주어진 수열이 내림차순으로 정렬된 결과를 공백으로 구분하여 출력
+
+
+  Example
+  #
+
+
+  
+      
+          INPUT
+          OUTPUT
+      
+  
+  
+      
+          3152712
+          27 15 12
+      
+  
+
+
+  My Solution
+  #
+
+# SOLUTION
+def solution(arr):
+    cnt_list = [0 for _ in range(100001)]
+
+    for v in arr:
+        cnt_list[v] += 1
+    
+    for i in range(100000, -1, -1):
+        for _ in range(cnt_list[i]):
+            print(i, end=' ')
+
+# TEST
+N = int(input())
+arr = []
+for _ in range(N):
+    arr.append(int(input()))
+solution(arr)
+
+  Solution
+  #
+
+# N 입력받기
+N = int(input())
+
+# N개의 정수 입력받아 리스트에 저장
+arr = []
+for _ in range(N):
+    arr.append(int(input()))
+
+# 정렬
+arr = sorted(arr, reverse=True)
+
+for i in arr:
+    print(i, end=' ')
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/6_%EC%A0%95%EB%A0%AC/%EC%9C%84%EC%97%90%EC%84%9C%EC%95%84%EB%9E%98%EB%A1%9C/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" 위에서 아래로 # INPUT # 첫째줄 - 수열에 속해있는 수의 개수 N, (1 <= N <= 500) 둘째줄부터 N개의 수 입력됨 (범위 1~100,000의 자연수) OUTPUT # 입력으로 주어진 수열이 내림차순으로 정렬된 결과를 공백으로 구분하여 출력 Example # INPUT OUTPUT 3152712 27 15 12 My Solution # # SOLUTION def solution(arr): cnt_list = [0 for _ in range(100001)] for v in arr: cnt_list[v] += 1 for i in range(100000, -1, -1): for _ in range(cnt_list[i]): print(i, end=' ') # TEST N = int(input()) arr = [] for _ in range(N): arr.append(int(input())) solution(arr) Solution # # N 입력받기 N = int(input()) # N개의 정수 입력받아 리스트에 저장 arr = [] for _ in range(N): arr.append(int(input())) # 정렬 arr = sorted(arr, reverse=True) for i in arr: print(i, end=' ') "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>위에서아래로 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle checked>

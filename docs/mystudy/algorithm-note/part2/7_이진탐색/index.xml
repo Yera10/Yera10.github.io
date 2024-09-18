@@ -1,3 +1,265 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>7. 이진탐색 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/</link><description>Recent content in 7. 이진탐색 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>떡볶이 떡 만들기 # INPUT # 첫째줄: N, M = 떡의 개수, 요청한 떡의 길이
-($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$) 둘째줄: 떡의 개별 높이 떡의 개별 높이의 총합은 항상 M 이상. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0 OUTPUT # 적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값 Example # 문제 # 절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</guid><description>부품 찾기 # INPUT # $N$ : 탐색할 배열의 크기 ($1 \le N \le 1,000,000$) 공백으로 구분된 N개의 정수: 탐색할 배열, $1 &amp;lt; 정수 \le 1,000,000$ $M$ : 찾으려는 숫자의 갯수 ($1 \le M \le 100,000$) 공백으로 구분된 M개의 정수: 탐색할 값, ($1 &amp;lt; N \le 1,000,000$) OUTPUT # 찾으려는 값들의 존재 여부를 yes, no로 출력 Example # Input Output 58 3 7 9 235 7 9 no yes yes My Solution # # SOLUTION def binary_search(arr, target, s, e): if e &amp;lt; s: return -1 m = (s+e)//2 if arr[m] &amp;lt; target: return binary_search(arr, target, m+1, e) elif arr[m] &amp;gt; target: return binary_search(arr, target, s, m-1) else: return arr[m] def solution(arr, targets, N): arr.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</guid><description>프로그래머스 - 징검다리 건너기 # 문제 링크 : 링크
-Input # 디딤돌에 적힌 숫자가 순서대로 담긴 배열 stones 한 번에 건너뛸 수 있는 디딤돌의 최대 칸수 k 디딤돌에는 모두 숫자가 적혀 있으며 디딤돌의 숫자는 한 번 밟을 때마다 1씩 줄어듭니다. 디딤돌의 숫자가 0이 되면 더 이상 밟을 수 없으며 이때는 그 다음 디딤돌로 한번에 여러 칸을 건너 뛸 수 있습니다. 단, 다음으로 밟을 수 있는 디딤돌이 여러 개인 경우 무조건 가장 가까운 디딤돌로만 건너뛸 수 있습니다 Output # 최대 몇 명까지 징검다리를 건널 수 있는지 return 입력과 출력 예 # stones k result [2, 4, 5, 3, 2, 1, 4, 2, 5, 1] 3 3 나의 풀이 코드 # 통과 (313.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>7. 이진탐색 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/</link><description>Recent content in 7. 이진탐색 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid><description>&lt;h1 id="떡볶이-떡-만들기">
+ 떡볶이 떡 만들기
+ &lt;a class="anchor" href="#%eb%96%a1%eb%b3%b6%ec%9d%b4-%eb%96%a1-%eb%a7%8c%eb%93%a4%ea%b8%b0">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ INPUT
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>첫째줄: N, M = 떡의 개수, 요청한 떡의 길이&lt;br>
+($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$)&lt;/li>
+&lt;li>둘째줄: 떡의 개별 높이
+&lt;ul>
+&lt;li>떡의 개별 높이의 총합은 항상 M 이상.&lt;/li>
+&lt;li>높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ OUTPUT
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;h3 id="문제">
+ 문제
+ &lt;a class="anchor" href="#%eb%ac%b8%ec%a0%9c">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림.&lt;/li>
+&lt;li>예) 19, 14, 14, 17cm 의 떡들을 15cm로 설정한 절단기로 자르면, 15, 14, 14, 15cm가 되고, 잘린 떡은 4, 0, 0, 2cm이며, 총 잘린 6cm의 떡을 가져갈 수 있다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">binary_search&lt;/span>(arr, target, s, e):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;이진탐색 코드의 변형
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> arr내에 target이 없을 때 없다고 반환하지 않고, 큰 값을 반환&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> s &lt;span style="color:#f92672">&amp;gt;&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#f92672">=&lt;/span> (s&lt;span style="color:#f92672">+&lt;/span>e)&lt;span style="color:#f92672">//&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> arr[m] &lt;span style="color:#f92672">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> binary_search(arr, target, m&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, e)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> arr[m] &lt;span style="color:#f92672">&amp;gt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> binary_search(arr, target, s, m&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> m
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(arr, N, M):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;떡볶이 떡 길이 계산&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr&lt;span style="color:#f92672">.&lt;/span>sort(reverse&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># diff &amp;amp; cnt 만들기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr_dup &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cnts &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diffs &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(N&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#f92672">=&lt;/span> arr[i] &lt;span style="color:#f92672">-&lt;/span> arr[i&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> d &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr_dup&lt;span style="color:#f92672">.&lt;/span>append(arr[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cnts&lt;span style="color:#f92672">.&lt;/span>append(c)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diffs&lt;span style="color:#f92672">.&lt;/span>append(d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr_dup&lt;span style="color:#f92672">.&lt;/span>extend([arr[&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>], &lt;span style="color:#ae81ff">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cnts&lt;span style="color:#f92672">.&lt;/span>append(c&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diffs&lt;span style="color:#f92672">.&lt;/span>append(arr[&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># dduck_diff&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dduk_diff &lt;span style="color:#f92672">=&lt;/span> [d&lt;span style="color:#f92672">*&lt;/span>c &lt;span style="color:#66d9ef">for&lt;/span> d,c &lt;span style="color:#f92672">in&lt;/span> zip(diffs, cnts)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># dduck&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dduk &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> dd &lt;span style="color:#f92672">in&lt;/span> dduk_diff:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#f92672">+=&lt;/span> dd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dduk&lt;span style="color:#f92672">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#f92672">=&lt;/span> binary_search(dduk, M, &lt;span style="color:#ae81ff">0&lt;/span>, len(dduk)&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> arr_dup[idx&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">+&lt;/span> (dduk[idx] &lt;span style="color:#f92672">-&lt;/span> M)&lt;span style="color:#f92672">//&lt;/span>cnts[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># TEST&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">19&lt;/span>, &lt;span style="color:#ae81ff">15&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(arr, N, M)) &lt;span style="color:#75715e"># 15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">19&lt;/span>, &lt;span style="color:#ae81ff">15&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(arr, N, M)) &lt;span style="color:#75715e"># 15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">19&lt;/span>, &lt;span style="color:#ae81ff">15&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">19&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(arr, N, M)) &lt;span style="color:#75715e"># 16&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">19&lt;/span>, &lt;span style="color:#ae81ff">15&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">19&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(arr, N, M)) &lt;span style="color:#75715e"># 11&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">50&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">19&lt;/span>, &lt;span style="color:#ae81ff">15&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">19&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(arr, N, M)) &lt;span style="color:#75715e"># 7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">97&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">19&lt;/span>, &lt;span style="color:#ae81ff">15&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">19&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(arr, N, M)) &lt;span style="color:#75715e"># 0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>시간복잡도 = $Nlog_2N + 7N + log_2N=O(Nlog_2N)$&lt;/li>
+&lt;li>최악의 경우 대략 27,000,000번의 연산 필요&lt;/li>
+&lt;/ul>
+&lt;h3 id="문제-해설">
+ 문제 해설
+ &lt;a class="anchor" href="#%eb%ac%b8%ec%a0%9c-%ed%95%b4%ec%84%a4">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>전형적인 이진 탐색 문제, &lt;!-- raw HTML omitted -->파라메트릭 서치&lt;!-- raw HTML omitted --> 유형의 문제&lt;/p></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%B6%80%ED%92%88%EC%B0%BE%EA%B8%B0/</guid><description>&lt;h1 id="부품-찾기">
+ 부품 찾기
+ &lt;a class="anchor" href="#%eb%b6%80%ed%92%88-%ec%b0%be%ea%b8%b0">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ INPUT
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>$N$ : 탐색할 배열의 크기 ($1 \le N \le 1,000,000$)&lt;/li>
+&lt;li>공백으로 구분된 N개의 정수: 탐색할 배열, $1 &amp;lt; 정수 \le 1,000,000$&lt;/li>
+&lt;li>$M$ : 찾으려는 숫자의 갯수 ($1 \le M \le 100,000$)&lt;/li>
+&lt;li>공백으로 구분된 M개의 정수: 탐색할 값, ($1 &amp;lt; N \le 1,000,000$)&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ OUTPUT
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>찾으려는 값들의 존재 여부를 yes, no로 출력&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Input&lt;/th>
+ &lt;th style="text-align: left">Output&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">5&lt;!-- raw HTML omitted -->8 3 7 9 2&lt;!-- raw HTML omitted -->3&lt;!-- raw HTML omitted -->5 7 9&lt;/td>
+ &lt;td style="text-align: left">no yes yes&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># SOLUTION&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">binary_search&lt;/span>(arr, target, s, e):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> e &lt;span style="color:#f92672">&amp;lt;&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#f92672">=&lt;/span> (s&lt;span style="color:#f92672">+&lt;/span>e)&lt;span style="color:#f92672">//&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> arr[m] &lt;span style="color:#f92672">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> binary_search(arr, target, m&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, e)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> arr[m] &lt;span style="color:#f92672">&amp;gt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> binary_search(arr, target, s, m&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> arr[m]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(arr, targets, N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr&lt;span style="color:#f92672">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> t &lt;span style="color:#f92672">in&lt;/span> targets:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> binary_search(arr, t, &lt;span style="color:#ae81ff">0&lt;/span>, N&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;yes&amp;#34;&lt;/span>, end&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;no&amp;#34;&lt;/span>, end&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="solution">
+ Solution
+ &lt;a class="anchor" href="#solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(arr, targets, N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr_sort &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">1000001&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> a &lt;span style="color:#f92672">in&lt;/span> arr:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arr_sort[a] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> t &lt;span style="color:#f92672">in&lt;/span> targets:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> arr_sort[t]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;yes&amp;#34;&lt;/span>, end&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;no&amp;#34;&lt;/span>, end&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># TEST&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">8&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">7&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>M &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>targets &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">7&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>solution(arr, targets, N)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EA%B1%B4%EB%84%88%EA%B8%B0/</guid><description>&lt;h1 id="프로그래머스---징검다리-건너기">
+ 프로그래머스 - 징검다리 건너기
+ &lt;a class="anchor" href="#%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%ec%8a%a4---%ec%a7%95%ea%b2%80%eb%8b%a4%eb%a6%ac-%ea%b1%b4%eb%84%88%ea%b8%b0">#&lt;/a>
+&lt;/h1>
+&lt;p>문제 링크 : &lt;a href="https://school.programmers.co.kr/learn/courses/30/lessons/64062">링크&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;h3 id="input">
+ &lt;strong>Input&lt;/strong>
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>디딤돌에 적힌 숫자가 순서대로 담긴 배열 stones&lt;/li>
+&lt;li>한 번에 건너뛸 수 있는 디딤돌의 최대 칸수 k&lt;/li>
+&lt;li>디딤돌에는 모두 숫자가 적혀 있으며 디딤돌의 숫자는 한 번 밟을 때마다 1씩 줄어듭니다.&lt;/li>
+&lt;li>디딤돌의 숫자가 0이 되면 더 이상 밟을 수 없으며 이때는 그 다음 디딤돌로 한번에 여러 칸을 건너 뛸 수 있습니다.&lt;/li>
+&lt;li>단, 다음으로 밟을 수 있는 디딤돌이 여러 개인 경우 무조건 가장 가까운 디딤돌로만 건너뛸 수 있습니다&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ &lt;strong>Output&lt;/strong>
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>최대 몇 명까지 징검다리를 건널 수 있는지 return&lt;/li>
+&lt;/ul>
+&lt;h3 id="입력과-출력-예">
+ &lt;strong>입력과 출력 예&lt;/strong>
+ &lt;a class="anchor" href="#%ec%9e%85%eb%a0%a5%ea%b3%bc-%ec%b6%9c%eb%a0%a5-%ec%98%88">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">stones&lt;/th>
+ &lt;th style="text-align: left">k&lt;/th>
+ &lt;th style="text-align: left">result&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">[2, 4, 5, 3, 2, 1, 4, 2, 5, 1]&lt;/td>
+ &lt;td style="text-align: left">3&lt;/td>
+ &lt;td style="text-align: left">3&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="나의-풀이-코드">
+ &lt;strong>나의 풀이 코드&lt;/strong>
+ &lt;a class="anchor" href="#%eb%82%98%ec%9d%98-%ed%92%80%ec%9d%b4-%ec%bd%94%eb%93%9c">#&lt;/a>
+&lt;/h3>
+&lt;p>통과 (313.83ms, 18.6MB)&lt;/p></description></item></channel></rss>

@@ -1,1 +1,313 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>4. 구현 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/</link><description>Recent content in 4. 구현 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</guid><description>게임 개발 # Input # N, M : 세로 크기, 가로 크기 (3 &amp;lt;= N,M &amp;lt;= 50) A, B, d : 게임 캐릭터가 있는 칸의 좌표 (A, B), 캐릭터가 바라보는 방향 d d 값 : 0 : 북 1 : 동 2 : 남 3 : 서 맵의 정보 : 육지인지 바다인지 N x M 으로 나타내줌 0 : 육지 1 : 바다 맵의 외곽은 항상 바다 게임 캐릭터가 처음 위치한 칸의 정보는 항상 육지 Output # 첫째 줄에 이동을 마친 후 캐릭터가 방문한 칸의 수 Rule # 현재 위치에서 현재 방향을 기준으로 반시계방향부터 차례대로 갈 곳을 정함 캐릭터의 왼쪽 방향(반시계 방향)에 가보지 않은 칸이 있다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한칸 전진.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</guid><description>상하좌우 # Input # N : 공간의 크기, N x N 크기의 정사각형 공간 이동할 계획서 : 여행가가 N x N 공간에서 이동할 계획, (1&amp;lt;= 이동횟수 &amp;lt;=100) Output # 여행가가 최종적으로 도착할 지점의 좌표를 공백으로 구분하여 출력 이동할 때, N x N의 정사각형을 벗어나는 움직임은 무시됨 예를 들어, (1,1)에서 L 혹은 U의 움직임은 무시 Example # 입력 출력 5 R R R U D D 3 4 My Solution # def solution(N, moves): now = [1, 1] moves = moves.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</guid><description>시각 # Input # N : 정수, 0&amp;lt;= N &amp;lt;= 23 Output # 00시 00분 00초부터 N시 59분 59초 까지의 모든 시각 중 3이 하나라도 포함되는 모든 경우의수 출력 Example # 입력 출력 5 11475 My Solution # def solution(N): res = 0 for h in range(N+1): if &amp;#39;3&amp;#39; in str(h): res += 60*60 continue for m in range(60): if &amp;#39;3&amp;#39; in str(m): res += 60 continue for s in range(60): if &amp;#39;3&amp;#39; in str(s): res += 1 return res N = 5 print(solution(N)) 문제 해설 # 하루는 86,400초로 모든 경우는 86,400가지밖에 존재하지 않음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</guid><description> 왕실의 나이트 # Input # 8 x 8 좌표평면에서 나이트가 현재 위치한 곳의 좌표 두문자로 구성된 문자열 Output # 나이트가 이동할 수 있는 경우의 수 Example # 입력 출력 a1 2 My Solution # moves = [(2, 1), (2, -1), (-2, 1), (-2, 1), (1, 2), (1, -2), (-1, 2), (-1, -2)] def solution(x): c, r = ord(x[0])-96, int(x[1]) nx = [1 for m in moves if (0 &amp;lt; (c+m[0]) &amp;lt; 9) and (0 &amp;lt; (r+m[1]) &amp;lt; 9)] return sum(nx) x = input() print(solution(x)) 문제 해설 # # 현재 나이트 위치 입력 input_data = input() row = int(inpu_data[1]) column = int(ord(input_data[0])) - int(ord(&amp;#39;a&amp;#39;)) + 1 # 8가지 이동 steps = [(2, 1), (2, -1), (-2, 1), (-2, 1), (1, 2), (1, -2), (-1, 2), (-1, -2)] # 이동가능 여부 확인 result = 0 for step in steps: nrow = row + step[0] ncol = col + step[1] if 1 &amp;lt;= nrow &amp;lt;= 8 and 1&amp;lt;= ncol &amp;lt;= 8: result += 1 # 출력 print(result)</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>4. 구현 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/</link><description>Recent content in 4. 구현 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C/</guid><description>&lt;h1 id="게임-개발">
+ 게임 개발
+ &lt;a class="anchor" href="#%ea%b2%8c%ec%9e%84-%ea%b0%9c%eb%b0%9c">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>N, M : 세로 크기, 가로 크기 (3 &amp;lt;= N,M &amp;lt;= 50)&lt;/li>
+&lt;li>A, B, d : 게임 캐릭터가 있는 칸의 좌표 (A, B), 캐릭터가 바라보는 방향 d&lt;/li>
+&lt;li>d 값 :
+&lt;ul>
+&lt;li>0 : 북&lt;/li>
+&lt;li>1 : 동&lt;/li>
+&lt;li>2 : 남&lt;/li>
+&lt;li>3 : 서&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>맵의 정보 : 육지인지 바다인지 N x M 으로 나타내줌
+&lt;ul>
+&lt;li>0 : 육지&lt;/li>
+&lt;li>1 : 바다&lt;/li>
+&lt;li>맵의 외곽은 항상 바다&lt;/li>
+&lt;li>게임 캐릭터가 처음 위치한 칸의 정보는 항상 육지&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>첫째 줄에 이동을 마친 후 캐릭터가 방문한 칸의 수&lt;/li>
+&lt;/ul>
+&lt;h3 id="rule">
+ Rule
+ &lt;a class="anchor" href="#rule">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>현재 위치에서 현재 방향을 기준으로 반시계방향부터 차례대로 갈 곳을 정함&lt;/li>
+&lt;li>캐릭터의 왼쪽 방향(반시계 방향)에 가보지 않은 칸이 있다면, 왼쪽 방향으로 회전한 다음 왼쪽으로 한칸 전진.
+왼쪽 방향에 가보지 않은 칸이 없다면, 왼쪽 방향으로만 회전 하고 1단계로 돌아가기&lt;/li>
+&lt;li>네 방향 모두 가본 칸이거나 바다로 되어 있는 칸이라면, 바라보는 방향을 유지한 채로 한 칸 뒤로 간 뒤, 1단계로 돌아가기. 뒤가 바다 방향이면 움직임을 멈추기.&lt;/li>
+&lt;/ol>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">4 4 &lt;!-- raw HTML omitted --> 1 1 0 &lt;!-- raw HTML omitted --> 1 1 1 1 &lt;!-- raw HTML omitted --> 1 0 0 0 1 &lt;!-- raw HTML omitted --> 1 1 0 1 &lt;!-- raw HTML omitted --> 1 1 1 1&lt;/td>
+ &lt;td style="text-align: left">3&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%83%81%ED%95%98%EC%A2%8C%EC%9A%B0/</guid><description>&lt;h1 id="상하좌우">
+ 상하좌우
+ &lt;a class="anchor" href="#%ec%83%81%ed%95%98%ec%a2%8c%ec%9a%b0">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>N : 공간의 크기, N x N 크기의 정사각형 공간&lt;/li>
+&lt;li>이동할 계획서 : 여행가가 N x N 공간에서 이동할 계획, (1&amp;lt;= 이동횟수 &amp;lt;=100)&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>여행가가 최종적으로 도착할 지점의 좌표를 공백으로 구분하여 출력&lt;/li>
+&lt;li>이동할 때, N x N의 정사각형을 벗어나는 움직임은 무시됨
+&lt;ul>
+&lt;li>예를 들어, (1,1)에서 L 혹은 U의 움직임은 무시&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">5 &lt;!-- raw HTML omitted --> R R R U D D&lt;/td>
+ &lt;td style="text-align: left">3 4&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ &lt;strong>My Solution&lt;/strong>
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(N, moves):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> moves &lt;span style="color:#f92672">=&lt;/span> moves&lt;span style="color:#f92672">.&lt;/span>split()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> m &lt;span style="color:#f92672">in&lt;/span> moves:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> m &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;R&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> m &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;L&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> m &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;U&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now[&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now[&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now[&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> max(min(now[&lt;span style="color:#ae81ff">0&lt;/span>], N), &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> now[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> max(min(now[&lt;span style="color:#ae81ff">1&lt;/span>], N), &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>now[&lt;span style="color:#ae81ff">0&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>now[&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N &lt;span style="color:#f92672">=&lt;/span> int(input())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>moves &lt;span style="color:#f92672">=&lt;/span> input()&lt;span style="color:#f92672">.&lt;/span>split()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(N, moves))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="문제-해설">
+ 문제 해설
+ &lt;a class="anchor" href="#%eb%ac%b8%ec%a0%9c-%ed%95%b4%ec%84%a4">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>일련의 명령어에 따라서 개체를 차례대로 이동시키므로 시뮬레이션 유형 문제&lt;/li>
+&lt;li>시뮬레이션 유형, 구현 유형, 완전 탐색 유형은 서로 유사함&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># INPUT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N &lt;span style="color:#f92672">=&lt;/span> int(input())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x, y &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>plans &lt;span style="color:#f92672">=&lt;/span> input()&lt;span style="color:#f92672">.&lt;/span>split()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 이동을 위한 변수&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dx &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dy &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>move_types &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;L&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;R&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;U&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;D&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># solution&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> plan &lt;span style="color:#f92672">in&lt;/span> plans:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(len(move_types)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> plan &lt;span style="color:#f92672">==&lt;/span> move_types[i]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nx &lt;span style="color:#f92672">=&lt;/span> x &lt;span style="color:#f92672">+&lt;/span> dx[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ny &lt;span style="color:#f92672">=&lt;/span> y &lt;span style="color:#f92672">+&lt;/span> dy[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> nx &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">or&lt;/span> ny &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">or&lt;/span> nx &lt;span style="color:#f92672">&amp;gt;&lt;/span> n &lt;span style="color:#f92672">or&lt;/span> ny &lt;span style="color:#f92672">&amp;gt;&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x, y &lt;span style="color:#f92672">=&lt;/span> nx, ny
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(x, y)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%8B%9C%EA%B0%81/</guid><description>&lt;h1 id="시각">
+ 시각
+ &lt;a class="anchor" href="#%ec%8b%9c%ea%b0%81">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>N : 정수, 0&amp;lt;= N &amp;lt;= 23&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>00시 00분 00초부터 N시 59분 59초 까지의 모든 시각 중 3이 하나라도 포함되는 모든 경우의수 출력&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">5&lt;/td>
+ &lt;td style="text-align: left">11475&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ &lt;strong>My Solution&lt;/strong>
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> h &lt;span style="color:#f92672">in&lt;/span> range(N&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span> &lt;span style="color:#f92672">in&lt;/span> str(h):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">60&lt;/span>&lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#ae81ff">60&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> m &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">60&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span> &lt;span style="color:#f92672">in&lt;/span> str(m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">60&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> s &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">60&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span> &lt;span style="color:#f92672">in&lt;/span> str(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(N))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="문제-해설">
+ 문제 해설
+ &lt;a class="anchor" href="#%eb%ac%b8%ec%a0%9c-%ed%95%b4%ec%84%a4">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>하루는 86,400초로 모든 경우는 86,400가지밖에 존재하지 않음. 시간제한 2초 안에 해결 가능&lt;/li>
+&lt;li>완전 탐색 유형&lt;/li>
+&lt;li>완전 탐색 알고리즘은 비효율적인 시간복잡도를 가져 데이터 수가 큰 경우에 동작하지 않을 수 있다.&lt;/li>
+&lt;li>데이터가 1,000,000개 이하일 때 적절&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># H를임력받기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>h &lt;span style="color:#f92672">=&lt;/span> int(input())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>count &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(h &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> j &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">60&lt;/span>) : 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> k &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">60&lt;/span>) :
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#매시각안에 &amp;#39;3&amp;#39;이 포함되어있다면카운트층가 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#e6db74">&amp;#39;3&amp;#39;&lt;/span> &lt;span style="color:#f92672">in&lt;/span> str(i) &lt;span style="color:#f92672">+&lt;/span> str(j) &lt;span style="color:#f92672">+&lt;/span> str(k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print (count)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/%EC%99%95%EC%8B%A4%EC%9D%98%EB%82%98%EC%9D%B4%ED%8A%B8/</guid><description>&lt;h1 id="왕실의-나이트">
+ 왕실의 나이트
+ &lt;a class="anchor" href="#%ec%99%95%ec%8b%a4%ec%9d%98-%eb%82%98%ec%9d%b4%ed%8a%b8">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>8 x 8 좌표평면에서 나이트가 현재 위치한 곳의 좌표&lt;/li>
+&lt;li>두문자로 구성된 문자열&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>나이트가 이동할 수 있는 경우의 수&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">a1&lt;/td>
+ &lt;td style="text-align: left">2&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>moves &lt;span style="color:#f92672">=&lt;/span> [(&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>), (&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c, r &lt;span style="color:#f92672">=&lt;/span> ord(x[&lt;span style="color:#ae81ff">0&lt;/span>])&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">96&lt;/span>, int(x[&lt;span style="color:#ae81ff">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nx &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> m &lt;span style="color:#f92672">in&lt;/span> moves &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> (c&lt;span style="color:#f92672">+&lt;/span>m[&lt;span style="color:#ae81ff">0&lt;/span>]) &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">9&lt;/span>) &lt;span style="color:#f92672">and&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> (r&lt;span style="color:#f92672">+&lt;/span>m[&lt;span style="color:#ae81ff">1&lt;/span>]) &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">9&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> sum(nx)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x &lt;span style="color:#f92672">=&lt;/span> input()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(x))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="문제-해설">
+ 문제 해설
+ &lt;a class="anchor" href="#%eb%ac%b8%ec%a0%9c-%ed%95%b4%ec%84%a4">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 현재 나이트 위치 입력&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>input_data &lt;span style="color:#f92672">=&lt;/span> input()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>row &lt;span style="color:#f92672">=&lt;/span> int(inpu_data[&lt;span style="color:#ae81ff">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>column &lt;span style="color:#f92672">=&lt;/span> int(ord(input_data[&lt;span style="color:#ae81ff">0&lt;/span>])) &lt;span style="color:#f92672">-&lt;/span> int(ord(&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>)) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 8가지 이동&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>steps &lt;span style="color:#f92672">=&lt;/span> [(&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>), (&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>), (&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>), (&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 이동가능 여부 확인&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> step &lt;span style="color:#f92672">in&lt;/span> steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nrow &lt;span style="color:#f92672">=&lt;/span> row &lt;span style="color:#f92672">+&lt;/span> step[&lt;span style="color:#ae81ff">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ncol &lt;span style="color:#f92672">=&lt;/span> col &lt;span style="color:#f92672">+&lt;/span> step[&lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">&amp;lt;=&lt;/span> nrow &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> &lt;span style="color:#f92672">and&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&lt;/span> ncol &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 출력&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(result)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

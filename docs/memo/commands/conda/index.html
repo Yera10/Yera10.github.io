@@ -1,5 +1,50 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=" 가상환경 관련 가상환경 생성 # conda create -n <가상환경명> conda create -n <가상환경명> python=3.7 conda create -n <가상환경명> --clone <가상환경명> 가상환경 목록 # conda env list conda info envs 가상환경에 jupyter kernel 연결 # python -m ipykernel install --user --name <가상환경명> --display-name <커널명> 가상환경 삭제 # conda remove --name {가상환경명} --all 가상환경 활성화 # conda activate {가상환경명} 가상환경 비활성화 # conda deactivate "><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/conda/"><title>Conda | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/conda/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+
+  
+    가상환경 관련
+  
+  
+    
+  가상환경 생성
+  #
+
+conda create -n <가상환경명>
+conda create -n <가상환경명> python=3.7
+conda create -n <가상환경명> --clone <가상환경명>
+
+
+  가상환경 목록
+  #
+
+conda env list
+conda info envs
+
+
+  가상환경에 jupyter kernel 연결
+  #
+
+python -m ipykernel install --user --name <가상환경명> --display-name <커널명>
+
+
+  가상환경 삭제
+  #
+
+conda remove --name {가상환경명} --all
+
+  가상환경 활성화
+  #
+
+conda activate {가상환경명}
+
+  가상환경 비활성화
+  #
+
+conda deactivate
+
+  
+  
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/conda/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" 가상환경 관련 가상환경 생성 # conda create -n <가상환경명> conda create -n <가상환경명> python=3.7 conda create -n <가상환경명> --clone <가상환경명> 가상환경 목록 # conda env list conda info envs 가상환경에 jupyter kernel 연결 # python -m ipykernel install --user --name <가상환경명> --display-name <커널명> 가상환경 삭제 # conda remove --name {가상환경명} --all 가상환경 활성화 # conda activate {가상환경명} 가상환경 비활성화 # conda deactivate "><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>Conda | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/conda/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -33,4 +78,19 @@
 <label for=section-d62e43e08089551fa5c3188ab2ea83ba class="flex justify-between"><a href=/docs/memo/commands/git/>Git 관련</a></label><ul><li><a href=/docs/memo/commands/git/clone/>clone 관련</a></li><li><a href=/docs/memo/commands/git/cancel/>commit 취소</a></li><li><a href=/docs/memo/commands/git/credential/>credential 관련</a></li><li><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></li><li><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></li></ul></li></ul></li><li><input type=checkbox id=section-232998b4ddb91b0de578d4b83588e89e class=toggle>
 <label for=section-232998b4ddb91b0de578d4b83588e89e class="flex justify-between"><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></label><ul><li><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></li><li><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></li><li><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></li><li><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></li><li><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></li><li><a href=/docs/memo/freq-used-code/file_open/>파일 읽기 python</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
 </label><strong>Conda</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/conda/virtual_env/>가상환경 관련</a></dt><dd class=markdown-inner>가상환경 생성 # conda create -n &lt;가상환경명> conda create -n &lt;가상환경명> python=3.7 conda create -n &lt;가상환경명> --clone &lt;가상환경명> 가상환경 목록 # conda env list conda info envs 가상환경에 jupyter kernel 연결 # python -m ipykernel install --user --name &lt;가상환경명> --display-name &lt;커널명> 가상환경 삭제 # conda remove --name {가상환경명} --all 가상환경 활성화 # conda activate {가상환경명} 가상환경 비활성화 # conda deactivate</dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/conda/virtual_env/>가상환경 관련</a></dt><dd class=markdown-inner><h3 id=가상환경-생성>가상환경 생성
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ec%83%9d%ec%84%b1>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda create -n &lt;가상환경명&gt;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda create -n &lt;가상환경명&gt; python=3.7
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda create -n &lt;가상환경명&gt; --clone &lt;가상환경명&gt;
+</span></span></code></pre></div><h3 id=가상환경-목록>가상환경 목록
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%eb%aa%a9%eb%a1%9d>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda env list
+</span></span><span style=display:flex><span>conda info envs
+</span></span></code></pre></div><h3 id=가상환경에-jupyter-kernel-연결>가상환경에 jupyter kernel 연결
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd%ec%97%90-jupyter-kernel-%ec%97%b0%ea%b2%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>python -m ipykernel install --user --name &lt;가상환경명&gt; --display-name &lt;커널명&gt;
+</span></span></code></pre></div><h3 id=가상환경-삭제>가상환경 삭제
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ec%82%ad%ec%a0%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda remove --name {가상환경명} --all
+</span></span></code></pre></div><h3 id=가상환경-활성화>가상환경 활성화
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ed%99%9c%ec%84%b1%ed%99%94>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda activate {가상환경명}
+</span></span></code></pre></div><h3 id=가상환경-비활성화>가상환경 비활성화
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%eb%b9%84%ed%99%9c%ec%84%b1%ed%99%94>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>conda deactivate
+</span></span></code></pre></div></dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

@@ -1,2 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pytorch on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/pytorch-study/</link><description>Recent content in Pytorch on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/pytorch-study/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/memo/pytorch-study/nn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/pytorch-study/nn/</guid><description> torch.nn # 공식문서
-Convolutional Layers # Conv1d, Conv2d, Conv3d 차이 # 3D Convolution Ref Conv1d, Conv2d, Conv3d 차이 설명</description></item><item><title>파이토치 데이터 모듈</title><link>https://yera10.github.io/docs/memo/pytorch-study/dataset_module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/pytorch-study/dataset_module/</guid><description>Dataset 관련 모듈 # torch.utils.data 데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈 파이토치 모델을 학습시키기 위한 데이터셋의 표준을 torch.utils.data.Datase에 정의 Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 torch.utils.data.DataLoader 인스턴스의 입력으로 사용할 수 있다 torchvision.dataset torch.utils.data.Dataset을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공 torchtext.dataset torch.utils.data.Dataset을 상속하는 텍스트 데이터셋의 모음으로, 기본적으로 IMDb나 AG_NEWS와 같은 데이터셋을 제공 torchvision.transforms 이미지 데이터셋에 쓸 수 있는 여러 가지 변환 필터를 담고 있는 모듈 torchvision.</description></item><item><title>파이토치 텐서?</title><link>https://yera10.github.io/docs/memo/pytorch-study/tensor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/pytorch-study/tensor/</guid><description> Pytorch의 기본 구성 요소 Tensor # torch.Tensor와 torch.tensor의 차이는? torch.Tensor # 클래스(Class)이다. int 입력시 float로 변환 torch.tensor # 함수(Function)이다. int 입력시 int 그대로 입력 클래스는 앞글자가 대문자로 시작하고, 함수는 소문자로 시작하는데, Pytorch에서는 이 규칙이 잘 적용되고 있다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pytorch on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/pytorch-study/</link><description>Recent content in Pytorch on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/pytorch-study/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/memo/pytorch-study/nn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/pytorch-study/nn/</guid><description>&lt;h1 id="torchnn">
+ torch.nn
+ &lt;a class="anchor" href="#torchnn">#&lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="https://pytorch.org/docs/stable/nn.html">공식문서&lt;/a>&lt;/p>
+&lt;h2 id="convolutional-layers">
+ Convolutional Layers
+ &lt;a class="anchor" href="#convolutional-layers">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="conv1d-conv2d-conv3d-차이">
+ Conv1d, Conv2d, Conv3d 차이
+ &lt;a class="anchor" href="#conv1d-conv2d-conv3d-%ec%b0%a8%ec%9d%b4">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://medium.com/@parkie0517/3d-convolution-%EC%99%84%EC%A0%84-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0-using-pytorch-conv3d-4fab52c527d6">3D Convolution Ref&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leeejihyun.tistory.com/37">Conv1d, Conv2d, Conv3d 차이 설명&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>파이토치 데이터 모듈</title><link>https://yera10.github.io/docs/memo/pytorch-study/dataset_module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/pytorch-study/dataset_module/</guid><description>&lt;h2 id="dataset-관련-모듈">
+ Dataset 관련 모듈
+ &lt;a class="anchor" href="#dataset-%ea%b4%80%eb%a0%a8-%eb%aa%a8%eb%93%88">#&lt;/a>
+&lt;/h2>
+&lt;ol>
+&lt;li>torch.utils.data
+&lt;ul>
+&lt;li>데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈&lt;/li>
+&lt;li>파이토치 모델을 학습시키기 위한 데이터셋의 표준을 &lt;code>torch.utils.data.Datase&lt;/code>에 정의&lt;/li>
+&lt;li>Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 &lt;code>torch.utils.data.DataLoader&lt;/code> 인스턴스의 입력으로 사용할 수 있다&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>torchvision.dataset
+&lt;ul>
+&lt;li>&lt;code>torch.utils.data.Dataset&lt;/code>을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>torchtext.dataset
+&lt;ul>
+&lt;li>&lt;code>torch.utils.data.Dataset&lt;/code>을 상속하는 텍스트 데이터셋의 모음으로, 기본적으로 IMDb나 AG_NEWS와 같은 데이터셋을 제공&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>torchvision.transforms
+&lt;ul>
+&lt;li>이미지 데이터셋에 쓸 수 있는 여러 가지 변환 필터를 담고 있는 모듈&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>torchvision.utils
+&lt;ul>
+&lt;li>이미지 데이터를 저장하고 시각화하기 위한 도구가 들어있는 모듈&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p> &lt;/p></description></item><item><title>파이토치 텐서?</title><link>https://yera10.github.io/docs/memo/pytorch-study/tensor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/pytorch-study/tensor/</guid><description>&lt;h2 id="pytorch의-기본-구성-요소-tensor">
+ Pytorch의 기본 구성 요소 Tensor
+ &lt;a class="anchor" href="#pytorch%ec%9d%98-%ea%b8%b0%eb%b3%b8-%ea%b5%ac%ec%84%b1-%ec%9a%94%ec%86%8c-tensor">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>torch.Tensor와 torch.tensor의 차이는?&lt;/li>
+&lt;/ul>
+&lt;h3 id="torchtensor">
+ torch.Tensor
+ &lt;a class="anchor" href="#torchtensor">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>클래스(Class)이다.&lt;/li>
+&lt;li>int 입력시 float로 변환&lt;/li>
+&lt;/ul>
+&lt;h3 id="torchtensor-1">
+ torch.tensor
+ &lt;a class="anchor" href="#torchtensor-1">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>함수(Function)이다.&lt;/li>
+&lt;li>int 입력시 int 그대로 입력&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>클래스는 앞글자가 대문자로 시작하고, 함수는 소문자로 시작하는데, Pytorch에서는 이 규칙이 잘 적용되고 있다.&lt;/li>
+&lt;/ul></description></item></channel></rss>

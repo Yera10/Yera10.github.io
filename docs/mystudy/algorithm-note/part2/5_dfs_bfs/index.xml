@@ -1,3 +1,202 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>5. DFS &amp; BFS on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/</link><description>Recent content in 5. DFS &amp; BFS on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</guid><description>미로탈출 # Input # 두 정수 N, M : 4 &amp;lt;= N, M &amp;lt;= 200 N개의 줄, M개의 정수로 미로정보 주어짐 공백 X 시작과 마지막은 항상 1 Output # 최소 이동 칸의 개수 Rule # N x M 크기의 직사각형 미로에 갇혀있다. 미로에 여러 마리의 괴물을 피해 탈출해야 함. 출발지점 (1,1)
-출구위치 (N, M)
-괴물이 있는 부분 : 0 \ 괴물이 없는 부분 : 1 \ 한번에 한칸씩 이동할 수 있음.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</guid><description>음료수 얼려 먹기 # Input # 얼음 틀의 세로길이 N, 가로길이 M (1 &amp;lt;= N, M &amp;lt;= 1,000) 두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐 구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1 Output # 한 번에 만들 수 있는 아이스크림의 갯수 구하기 Example # 입력 출력 15 14 00000111100000 11111101111110 11011101101110 11011101100000 11011111111111 11011111111100 11000000011111 01111111111111 00000000011111 01111111111000 00011111111000 00000001111000 11111111110011 1110001111111111100011111111 8 My Solution # # INPUT n, m = map(int, input().</description></item><item><title>자료구조 기초</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</guid><description>자료구조 기초 # 탐색 # 많은 양의 데이터 중 원하는 데이터를 찾는 과정 그래프, 트리 등의 자료구조 안에서 탐색하는 문제를 자주 다룸. 대표적인 탐색 알고리즘으로 DFS, BFS를 꼽을 수 있다. 자료구조 # 데이터를 표현하고 관리하고 처리하기 위한 구조 스택과 큐는 자료구조의 기초개념으로 &amp;ldquo;삽입&amp;rdquo;, &amp;ldquo;삭제&amp;rdquo; 의 두 핵심 함수로 구성됨 스택 : 선입후출 / 후입선출 큐 : 선입선출 구조 재귀함수 컴퓨터 내부에서 재귀함수의 수행은 스택 자료구조를 이용 (가장 마지막에 호출한 함수가 먼저 수행을 끝내야 그 앞의 함수 호출이 종료되기 때문에) 스택 자료구조를 활용해야 하는 상당 수 알고리즘은 재귀 함수를 이용해 간편하게 구현될 수 있다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>5. DFS &amp; BFS on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/</link><description>Recent content in 5. DFS &amp; BFS on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EB%AF%B8%EB%A1%9C%ED%83%88%EC%B6%9C/</guid><description>&lt;h1 id="미로탈출">
+ 미로탈출
+ &lt;a class="anchor" href="#%eb%af%b8%eb%a1%9c%ed%83%88%ec%b6%9c">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>두 정수 N, M : 4 &amp;lt;= N, M &amp;lt;= 200&lt;/li>
+&lt;li>N개의 줄, M개의 정수로 미로정보 주어짐&lt;/li>
+&lt;li>공백 X&lt;/li>
+&lt;li>시작과 마지막은 항상 1&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>최소 이동 칸의 개수&lt;/li>
+&lt;/ul>
+&lt;h3 id="rule">
+ Rule
+ &lt;a class="anchor" href="#rule">#&lt;/a>
+&lt;/h3>
+&lt;p>N x M 크기의 직사각형 미로에 갇혀있다. &lt;br>
+미로에 여러 마리의 괴물을 피해 탈출해야 함. &lt;br>
+출발지점 (1,1)&lt;br>
+출구위치 (N, M)&lt;br>
+괴물이 있는 부분 : 0 \
+괴물이 없는 부분 : 1 \
+한번에 한칸씩 이동할 수 있음. &lt;br>
+동빈이가 탈출하기 위해 움직여야 하는 최소 칸의 개수 구하기.&lt;br>
+미로는 반드시 탈출할 수 있는 형태로 제시됨&lt;/p></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/</guid><description>&lt;h1 id="음료수-얼려-먹기">
+ 음료수 얼려 먹기
+ &lt;a class="anchor" href="#%ec%9d%8c%eb%a3%8c%ec%88%98-%ec%96%bc%eb%a0%a4-%eb%a8%b9%ea%b8%b0">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>얼음 틀의 세로길이 N, 가로길이 M (1 &amp;lt;= N, M &amp;lt;= 1,000)&lt;/li>
+&lt;li>두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐&lt;/li>
+&lt;li>구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>한 번에 만들 수 있는 아이스크림의 갯수 구하기&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">15 14 &lt;!-- raw HTML omitted --> 00000111100000 &lt;!-- raw HTML omitted -->11111101111110 &lt;!-- raw HTML omitted -->11011101101110 &lt;!-- raw HTML omitted --> 11011101100000 &lt;!-- raw HTML omitted --> 11011111111111 &lt;!-- raw HTML omitted --> 11011111111100 &lt;!-- raw HTML omitted --> 11000000011111 &lt;!-- raw HTML omitted --> 01111111111111 &lt;!-- raw HTML omitted --> 00000000011111 &lt;!-- raw HTML omitted --> 01111111111000 &lt;!-- raw HTML omitted --> 00011111111000 &lt;!-- raw HTML omitted --> 00000001111000 &lt;!-- raw HTML omitted -->11111111110011 &lt;!-- raw HTML omitted --> 11100011111111&lt;!-- raw HTML omitted -->11100011111111&lt;/td>
+ &lt;td style="text-align: left">8&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># INPUT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>n, m &lt;span style="color:#f92672">=&lt;/span> map(int, input()&lt;span style="color:#f92672">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>graph &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph&lt;span style="color:#f92672">.&lt;/span>append(list(map(int, input())))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># SOLUTION&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> collections &lt;span style="color:#f92672">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">bfs&lt;/span>(graph, start, N, M):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> start 지점에서 시작하여 0인 영역을 모두 탐색하는 함수
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> q &lt;span style="color:#f92672">=&lt;/span> deque([start])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph[start[&lt;span style="color:#ae81ff">0&lt;/span>]][start[&lt;span style="color:#ae81ff">1&lt;/span>]] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> q:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vi, vj &lt;span style="color:#f92672">=&lt;/span> q&lt;span style="color:#f92672">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i, j &lt;span style="color:#f92672">in&lt;/span> [[vi&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, vj], [vi&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, vj], [vi, vj&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>], [vi, vj&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> i &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">or&lt;/span> i &lt;span style="color:#f92672">&amp;gt;=&lt;/span> N &lt;span style="color:#f92672">or&lt;/span> j &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">or&lt;/span> j &lt;span style="color:#f92672">&amp;gt;=&lt;/span> M:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> graph[i][j]&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> q&lt;span style="color:#f92672">.&lt;/span>append([i, j])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph[i][j] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(N, M, frame):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i, j &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(N):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> j &lt;span style="color:#f92672">in&lt;/span> range(M):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> frame[i][j] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bfs(frame, [i, j], N, M)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># OUTPUT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print( solution(N, M, frame) )
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="solution">
+ Solution
+ &lt;a class="anchor" href="#solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># N, M을 공백을 기준으로 구분하여 입력 받기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>n, m &lt;span style="color:#f92672">=&lt;/span> map(int, input()&lt;span style="color:#f92672">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 2차원 리스트의 맵 정보 입력 받기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>graph &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph&lt;span style="color:#f92672">.&lt;/span>append(list(map(int, input())))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">dfs&lt;/span>(x, y):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 주어진 범위를 벗어나는 경우에는 즉시 종료&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">or&lt;/span> x &lt;span style="color:#f92672">&amp;gt;=&lt;/span> n &lt;span style="color:#f92672">or&lt;/span> y &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">or&lt;/span> y &lt;span style="color:#f92672">&amp;gt;=&lt;/span> m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 현재 노드를 아직 방문하지 않았다면&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> graph[x][y] &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 해당 노드 방문 처리&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph[x][y] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 상, 하, 좌, 우의 위치들도 모두 재귀적으로 호출&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(x &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, y)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(x, y &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(x &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, y)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(x, y &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 모든 노드(위치)에 대하여 음료수 채우기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> j &lt;span style="color:#f92672">in&lt;/span> range(m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 현재 위치에서 DFS 수행&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> dfs(i, j) &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(result) &lt;span style="color:#75715e"># 정답 출력&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>자료구조 기초</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/datastructure/</guid><description>&lt;h2 id="자료구조-기초">
+ 자료구조 기초
+ &lt;a class="anchor" href="#%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0-%ea%b8%b0%ec%b4%88">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="탐색">
+ 탐색
+ &lt;a class="anchor" href="#%ed%83%90%ec%83%89">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>많은 양의 데이터 중 원하는 데이터를 찾는 과정&lt;/li>
+&lt;li>그래프, 트리 등의 자료구조 안에서 탐색하는 문제를 자주 다룸.&lt;/li>
+&lt;li>대표적인 탐색 알고리즘으로 DFS, BFS를 꼽을 수 있다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="자료구조">
+ 자료구조
+ &lt;a class="anchor" href="#%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>데이터를 표현하고 관리하고 처리하기 위한 구조&lt;/li>
+&lt;li>스택과 큐는 자료구조의 기초개념으로 &amp;ldquo;삽입&amp;rdquo;, &amp;ldquo;삭제&amp;rdquo; 의 두 핵심 함수로 구성됨&lt;/li>
+&lt;li>스택 : 선입후출 / 후입선출&lt;/li>
+&lt;li>큐 : 선입선출 구조&lt;/li>
+&lt;li>재귀함수
+&lt;ul>
+&lt;li>컴퓨터 내부에서 재귀함수의 수행은 스택 자료구조를 이용 (가장 마지막에 호출한 함수가 먼저 수행을 끝내야 그 앞의 함수 호출이 종료되기 때문에)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>스택 자료구조를 활용해야 하는 상당 수 알고리즘은 재귀 함수를 이용해 간편하게 구현될 수 있다. (ex. DFS)&lt;/li>
+&lt;/ul>
+&lt;h3 id="그래프">
+ 그래프
+ &lt;a class="anchor" href="#%ea%b7%b8%eb%9e%98%ed%94%84">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>노드 Node 와 간선 Edge 으로 표현되며, 노드를 정점(Vertex)이라고도 한다.&lt;/li>
+&lt;li>그래프 탐색이란 하나의 노드를 시작으로 다수의 노드를 방문하는 것을 말함.&lt;/li>
+&lt;li>프로그래밍에서 그래프는 크게 2가지 방식으로 표현할 수 있다.
+&lt;ul>
+&lt;li>&lt;strong>인접행렬&lt;/strong> : 2차원 배열로 그래프의 연결관계를 표현하는 방식&lt;/li>
+&lt;li>&lt;strong>인접 리스트&lt;/strong> : 리스트로 그래프의 연결관계를 표현하는 방식
+&lt;ul>
+&lt;li>&amp;ldquo;연결 리스트&amp;quot;라는 자료구조 이용&lt;/li>
+&lt;li>python에서 연결리스트를 이용해 그래프를 표현하고자 할 때에도 단순히 2차원 리스트를 이용하면 됨.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>인접 행렬 방식 예제&lt;/p></description></item></channel></rss>

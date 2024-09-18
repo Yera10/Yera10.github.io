@@ -1,3 +1,80 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>자주 쓰는 코드들 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/freq-used-code/</link><description>Recent content in 자주 쓰는 코드들 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/freq-used-code/index.xml" rel="self" type="application/rss+xml"/><item><title>간단한 히스토그램 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/histogram/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/histogram/</guid><description>import matplotlib.pyplot as plt plt.hist(data, bins=bin_num) import matplotlib.pyplot as plt import numpy as np cnts, bins = np.histogram(data, bin_num) plt.his(data, bins)</description></item><item><title>경고 무시 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/warnings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/warnings/</guid><description> python 경고 무시하기 # import warnings warnings.filterwarnings(action=&amp;#39;ignore&amp;#39;)</description></item><item><title>시간 측정 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/time/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/time/</guid><description> 코드 시간 측정하기 # import time start = time.time() ### 실행코드 ### end = time.time() print(end-start) # 초단위</description></item><item><title>예쁘게 출력(pprint) python</title><link>https://yera10.github.io/docs/memo/freq-used-code/pretty_print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/pretty_print/</guid><description>import pprint pprint.pprint(복잡한 json, dict 파일 등)</description></item><item><title>파일 압축 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/file_zip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/file_zip/</guid><description> 파일 압축 # import zipfile zf = zipfile.ZipFile(&amp;#39;.//foldername//filename.zip&amp;#39;, &amp;#39;w&amp;#39;) zf.write(&amp;#39;filepath&amp;#39;) # compress_type=zipfile.ZIP_DEFLATED zf.close() 압축 해제 후 DataFrame으로 변환 # import zipfile from pyarrow import csv zf = zipfile.ZipFile(&amp;#39;..//foldername//filename.zip&amp;#39;, &amp;#39;r&amp;#39;) df = csv.read_csv(zf.open(&amp;#39;content_hit-2021.03.csv&amp;#39;)).to_pandas()</description></item><item><title>파일 읽기 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/file_open/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/file_open/</guid><description>내장함수 open으로 파일 읽기 (txt, csv, json) # readline readline( ) 함수 사용 # 제너레이터처럼 한줄씩 꺼내서 str 타입으로 읽어들인다.
-(txt, csv, json 파일도 가능)
-f = open(&amp;#34;d:\\data\\emp3.csv&amp;#34;, &amp;#34;r&amp;#34;) file = [] while True: line = f.readline() # readline: 한줄씩 읽어들임 if not line: break file.append(line) # readline: 한줄을 문자열로 반환 f.close() print(file) # file : [ str, str, ..., str ] 의 형태 readlines readlines( ) 함수 사용 # readline( ) 함수와는 다르게 list 타입으로 반환한다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>자주 쓰는 코드들 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/freq-used-code/</link><description>Recent content in 자주 쓰는 코드들 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/freq-used-code/index.xml" rel="self" type="application/rss+xml"/><item><title>간단한 히스토그램 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/histogram/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/histogram/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> matplotlib.pyplot &lt;span style="color:#66d9ef">as&lt;/span> plt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>plt&lt;span style="color:#f92672">.&lt;/span>hist(data, bins&lt;span style="color:#f92672">=&lt;/span>bin_num)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> matplotlib.pyplot &lt;span style="color:#66d9ef">as&lt;/span> plt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> numpy &lt;span style="color:#66d9ef">as&lt;/span> np
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cnts, bins &lt;span style="color:#f92672">=&lt;/span> np&lt;span style="color:#f92672">.&lt;/span>histogram(data, bin_num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>plt&lt;span style="color:#f92672">.&lt;/span>his(data, bins)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>경고 무시 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/warnings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/warnings/</guid><description>&lt;h2 id="python-경고-무시하기">
+ python 경고 무시하기
+ &lt;a class="anchor" href="#python-%ea%b2%bd%ea%b3%a0-%eb%ac%b4%ec%8b%9c%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> warnings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>warnings&lt;span style="color:#f92672">.&lt;/span>filterwarnings(action&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;ignore&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>시간 측정 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/time/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/time/</guid><description>&lt;h2 id="코드-시간-측정하기">
+ 코드 시간 측정하기
+ &lt;a class="anchor" href="#%ec%bd%94%eb%93%9c-%ec%8b%9c%ea%b0%84-%ec%b8%a1%ec%a0%95%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> time
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start &lt;span style="color:#f92672">=&lt;/span> time&lt;span style="color:#f92672">.&lt;/span>time()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">### 실행코드 ###&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end &lt;span style="color:#f92672">=&lt;/span> time&lt;span style="color:#f92672">.&lt;/span>time()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(end&lt;span style="color:#f92672">-&lt;/span>start) &lt;span style="color:#75715e"># 초단위&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>예쁘게 출력(pprint) python</title><link>https://yera10.github.io/docs/memo/freq-used-code/pretty_print/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/pretty_print/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pprint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pprint&lt;span style="color:#f92672">.&lt;/span>pprint(복잡한 json, dict 파일 등)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>파일 압축 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/file_zip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/file_zip/</guid><description>&lt;h2 id="파일-압축">
+ 파일 압축
+ &lt;a class="anchor" href="#%ed%8c%8c%ec%9d%bc-%ec%95%95%ec%b6%95">#&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> zipfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zf &lt;span style="color:#f92672">=&lt;/span> zipfile&lt;span style="color:#f92672">.&lt;/span>ZipFile(&lt;span style="color:#e6db74">&amp;#39;.//foldername//filename.zip&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;w&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zf&lt;span style="color:#f92672">.&lt;/span>write(&lt;span style="color:#e6db74">&amp;#39;filepath&amp;#39;&lt;/span>) &lt;span style="color:#75715e"># compress_type=zipfile.ZIP_DEFLATED&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zf&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p> &lt;/p>
+&lt;h2 id="압축-해제-후-dataframe으로-변환">
+ 압축 해제 후 DataFrame으로 변환
+ &lt;a class="anchor" href="#%ec%95%95%ec%b6%95-%ed%95%b4%ec%a0%9c-%ed%9b%84-dataframe%ec%9c%bc%eb%a1%9c-%eb%b3%80%ed%99%98">#&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> zipfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> pyarrow &lt;span style="color:#f92672">import&lt;/span> csv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zf &lt;span style="color:#f92672">=&lt;/span> zipfile&lt;span style="color:#f92672">.&lt;/span>ZipFile(&lt;span style="color:#e6db74">&amp;#39;..//foldername//filename.zip&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;r&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df &lt;span style="color:#f92672">=&lt;/span> csv&lt;span style="color:#f92672">.&lt;/span>read_csv(zf&lt;span style="color:#f92672">.&lt;/span>open(&lt;span style="color:#e6db74">&amp;#39;content_hit-2021.03.csv&amp;#39;&lt;/span>))&lt;span style="color:#f92672">.&lt;/span>to_pandas()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>파일 읽기 python</title><link>https://yera10.github.io/docs/memo/freq-used-code/file_open/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/freq-used-code/file_open/</guid><description>&lt;h2 id="내장함수-open으로-파일-읽기-txt-csv-json">
+ 내장함수 open으로 파일 읽기 (txt, csv, json)
+ &lt;a class="anchor" href="#%eb%82%b4%ec%9e%a5%ed%95%a8%ec%88%98-open%ec%9c%bc%eb%a1%9c-%ed%8c%8c%ec%9d%bc-%ec%9d%bd%ea%b8%b0-txt-csv-json">#&lt;/a>
+&lt;/h2>
+
+
+
+
+&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-open-file" id="tabs-open-file-0" checked="checked" />
+ &lt;label for="tabs-open-file-0">readline&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;h2 id="readline--함수-사용">
+ readline( ) 함수 사용
+ &lt;a class="anchor" href="#readline--%ed%95%a8%ec%88%98-%ec%82%ac%ec%9a%a9">#&lt;/a>
+&lt;/h2>
+&lt;p>제너레이터처럼 한줄씩 꺼내서 str 타입으로 읽어들인다.&lt;br>
+(txt, csv, json 파일도 가능)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>f &lt;span style="color:#f92672">=&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">data&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">emp3.csv&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;r&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>file &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	line &lt;span style="color:#f92672">=&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>readline()    &lt;span style="color:#75715e"># readline: 한줄씩 읽어들임&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> line: &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	file&lt;span style="color:#f92672">.&lt;/span>append(line)    &lt;span style="color:#75715e"># readline: 한줄을 문자열로 반환&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>f&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(file)    &lt;span style="color:#75715e"># file : [ str, str, ..., str ] 의 형태&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;input type="radio" class="toggle" name="tabs-open-file" id="tabs-open-file-1" />
+ &lt;label for="tabs-open-file-1">readlines&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;h2 id="readlines--함수-사용">
+ readlines( ) 함수 사용
+ &lt;a class="anchor" href="#readlines--%ed%95%a8%ec%88%98-%ec%82%ac%ec%9a%a9">#&lt;/a>
+&lt;/h2>
+&lt;p>readline( ) 함수와는 다르게 list 타입으로 반환한다.&lt;br>
+반복문을 사용하지 않아도 된다.&lt;/p></description></item></channel></rss>

@@ -1,5 +1,72 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="clone 관련 클론 # git clone {REPO_URL} {DIR_생략가능} commit 취소 commit 취소 # # 꺽쇠 수만큼 전으로 돌아감 git reset HEAD^ git reset HEAD^^ # 숫자만큼 전으로 돌아감 git reset HEAD~1 git reset HEAD~2 commit 취소 - push 했을 때 # git reset HEAD^ # 원하는 시점으로 되돌리기 git reflog git reset {commit id} # 강제 푸시 git push origin {branch name} -f credential 관련 Credential 정보를 반영구 저장 # git config credential."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content="Git 관련"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/git/"><title>Git 관련 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/git/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+
+  
+    clone 관련
+  
+  
+    
+  클론
+  #
+
+git clone {REPO_URL} {DIR_생략가능}
+
+  클론 시 인증하기
+  #
+
+Username for 'https://github.com': {사용자명 입력하기}
+Password for 'https://NAME@github.com': {토큰 붙여넣기}
+
+토큰발급방법: github 로그인 > Settings > Developer settings > Personal access tokens > Generate New Token > 필요항목 입력 후 Generate Token [참고]
+
+  
+  
+  
+    commit 취소
+  
+  
+    
+  commit 취소
+  #
+
+# 꺽쇠 수만큼 전으로 돌아감
+git reset HEAD^
+git reset HEAD^^
+# 숫자만큼 전으로 돌아감
+git reset HEAD~1
+git reset HEAD~2
+
+  commit 취소 - push 했을 때
+  #
+
+git reset HEAD^
+
+# 원하는 시점으로 되돌리기
+git reflog
+git reset {commit id}
+
+# 강제 푸시
+git push origin {branch name} -f
+
+  
+  
+  
+    credential 관련
+  
+  
+    
+  Credential 정보를 반영구 저장
+  #
+
+git config credential.helper store
+
+  
+  
+  
+    서브모듈 관련
+  
+  
+    ref - git doc"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/git/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="Git 관련"><meta property="og:description" content=" clone 관련 클론 # git clone {REPO_URL} {DIR_생략가능} 클론 시 인증하기 # Username for 'https://github.com': {사용자명 입력하기} Password for 'https://NAME@github.com': {토큰 붙여넣기} 토큰발급방법: github 로그인 > Settings > Developer settings > Personal access tokens > Generate New Token > 필요항목 입력 후 Generate Token [참고] commit 취소 commit 취소 # # 꺽쇠 수만큼 전으로 돌아감 git reset HEAD^ git reset HEAD^^ # 숫자만큼 전으로 돌아감 git reset HEAD~1 git reset HEAD~2 commit 취소 - push 했을 때 # git reset HEAD^ # 원하는 시점으로 되돌리기 git reflog git reset {commit id} # 강제 푸시 git push origin {branch name} -f credential 관련 Credential 정보를 반영구 저장 # git config credential.helper store 서브모듈 관련 ref - git doc"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>Git 관련 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/git/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -33,8 +100,61 @@
 <label for=section-d62e43e08089551fa5c3188ab2ea83ba class="flex justify-between"><a href=/docs/memo/commands/git/ class=active>Git 관련</a></label><ul><li><a href=/docs/memo/commands/git/clone/>clone 관련</a></li><li><a href=/docs/memo/commands/git/cancel/>commit 취소</a></li><li><a href=/docs/memo/commands/git/credential/>credential 관련</a></li><li><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></li><li><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></li></ul></li></ul></li><li><input type=checkbox id=section-232998b4ddb91b0de578d4b83588e89e class=toggle>
 <label for=section-232998b4ddb91b0de578d4b83588e89e class="flex justify-between"><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></label><ul><li><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></li><li><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></li><li><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></li><li><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></li><li><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></li><li><a href=/docs/memo/freq-used-code/file_open/>파일 읽기 python</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
 </label><strong>Git 관련</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/git/clone/>clone 관련</a></dt><dd class=markdown-inner>클론 # git clone {REPO_URL} {DIR_생략가능}</dd><dt><a href=/docs/memo/commands/git/cancel/>commit 취소</a></dt><dd class=markdown-inner>commit 취소 # # 꺽쇠 수만큼 전으로 돌아감 git reset HEAD^ git reset HEAD^^ # 숫자만큼 전으로 돌아감 git reset HEAD~1 git reset HEAD~2 commit 취소 - push 했을 때 # git reset HEAD^ # 원하는 시점으로 되돌리기 git reflog git reset {commit id} # 강제 푸시 git push origin {branch name} -f</dd><dt><a href=/docs/memo/commands/git/credential/>credential 관련</a></dt><dd class=markdown-inner>Credential 정보를 반영구 저장 # git config credential.helper store</dd><dt><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></dt><dd class=markdown-inner>ref - git doc
-서브모듈 추가 # git submodule add {저장소 URL} 서브모듈 끊기 # # 1. 모듈 deinit git submodule deinit -f {모듈명} # 2. .git/modules 에서 폴더 삭제 rm -rf .git/modules/{모듈명} # 3. git에서 해당 폴더를 제거 git rm -f {모듈명} 서브모듈까지 모두 clone # git clone --recursive {저장소 URL} 또는
-git clone {저장소 URL} git submodule update --init --recursive 서브모듈까지 모두 업데이트(pull) # # 모든 서브모듈에 대해 동일한 명령어를 수행하고 싶을 때 git submodule foreach [명령어] # 모든 서브모듈에 대해 git pull git submodule foreach git pull origin master 또는</dd><dt><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></dt><dd class=markdown-inner>모든 설정값 확인 # git config --list 특정값 확인
-git config user.name 모든 설정값과 해당 위치 확인 # git config --list --show-origin 사용자 이름 및 이메일 설정 # git config --global user.name "&lt;사용자ID>" git config --global user.email {이메일} * global 옵션을 전달할 경우 한번만 수행해도 된다.
-설정값 지우기 # git config --unset user.name git config --unset user.email git config --unset --global user.name git config --unset --global user.email * global로 설정한 경우, global로 지워야 한다.</dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/git/clone/>clone 관련</a></dt><dd class=markdown-inner><h3 id=클론>클론
+<a class=anchor href=#%ed%81%b4%eb%a1%a0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git clone <span style=color:#f92672>{</span>REPO_URL<span style=color:#f92672>}</span> <span style=color:#f92672>{</span>DIR_생략가능<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h3 id=클론-시-인증하기>클론 시 인증하기
+<a class=anchor href=#%ed%81%b4%eb%a1%a0-%ec%8b%9c-%ec%9d%b8%ec%a6%9d%ed%95%98%ea%b8%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Username <span style=color:#66d9ef>for</span> <span style=color:#e6db74>&#39;https://github.com&#39;</span>: <span style=color:#f92672>{</span>사용자명 입력하기<span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>Password <span style=color:#66d9ef>for</span> <span style=color:#e6db74>&#39;https://NAME@github.com&#39;</span>: <span style=color:#f92672>{</span>토큰 붙여넣기<span style=color:#f92672>}</span>
+</span></span></code></pre></div><ul><li>토큰발급방법: github 로그인 > Settings > Developer settings > Personal access tokens > Generate New Token > 필요항목 입력 후 Generate Token <a href=https://velog.io/@rxdryd/git-clone-%EC%98%A4%EB%A5%98>[참고]</a></li></ul></dd><dt><a href=/docs/memo/commands/git/cancel/>commit 취소</a></dt><dd class=markdown-inner><h3 id=commit-취소>commit 취소
+<a class=anchor href=#commit-%ec%b7%a8%ec%86%8c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 꺽쇠 수만큼 전으로 돌아감</span>
+</span></span><span style=display:flex><span>git reset HEAD^
+</span></span><span style=display:flex><span>git reset HEAD^^
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 숫자만큼 전으로 돌아감</span>
+</span></span><span style=display:flex><span>git reset HEAD~1
+</span></span><span style=display:flex><span>git reset HEAD~2
+</span></span></code></pre></div><h3 id=commit-취소---push-했을-때>commit 취소 - push 했을 때
+<a class=anchor href=#commit-%ec%b7%a8%ec%86%8c---push-%ed%96%88%ec%9d%84-%eb%95%8c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git reset HEAD^
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 원하는 시점으로 되돌리기</span>
+</span></span><span style=display:flex><span>git reflog
+</span></span><span style=display:flex><span>git reset <span style=color:#f92672>{</span>commit id<span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 강제 푸시</span>
+</span></span><span style=display:flex><span>git push origin <span style=color:#f92672>{</span>branch name<span style=color:#f92672>}</span> -f
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/git/credential/>credential 관련</a></dt><dd class=markdown-inner><h3 id=credential-정보를-반영구-저장>Credential 정보를 반영구 저장
+<a class=anchor href=#credential-%ec%a0%95%eb%b3%b4%eb%a5%bc-%eb%b0%98%ec%98%81%ea%b5%ac-%ec%a0%80%ec%9e%a5>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config credential.helper store
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></dt><dd class=markdown-inner><p><a href=https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88>ref - git doc</a></p><h3 id=서브모듈-추가>서브모듈 추가
+<a class=anchor href=#%ec%84%9c%eb%b8%8c%eb%aa%a8%eb%93%88-%ec%b6%94%ea%b0%80>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git submodule add <span style=color:#f92672>{</span>저장소 URL<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h3 id=서브모듈-끊기>서브모듈 끊기
+<a class=anchor href=#%ec%84%9c%eb%b8%8c%eb%aa%a8%eb%93%88-%eb%81%8a%ea%b8%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 1. 모듈 deinit</span>
+</span></span><span style=display:flex><span>git submodule deinit -f <span style=color:#f92672>{</span>모듈명<span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 2. .git/modules 에서 폴더 삭제</span>
+</span></span><span style=display:flex><span>rm -rf .git/modules/<span style=color:#f92672>{</span>모듈명<span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 3. git에서 해당 폴더를 제거</span>
+</span></span><span style=display:flex><span>git rm -f <span style=color:#f92672>{</span>모듈명<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h3 id=서브모듈까지-모두-clone>서브모듈까지 모두 clone
+<a class=anchor href=#%ec%84%9c%eb%b8%8c%eb%aa%a8%eb%93%88%ea%b9%8c%ec%a7%80-%eb%aa%a8%eb%91%90-clone>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git clone --recursive <span style=color:#f92672>{</span>저장소 URL<span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>또는</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git clone <span style=color:#f92672>{</span>저장소 URL<span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>git submodule update --init --recursive
+</span></span></code></pre></div><h3 id=서브모듈까지-모두-업데이트pull>서브모듈까지 모두 업데이트(pull)
+<a class=anchor href=#%ec%84%9c%eb%b8%8c%eb%aa%a8%eb%93%88%ea%b9%8c%ec%a7%80-%eb%aa%a8%eb%91%90-%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8pull>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 모든 서브모듈에 대해 동일한 명령어를 수행하고 싶을 때</span>
+</span></span><span style=display:flex><span>git submodule foreach <span style=color:#f92672>[</span>명령어<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 모든 서브모듈에 대해 git pull</span>
+</span></span><span style=display:flex><span>git submodule foreach git pull origin master
+</span></span></code></pre></div><p>또는</p></dd><dt><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></dt><dd class=markdown-inner><h3 id=모든-설정값-확인>모든 설정값 확인
+<a class=anchor href=#%eb%aa%a8%eb%93%a0-%ec%84%a4%ec%a0%95%ea%b0%92-%ed%99%95%ec%9d%b8>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config --list
+</span></span></code></pre></div><p>특정값 확인</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config user.name
+</span></span></code></pre></div><h3 id=모든-설정값과-해당-위치-확인>모든 설정값과 해당 위치 확인
+<a class=anchor href=#%eb%aa%a8%eb%93%a0-%ec%84%a4%ec%a0%95%ea%b0%92%ea%b3%bc-%ed%95%b4%eb%8b%b9-%ec%9c%84%ec%b9%98-%ed%99%95%ec%9d%b8>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config --list --show-origin
+</span></span></code></pre></div><h3 id=사용자-이름-및-이메일-설정>사용자 이름 및 이메일 설정
+<a class=anchor href=#%ec%82%ac%ec%9a%a9%ec%9e%90-%ec%9d%b4%eb%a6%84-%eb%b0%8f-%ec%9d%b4%eb%a9%94%ec%9d%bc-%ec%84%a4%ec%a0%95>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config --global user.name <span style=color:#e6db74>&#34;&lt;사용자ID&gt;&#34;</span>
+</span></span><span style=display:flex><span>git config --global user.email <span style=color:#f92672>{</span>이메일<span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>* global 옵션을 전달할 경우 한번만 수행해도 된다.</p><h3 id=설정값-지우기>설정값 지우기
+<a class=anchor href=#%ec%84%a4%ec%a0%95%ea%b0%92-%ec%a7%80%ec%9a%b0%ea%b8%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config --unset user.name
+</span></span><span style=display:flex><span>git config --unset user.email
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git config --unset --global user.name
+</span></span><span style=display:flex><span>git config --unset --global user.email
+</span></span></code></pre></div><p>* global로 설정한 경우, global로 지워야 한다.</p></dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

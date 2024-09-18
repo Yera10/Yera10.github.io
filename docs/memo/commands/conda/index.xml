@@ -1,1 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/commands/conda/</link><description>Recent content on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/commands/conda/index.xml" rel="self" type="application/rss+xml"/><item><title>가상환경 관련</title><link>https://yera10.github.io/docs/memo/commands/conda/virtual_env/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/conda/virtual_env/</guid><description> 가상환경 생성 # conda create -n &amp;lt;가상환경명&amp;gt; conda create -n &amp;lt;가상환경명&amp;gt; python=3.7 conda create -n &amp;lt;가상환경명&amp;gt; --clone &amp;lt;가상환경명&amp;gt; 가상환경 목록 # conda env list conda info envs 가상환경에 jupyter kernel 연결 # python -m ipykernel install --user --name &amp;lt;가상환경명&amp;gt; --display-name &amp;lt;커널명&amp;gt; 가상환경 삭제 # conda remove --name {가상환경명} --all 가상환경 활성화 # conda activate {가상환경명} 가상환경 비활성화 # conda deactivate</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/commands/conda/</link><description>Recent content on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/commands/conda/index.xml" rel="self" type="application/rss+xml"/><item><title>가상환경 관련</title><link>https://yera10.github.io/docs/memo/commands/conda/virtual_env/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/conda/virtual_env/</guid><description>&lt;h3 id="가상환경-생성">
+ 가상환경 생성
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ec%83%9d%ec%84%b1">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda create -n &amp;lt;가상환경명&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda create -n &amp;lt;가상환경명&amp;gt; python=3.7
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda create -n &amp;lt;가상환경명&amp;gt; --clone &amp;lt;가상환경명&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;h3 id="가상환경-목록">
+ 가상환경 목록
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%eb%aa%a9%eb%a1%9d">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda env list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conda info envs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;h3 id="가상환경에-jupyter-kernel-연결">
+ 가상환경에 jupyter kernel 연결
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd%ec%97%90-jupyter-kernel-%ec%97%b0%ea%b2%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>python -m ipykernel install --user --name &amp;lt;가상환경명&amp;gt; --display-name &amp;lt;커널명&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- raw HTML omitted -->
+&lt;h3 id="가상환경-삭제">
+ 가상환경 삭제
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ec%82%ad%ec%a0%9c">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda remove --name {가상환경명} --all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="가상환경-활성화">
+ 가상환경 활성화
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ed%99%9c%ec%84%b1%ed%99%94">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda activate {가상환경명}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="가상환경-비활성화">
+ 가상환경 비활성화
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%eb%b9%84%ed%99%9c%ec%84%b1%ed%99%94">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>conda deactivate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

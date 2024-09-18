@@ -1,5 +1,131 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Docker docker 버전 확인 # docker -v docker image 검색 및 설치 # docker search ubuntu docker pull ubuntu:20.04 컨테이너 생성 및 실행 # docker run -it --name <이름> <Image이름> /bin/bash 컨테이너 목록 확인 # docker ps --all python 실행파일 인자값 받기 python 실행파일 인자값 받기 # 1. sys.argv # test.py 가 아래와 같은 파일이고, import sys print(sys.argv) 아래 명령어를 실행하면, $ python test.py abc hello name 출력은 아래와 같다."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/etc/"><title>Etc | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/etc/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+
+  
+    Docker
+  
+  
+    
+  docker 버전 확인
+  #
+
+docker -v
+
+  docker image 검색 및 설치
+  #
+
+docker search ubuntu
+
+docker pull ubuntu:20.04
+
+  컨테이너 생성 및 실행
+  #
+
+docker run -it --name <이름> <Image이름> /bin/bash
+
+  컨테이너 목록 확인
+  #
+
+docker ps --all
+
+  
+  
+  
+    python 실행파일 인자값 받기
+  
+  
+    
+  python 실행파일 인자값 받기
+  #
+
+
+  1. sys.argv
+  #
+
+
+test.py 가 아래와 같은 파일이고,
+
+import sys
+print(sys.argv)
+
+아래 명령어를 실행하면,
+
+$ python test.py abc hello name
+
+출력은 아래와 같다.
+
+['test.py', 'abc', 'hello', 'name']
+
+sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감
+
+
+  2. configparser
+  #
+
+
+아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용
+config file (확장자 .cfg)
+
+[SectionOne]    # Section - 대괄호 
+Status: Single    # 속성 - Key : Value
+Name: Derek
+Value: Yes
+Age: 30
+
+[SectionTwo]
+FavoriteColor = Green    # :(콜론)을 써도 되고, =(equal)을 써도 된다. 
+
+[SectionThree]
+FamilyName: Johnson
+
+위 파일을 읽어들여 사용하는 아래 파일을 실행시키면 됨
+
+import configparser
+config = configparser.ConfigParser()
+config.sections()   # 빈 List
+
+config.read('example.cfg')
+config.sections()   # Section Name들 List
+
+for sec in config.sections():
+    print(f'---{sec}---')
+    for key in config[sec]:
+        value = config[sec][key]
+        print('{0} : {1}'.format(key, value))
+
+  3. argparse
+  #
+
+
+args_test.py 가 아래와 같은 파일일 때,
+
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='ArgumentParser Tutorial')
+    parser.add_argument('a', help='parameter description')
+    group_gpus.add_argument(&#34;-b&#34;, &#34;--bparam&#34;, type=int, default=0, help='b parameter description')
+
+    args = parser.parse_args()
+    return args
+
+def main():
+    args = parse_args()
+    print(args.a)
+    print(args.bparam)
+
+if __name__ == &#34;__main__&#34;:
+    main()
+
+아래와 같은 명령어를 실행하면
+
+$ python args_test.py &#34;hello&#34; -b &#34;world&#34;
+
+아래와 같이 출력됨
+
+hello
+world
+ref"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/etc/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" Docker docker 버전 확인 # docker -v docker image 검색 및 설치 # docker search ubuntu docker pull ubuntu:20.04 컨테이너 생성 및 실행 # docker run -it --name <이름> <Image이름> /bin/bash 컨테이너 목록 확인 # docker ps --all python 실행파일 인자값 받기 python 실행파일 인자값 받기 # 1. sys.argv # test.py 가 아래와 같은 파일이고, import sys print(sys.argv) 아래 명령어를 실행하면, $ python test.py abc hello name 출력은 아래와 같다. ['test.py', 'abc', 'hello', 'name'] sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감 2. configparser # 아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용 config file (확장자 .cfg) [SectionOne] # Section - 대괄호 Status: Single # 속성 - Key : Value Name: Derek Value: Yes Age: 30 [SectionTwo] FavoriteColor = Green # :(콜론)을 써도 되고, =(equal)을 써도 된다. [SectionThree] FamilyName: Johnson 위 파일을 읽어들여 사용하는 아래 파일을 실행시키면 됨 import configparser config = configparser.ConfigParser() config.sections() # 빈 List config.read('example.cfg') config.sections() # Section Name들 List for sec in config.sections(): print(f'---{sec}---') for key in config[sec]: value = config[sec][key] print('{0} : {1}'.format(key, value)) 3. argparse # args_test.py 가 아래와 같은 파일일 때, import argparse def parse_args(): parser = argparse.ArgumentParser(description='ArgumentParser Tutorial') parser.add_argument('a', help='parameter description') group_gpus.add_argument(&#34;-b&#34;, &#34;--bparam&#34;, type=int, default=0, help='b parameter description') args = parser.parse_args() return args def main(): args = parse_args() print(args.a) print(args.bparam) if __name__ == &#34;__main__&#34;: main() 아래와 같은 명령어를 실행하면 $ python args_test.py &#34;hello&#34; -b &#34;world&#34; 아래와 같이 출력됨 hello world ref"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>Etc | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/etc/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -33,6 +159,78 @@
 <label for=section-d62e43e08089551fa5c3188ab2ea83ba class="flex justify-between"><a href=/docs/memo/commands/git/>Git 관련</a></label><ul><li><a href=/docs/memo/commands/git/clone/>clone 관련</a></li><li><a href=/docs/memo/commands/git/cancel/>commit 취소</a></li><li><a href=/docs/memo/commands/git/credential/>credential 관련</a></li><li><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></li><li><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></li></ul></li></ul></li><li><input type=checkbox id=section-232998b4ddb91b0de578d4b83588e89e class=toggle>
 <label for=section-232998b4ddb91b0de578d4b83588e89e class="flex justify-between"><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></label><ul><li><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></li><li><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></li><li><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></li><li><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></li><li><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></li><li><a href=/docs/memo/freq-used-code/file_open/>파일 읽기 python</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
 </label><strong>Etc</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/etc/docker/>Docker</a></dt><dd class=markdown-inner>docker 버전 확인 # docker -v docker image 검색 및 설치 # docker search ubuntu docker pull ubuntu:20.04 컨테이너 생성 및 실행 # docker run -it --name &lt;이름> &lt;Image이름> /bin/bash 컨테이너 목록 확인 # docker ps --all</dd><dt><a href=/docs/memo/commands/etc/python-parameter/>python 실행파일 인자값 받기</a></dt><dd class=markdown-inner>python 실행파일 인자값 받기 # 1. sys.argv # test.py 가 아래와 같은 파일이고, import sys print(sys.argv) 아래 명령어를 실행하면, $ python test.py abc hello name 출력은 아래와 같다. ['test.py', 'abc', 'hello', 'name'] sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감 2. configparser # 아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용 config file (확장자 .cfg) [SectionOne] # Section - 대괄호 Status: Single # 속성 - Key : Value Name: Derek Value: Yes Age: 30 [SectionTwo] FavoriteColor = Green # :(콜론)을 써도 되고, =(equal)을 써도 된다.</dd><dt><a href=/docs/memo/commands/etc/python-venv/>python3 venv 사용법</a></dt><dd class=markdown-inner>venv # python2에서는 써드파티 라이브러리인 virtualenv 가상환경 라이브러리를 사용
-python3에서는 기본적으로 제공되는 venv 가상환경 라이브러리를 사용
-가상환경 생성 # python -m venv {가상환경이름} 가상환경 활성화 # {가상환경이름}\Scripts\activate.bat source {가상환경이름}\Scripts\activate.bat 가상환경 삭제 # 가상환경 이름의 폴더를 휴지통으로 이동 (삭제)</dd><dt><a href=/docs/memo/commands/etc/python-server/>python3 서버열기</a></dt><dd class=markdown-inner>python 으로 http 서버 열기 # $ python3 -m http.server &lt;포트번호 ex.8000></dd><dt><a href=/docs/memo/commands/etc/vscode_shortcuts/>VSCode 단축키</a></dt><dd class=markdown-inner>내가 자주 쓰는 VSCode 단축키 # 설명 단축키 코드 전체 접기 Ctrl + k + 0 코드 전체 펼치기 Ctrl + k + j</dd><dt><a href=/docs/memo/commands/etc/terminal_theme/>터미널 테마</a></dt><dd class=markdown-inner>터미널 테마 바꾸기 # https://terminalsplash.com/</dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/etc/docker/>Docker</a></dt><dd class=markdown-inner><h3 id=docker-버전-확인>docker 버전 확인
+<a class=anchor href=#docker-%eb%b2%84%ec%a0%84-%ed%99%95%ec%9d%b8>#</a></h3><pre tabindex=0><code>docker -v
+</code></pre><h3 id=docker-image-검색-및-설치>docker image 검색 및 설치
+<a class=anchor href=#docker-image-%ea%b2%80%ec%83%89-%eb%b0%8f-%ec%84%a4%ec%b9%98>#</a></h3><pre tabindex=0><code>docker search ubuntu
+
+docker pull ubuntu:20.04
+</code></pre><h3 id=컨테이너-생성-및-실행>컨테이너 생성 및 실행
+<a class=anchor href=#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%ec%83%9d%ec%84%b1-%eb%b0%8f-%ec%8b%a4%ed%96%89>#</a></h3><pre tabindex=0><code>docker run -it --name &lt;이름&gt; &lt;Image이름&gt; /bin/bash
+</code></pre><h3 id=컨테이너-목록-확인>컨테이너 목록 확인
+<a class=anchor href=#%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88-%eb%aa%a9%eb%a1%9d-%ed%99%95%ec%9d%b8>#</a></h3><pre tabindex=0><code>docker ps --all
+</code></pre></dd><dt><a href=/docs/memo/commands/etc/python-parameter/>python 실행파일 인자값 받기</a></dt><dd class=markdown-inner><h1 id=python-실행파일-인자값-받기>python 실행파일 인자값 받기
+<a class=anchor href=#python-%ec%8b%a4%ed%96%89%ed%8c%8c%ec%9d%bc-%ec%9d%b8%ec%9e%90%ea%b0%92-%eb%b0%9b%ea%b8%b0>#</a></h1><h2 id=1-sysargv>1. sys.argv
+<a class=anchor href=#1-sysargv>#</a></h2><ol><li>test.py 가 아래와 같은 파일이고,</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> sys
+</span></span><span style=display:flex><span>print(sys<span style=color:#f92672>.</span>argv)
+</span></span></code></pre></div><ol start=2><li>아래 명령어를 실행하면,</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ python test.py abc hello name
+</span></span></code></pre></div><ol start=3><li>출력은 아래와 같다.</li></ol><pre tabindex=0><code>[&#39;test.py&#39;, &#39;abc&#39;, &#39;hello&#39;, &#39;name&#39;]
+</code></pre><ul><li>sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감</li></ul><h2 id=2-configparser>2. configparser
+<a class=anchor href=#2-configparser>#</a></h2><ol><li>아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용
+config file (확장자 .cfg)</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cfg data-lang=cfg><span style=display:flex><span><span style=color:#a6e22e>[SectionOne]    # Section - 대괄호 </span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Status: Single    # 속성 - Key : Value</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Name: Derek</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Value: Yes</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Age: 30</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>[SectionTwo]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>FavoriteColor</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>Green    # :(콜론)을 써도 되고, =(equal)을 써도 된다. </span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>[SectionThree]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>FamilyName: Johnson</span>
+</span></span></code></pre></div><ol start=2><li>위 파일을 읽어들여 사용하는 아래 파일을 실행시키면 됨</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> configparser
+</span></span><span style=display:flex><span>config <span style=color:#f92672>=</span> configparser<span style=color:#f92672>.</span>ConfigParser()
+</span></span><span style=display:flex><span>config<span style=color:#f92672>.</span>sections()   <span style=color:#75715e># 빈 List</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>config<span style=color:#f92672>.</span>read(<span style=color:#e6db74>&#39;example.cfg&#39;</span>)
+</span></span><span style=display:flex><span>config<span style=color:#f92672>.</span>sections()   <span style=color:#75715e># Section Name들 List</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> sec <span style=color:#f92672>in</span> config<span style=color:#f92672>.</span>sections():
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;---</span><span style=color:#e6db74>{</span>sec<span style=color:#e6db74>}</span><span style=color:#e6db74>---&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> key <span style=color:#f92672>in</span> config[sec]:
+</span></span><span style=display:flex><span>        value <span style=color:#f92672>=</span> config[sec][key]
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{0}</span><span style=color:#e6db74> : </span><span style=color:#e6db74>{1}</span><span style=color:#e6db74>&#39;</span><span style=color:#f92672>.</span>format(key, value))
+</span></span></code></pre></div><h2 id=3-argparse>3. argparse
+<a class=anchor href=#3-argparse>#</a></h2><ol><li>args_test.py 가 아래와 같은 파일일 때,</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> argparse
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>parse_args</span>():
+</span></span><span style=display:flex><span>    parser <span style=color:#f92672>=</span> argparse<span style=color:#f92672>.</span>ArgumentParser(description<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ArgumentParser Tutorial&#39;</span>)
+</span></span><span style=display:flex><span>    parser<span style=color:#f92672>.</span>add_argument(<span style=color:#e6db74>&#39;a&#39;</span>, help<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;parameter description&#39;</span>)
+</span></span><span style=display:flex><span>    group_gpus<span style=color:#f92672>.</span>add_argument(<span style=color:#e6db74>&#34;-b&#34;</span>, <span style=color:#e6db74>&#34;--bparam&#34;</span>, type<span style=color:#f92672>=</span>int, default<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, help<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;b parameter description&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    args <span style=color:#f92672>=</span> parser<span style=color:#f92672>.</span>parse_args()
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> args
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>main</span>():
+</span></span><span style=display:flex><span>    args <span style=color:#f92672>=</span> parse_args()
+</span></span><span style=display:flex><span>    print(args<span style=color:#f92672>.</span>a)
+</span></span><span style=display:flex><span>    print(args<span style=color:#f92672>.</span>bparam)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    main()
+</span></span></code></pre></div><ol start=2><li>아래와 같은 명령어를 실행하면</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ python args_test.py <span style=color:#e6db74>&#34;hello&#34;</span> -b <span style=color:#e6db74>&#34;world&#34;</span>
+</span></span></code></pre></div><ol start=3><li>아래와 같이 출력됨</li></ol><pre tabindex=0><code>hello
+world
+</code></pre><p><a href=https://docs.python.org/3/library/argparse.html>ref</a></p></dd><dt><a href=/docs/memo/commands/etc/python-venv/>python3 venv 사용법</a></dt><dd class=markdown-inner><h2 id=venv>venv
+<a class=anchor href=#venv>#</a></h2><p><code>python2</code>에서는 써드파티 라이브러리인 <code>virtualenv</code> 가상환경 라이브러리를 사용<br><code>python3</code>에서는 기본적으로 제공되는 <code>venv</code> 가상환경 라이브러리를 사용</p><h3 id=가상환경-생성>가상환경 생성
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ec%83%9d%ec%84%b1>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>python -m venv <span style=color:#f92672>{</span>가상환경이름<span style=color:#f92672>}</span>
+</span></span></code></pre></div><h3 id=가상환경-활성화>가상환경 활성화
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ed%99%9c%ec%84%b1%ed%99%94>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>{</span>가상환경이름<span style=color:#f92672>}</span><span style=color:#ae81ff>\S</span>cripts<span style=color:#ae81ff>\a</span>ctivate.bat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>source <span style=color:#f92672>{</span>가상환경이름<span style=color:#f92672>}</span><span style=color:#ae81ff>\S</span>cripts<span style=color:#ae81ff>\a</span>ctivate.bat
+</span></span></code></pre></div><h3 id=가상환경-삭제>가상환경 삭제
+<a class=anchor href=#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ec%82%ad%ec%a0%9c>#</a></h3><p>가상환경 이름의 폴더를 휴지통으로 이동 (삭제)</p></dd><dt><a href=/docs/memo/commands/etc/python-server/>python3 서버열기</a></dt><dd class=markdown-inner><h3 id=python-으로-http-서버-열기>python 으로 http 서버 열기
+<a class=anchor href=#python-%ec%9c%bc%eb%a1%9c-http-%ec%84%9c%eb%b2%84-%ec%97%b4%ea%b8%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ python3 -m http.server &lt;포트번호 ex.8000&gt;
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/etc/vscode_shortcuts/>VSCode 단축키</a></dt><dd class=markdown-inner><h2 id=내가-자주-쓰는-vscode-단축키>내가 자주 쓰는 VSCode 단축키
+<a class=anchor href=#%eb%82%b4%ea%b0%80-%ec%9e%90%ec%a3%bc-%ec%93%b0%eb%8a%94-vscode-%eb%8b%a8%ec%b6%95%ed%82%a4>#</a></h2><table><thead><tr><th style=text-align:left>설명</th><th style=text-align:center>단축키</th></tr></thead><tbody><tr><td style=text-align:left>코드 전체 접기</td><td style=text-align:center><code>Ctrl</code> + <code>k</code> + <code>0</code></td></tr><tr><td style=text-align:left>코드 전체 펼치기</td><td style=text-align:center><code>Ctrl</code> + <code>k</code> + <code>j</code></td></tr></tbody></table></dd><dt><a href=/docs/memo/commands/etc/terminal_theme/>터미널 테마</a></dt><dd class=markdown-inner><h3 id=터미널-테마-바꾸기>터미널 테마 바꾸기
+<a class=anchor href=#%ed%84%b0%eb%af%b8%eb%84%90-%ed%85%8c%eb%a7%88-%eb%b0%94%ea%be%b8%ea%b8%b0>#</a></h3><p><a href=https://terminalsplash.com/>https://terminalsplash.com/</a></p></dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

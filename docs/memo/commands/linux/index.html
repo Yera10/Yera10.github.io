@@ -1,5 +1,147 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="GPU 관련 GPU 스펙 확인 # nvidia-smi 사용용량 확인 # nvidia-smi Ubuntu Screen 명령어 screen tool 설치 # sudo apt-get install screen screen 생성 # screen -S <생성할 스크린 이름> screen 나가기 # ctrl + a + d (단축키) screen 리스트 확인 # screen -ls 생성된 screen에 재접속 # screen -R <접속할 스크린 이름> 백그라운드 관련 백그라운드 프로세스 목록 # jobs 출력 [job 번호]job기호 job상태 백그라운드 프로세스 종료 # kill %<job 번호> 압축 관련 압축 해제 # tar -zxvf [압축파일] -C [폴더이름] 파일 생성/이동/복사/삭제 파일 이동 # mv <이동전 파일 path> <이동후 파일 path> mv /home/index."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/linux/"><title>Linux | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/linux/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+
+  
+    GPU 관련
+  
+  
+    
+  GPU 스펙 확인
+  #
+
+nvidia-smi
+
+  사용용량 확인
+  #
+
+nvidia-smi
+
+  
+  
+  
+    Ubuntu Screen 명령어
+  
+  
+    
+  screen tool 설치
+  #
+
+sudo apt-get install screen
+
+  screen 생성
+  #
+
+screen -S <생성할 스크린 이름>
+
+  screen 나가기
+  #
+
+
+ctrl + a + d (단축키)
+
+
+  screen 리스트 확인
+  #
+
+screen -ls
+
+  생성된 screen에 재접속
+  #
+
+screen -R <접속할 스크린 이름>
+
+  
+  
+  
+    백그라운드 관련
+  
+  
+    
+  백그라운드 프로세스 목록
+  #
+
+jobs
+출력
+
+[job 번호]job기호 job상태
+
+
+  백그라운드 프로세스 종료
+  #
+
+kill %<job 번호>
+
+  
+  
+  
+    압축 관련
+  
+  
+    
+  압축 해제
+  #
+
+tar -zxvf [압축파일] -C [폴더이름]
+
+  
+  
+  
+    파일 생성/이동/복사/삭제
+  
+  
+    
+  파일 이동
+  #
+
+mv <이동전 파일 path> <이동후 파일 path>
+mv /home/index.html /home/test/index.html
+
+  파일 복사
+  #
+
+cp <복사전 파일 path> <복사후 파일 path>
+cp /home/index.html /home/test/index.html
+
+  디렉토리 이동
+  #
+
+mv <원본폴더> <목적지폴더>
+
+  디렉토리 복사
+  #
+
+cp -r <복사전 dir_path> <복사될 상위 dir_path>
+cp -r /home/index /home/test  # home/test/index 폴더가 생성됨
+
+  디렉토리 생성
+  #
+
+mkdir <디렉토리명>
+
+옵션
+
+-m : 폴더 권한 설정
+
+
+
+
+  파일 삭제
+  #
+
+rm <파일명>
+
+  디렉토리 삭제
+  #
+
+rm -r <파일명>
+
+-r 옵션:  recursive, 폴더를 지우거나 폴더 안의 파일을 전부 지울 때
+-f 옵션 : 진짜로 지울거냐는 확인 없이 강제로 지움.
+
+  
+  
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/linux/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" GPU 관련 GPU 스펙 확인 # nvidia-smi 사용용량 확인 # nvidia-smi Ubuntu Screen 명령어 screen tool 설치 # sudo apt-get install screen screen 생성 # screen -S <생성할 스크린 이름> screen 나가기 # ctrl + a + d (단축키) screen 리스트 확인 # screen -ls 생성된 screen에 재접속 # screen -R <접속할 스크린 이름> 백그라운드 관련 백그라운드 프로세스 목록 # jobs 출력
+[job 번호]job기호 job상태 백그라운드 프로세스 종료 # kill %<job 번호> 압축 관련 압축 해제 # tar -zxvf [압축파일] -C [폴더이름] 파일 생성/이동/복사/삭제 파일 이동 # mv <이동전 파일 path> <이동후 파일 path> mv /home/index.html /home/test/index.html 파일 복사 # cp <복사전 파일 path> <복사후 파일 path> cp /home/index.html /home/test/index.html 디렉토리 이동 # mv <원본폴더> <목적지폴더> 디렉토리 복사 # cp -r <복사전 dir_path> <복사될 상위 dir_path> cp -r /home/index /home/test # home/test/index 폴더가 생성됨 디렉토리 생성 # mkdir <디렉토리명> 옵션 -m : 폴더 권한 설정 파일 삭제 # rm <파일명> 디렉토리 삭제 # rm -r <파일명> -r 옵션: recursive, 폴더를 지우거나 폴더 안의 파일을 전부 지울 때 -f 옵션 : 진짜로 지울거냐는 확인 없이 강제로 지움. "><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>Linux | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/commands/linux/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -33,5 +175,40 @@
 <label for=section-d62e43e08089551fa5c3188ab2ea83ba class="flex justify-between"><a href=/docs/memo/commands/git/>Git 관련</a></label><ul><li><a href=/docs/memo/commands/git/clone/>clone 관련</a></li><li><a href=/docs/memo/commands/git/cancel/>commit 취소</a></li><li><a href=/docs/memo/commands/git/credential/>credential 관련</a></li><li><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></li><li><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></li></ul></li></ul></li><li><input type=checkbox id=section-232998b4ddb91b0de578d4b83588e89e class=toggle>
 <label for=section-232998b4ddb91b0de578d4b83588e89e class="flex justify-between"><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></label><ul><li><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></li><li><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></li><li><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></li><li><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></li><li><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></li><li><a href=/docs/memo/freq-used-code/file_open/>파일 읽기 python</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
 </label><strong>Linux</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/linux/gpu/>GPU 관련</a></dt><dd class=markdown-inner>GPU 스펙 확인 # nvidia-smi 사용용량 확인 # nvidia-smi</dd><dt><a href=/docs/memo/commands/linux/screen/>Ubuntu Screen 명령어</a></dt><dd class=markdown-inner>screen tool 설치 # sudo apt-get install screen screen 생성 # screen -S &lt;생성할 스크린 이름> screen 나가기 # ctrl + a + d (단축키) screen 리스트 확인 # screen -ls 생성된 screen에 재접속 # screen -R &lt;접속할 스크린 이름></dd><dt><a href=/docs/memo/commands/linux/background/>백그라운드 관련</a></dt><dd class=markdown-inner>백그라운드 프로세스 목록 # jobs 출력
-[job 번호]job기호 job상태 백그라운드 프로세스 종료 # kill %&lt;job 번호></dd><dt><a href=/docs/memo/commands/linux/zip_tar_gz/>압축 관련</a></dt><dd class=markdown-inner>압축 해제 # tar -zxvf [압축파일] -C [폴더이름]</dd><dt><a href=/docs/memo/commands/linux/file_dir/>파일 생성/이동/복사/삭제</a></dt><dd class=markdown-inner>파일 이동 # mv &lt;이동전 파일 path> &lt;이동후 파일 path> mv /home/index.html /home/test/index.html 파일 복사 # cp &lt;복사전 파일 path> &lt;복사후 파일 path> cp /home/index.html /home/test/index.html 디렉토리 이동 # mv &lt;원본폴더> &lt;목적지폴더> 디렉토리 복사 # cp -r &lt;복사전 dir_path> &lt;복사될 상위 dir_path> cp -r /home/index /home/test # home/test/index 폴더가 생성됨 디렉토리 생성 # mkdir &lt;디렉토리명> 옵션 -m : 폴더 권한 설정 파일 삭제 # rm &lt;파일명> 디렉토리 삭제 # rm -r &lt;파일명> -r 옵션: recursive, 폴더를 지우거나 폴더 안의 파일을 전부 지울 때 -f 옵션 : 진짜로 지울거냐는 확인 없이 강제로 지움.</dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/commands/linux/gpu/>GPU 관련</a></dt><dd class=markdown-inner><h3 id=gpu-스펙-확인>GPU 스펙 확인
+<a class=anchor href=#gpu-%ec%8a%a4%ed%8e%99-%ed%99%95%ec%9d%b8>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nvidia-smi
+</span></span></code></pre></div><h3 id=사용용량-확인>사용용량 확인
+<a class=anchor href=#%ec%82%ac%ec%9a%a9%ec%9a%a9%eb%9f%89-%ed%99%95%ec%9d%b8>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nvidia-smi
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/linux/screen/>Ubuntu Screen 명령어</a></dt><dd class=markdown-inner><h3 id=screen-tool-설치>screen tool 설치
+<a class=anchor href=#screen-tool-%ec%84%a4%ec%b9%98>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>sudo apt-get install screen
+</span></span></code></pre></div><h3 id=screen-생성>screen 생성
+<a class=anchor href=#screen-%ec%83%9d%ec%84%b1>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>screen -S &lt;생성할 스크린 이름&gt;
+</span></span></code></pre></div><h3 id=screen-나가기>screen 나가기
+<a class=anchor href=#screen-%eb%82%98%ea%b0%80%ea%b8%b0>#</a></h3><ul><li>ctrl + a + d (단축키)</li></ul><h3 id=screen-리스트-확인>screen 리스트 확인
+<a class=anchor href=#screen-%eb%a6%ac%ec%8a%a4%ed%8a%b8-%ed%99%95%ec%9d%b8>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>screen -ls
+</span></span></code></pre></div><h3 id=생성된-screen에-재접속>생성된 screen에 재접속
+<a class=anchor href=#%ec%83%9d%ec%84%b1%eb%90%9c-screen%ec%97%90-%ec%9e%ac%ec%a0%91%ec%86%8d>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>screen -R &lt;접속할 스크린 이름&gt;
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/linux/background/>백그라운드 관련</a></dt><dd class=markdown-inner><h3 id=백그라운드-프로세스-목록>백그라운드 프로세스 목록
+<a class=anchor href=#%eb%b0%b1%ea%b7%b8%eb%9d%bc%ec%9a%b4%eb%93%9c-%ed%94%84%eb%a1%9c%ec%84%b8%ec%8a%a4-%eb%aa%a9%eb%a1%9d>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>jobs
+</span></span></code></pre></div><p>출력</p><ul><li>[job 번호]job기호 job상태</li></ul><h3 id=백그라운드-프로세스-종료>백그라운드 프로세스 종료
+<a class=anchor href=#%eb%b0%b1%ea%b7%b8%eb%9d%bc%ec%9a%b4%eb%93%9c-%ed%94%84%eb%a1%9c%ec%84%b8%ec%8a%a4-%ec%a2%85%eb%a3%8c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>kill %&lt;job 번호&gt;
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/linux/zip_tar_gz/>압축 관련</a></dt><dd class=markdown-inner><h3 id=압축-해제>압축 해제
+<a class=anchor href=#%ec%95%95%ec%b6%95-%ed%95%b4%ec%a0%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>tar -zxvf [압축파일] -C [폴더이름]
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/commands/linux/file_dir/>파일 생성/이동/복사/삭제</a></dt><dd class=markdown-inner><h3 id=파일-이동>파일 이동
+<a class=anchor href=#%ed%8c%8c%ec%9d%bc-%ec%9d%b4%eb%8f%99>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>mv &lt;이동전 파일 path&gt; &lt;이동후 파일 path&gt;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>mv /home/index.html /home/test/index.html
+</span></span></code></pre></div><h3 id=파일-복사>파일 복사
+<a class=anchor href=#%ed%8c%8c%ec%9d%bc-%eb%b3%b5%ec%82%ac>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>cp &lt;복사전 파일 path&gt; &lt;복사후 파일 path&gt;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>cp /home/index.html /home/test/index.html
+</span></span></code></pre></div><h3 id=디렉토리-이동>디렉토리 이동
+<a class=anchor href=#%eb%94%94%eb%a0%89%ed%86%a0%eb%a6%ac-%ec%9d%b4%eb%8f%99>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>mv &lt;원본폴더&gt; &lt;목적지폴더&gt;
+</span></span></code></pre></div><h3 id=디렉토리-복사>디렉토리 복사
+<a class=anchor href=#%eb%94%94%eb%a0%89%ed%86%a0%eb%a6%ac-%eb%b3%b5%ec%82%ac>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>cp -r &lt;복사전 dir_path&gt; &lt;복사될 상위 dir_path&gt;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>cp -r /home/index /home/test  # home/test/index 폴더가 생성됨
+</span></span></code></pre></div><h3 id=디렉토리-생성>디렉토리 생성
+<a class=anchor href=#%eb%94%94%eb%a0%89%ed%86%a0%eb%a6%ac-%ec%83%9d%ec%84%b1>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span><span style=color:#66d9ef>mkdir</span> &lt;디렉토리명&gt;
+</span></span></code></pre></div><ul><li>옵션<ul><li><code>-m</code> : 폴더 권한 설정</li></ul></li></ul><h3 id=파일-삭제>파일 삭제
+<a class=anchor href=#%ed%8c%8c%ec%9d%bc-%ec%82%ad%ec%a0%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>rm &lt;파일명&gt;
+</span></span></code></pre></div><h3 id=디렉토리-삭제>디렉토리 삭제
+<a class=anchor href=#%eb%94%94%eb%a0%89%ed%86%a0%eb%a6%ac-%ec%82%ad%ec%a0%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cmd data-lang=cmd><span style=display:flex><span>rm -r &lt;파일명&gt;
+</span></span></code></pre></div><ul><li>-r 옵션: recursive, 폴더를 지우거나 폴더 안의 파일을 전부 지울 때</li><li>-f 옵션 : 진짜로 지울거냐는 확인 없이 강제로 지움.</li></ul></dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

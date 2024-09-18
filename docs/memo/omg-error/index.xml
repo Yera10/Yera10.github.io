@@ -1,5 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>오마이갓 에러극복 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/omg-error/</link><description>Recent content in 오마이갓 에러극복 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/omg-error/index.xml" rel="self" type="application/rss+xml"/><item><title>poetry 가상환경에 jupyter 설치 안됨</title><link>https://yera10.github.io/docs/memo/omg-error/poetry_venv_broken/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/omg-error/poetry_venv_broken/</guid><description>에러 발생 # poetry로 의존성을 관리하고 있었고, poetry의 가상환경으로 jupyter notebook을 작성하기 위해 poetry add jupyter ipykernel 을 입력했다.
-attrs라는 패키지를 설치하다가 failed.
-또잉?
-에러메세지를 검색해봤지만, 모르겠어서 일단 poetry 패키지를 살펴보려고 poetry show를입력했는데, 이러한 메세지가 뜨는 것.. 내 가상환경이 부러졌다고..?
-The currently activated Python version 3.9.13 is not supported by the project (^3.11). Trying to find and use a compatible version. Using python3.11 (3.11.5) The virtual environment found in C:\git\ddareung\.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>오마이갓 에러극복 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/omg-error/</link><description>Recent content in 오마이갓 에러극복 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/omg-error/index.xml" rel="self" type="application/rss+xml"/><item><title>poetry 가상환경에 jupyter 설치 안됨</title><link>https://yera10.github.io/docs/memo/omg-error/poetry_venv_broken/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/omg-error/poetry_venv_broken/</guid><description>&lt;h2 id="에러-발생">
+ 에러 발생
+ &lt;a class="anchor" href="#%ec%97%90%eb%9f%ac-%eb%b0%9c%ec%83%9d">#&lt;/a>
+&lt;/h2>
+&lt;p>poetry로 의존성을 관리하고 있었고, poetry의 가상환경으로 jupyter notebook을 작성하기 위해 &lt;code>poetry add jupyter ipykernel&lt;/code> 을 입력했다.&lt;br>
+&lt;code>attrs&lt;/code>라는 패키지를 설치하다가 failed.&lt;br>
+또잉?&lt;br>
+에러메세지를 검색해봤지만, 모르겠어서 일단 poetry 패키지를 살펴보려고 &lt;code>poetry show&lt;/code>를입력했는데, 이러한 메세지가 뜨는 것..
+내 가상환경이 부러졌다고..?&lt;/p>
+&lt;pre tabindex="0">&lt;code>The currently activated Python version 3.9.13 is not supported by the project (^3.11).
+Trying to find and use a compatible version. 
+Using python3.11 (3.11.5)
+The virtual environment found in C:\git\ddareung\.venv seems to be broken.
+Recreating virtualenv ddareung in C:\git\ddareung\.venv
+certifi (!) 2023.11.17 Python package for providing Mozilla&amp;#39;s CA Bundle.
+charset-normalizer (!) 3.3.2 The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+idna (!) 3.6 Internationalized Domain Names in Applications (IDNA)
+requests (!) 2.31.0 Python HTTP for Humans.
+urllib3 (!) 2.1.0 HTTP library with thread-safe connection pooling, file post, and more.
+&lt;/code>&lt;/pre>&lt;p>나중에 확인해보니, venv 가 부러진 게 문제가 아니었다. 다시 &lt;code>poetry show&lt;/code> 해보니, 아무 문제 없었고, &lt;code>poetry add jupyter&lt;/code>를 입력했을 때, 또 같은 문제 발생.&lt;/p></description></item></channel></rss>

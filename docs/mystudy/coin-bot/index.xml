@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>비트코인 자동매매 봇 만들기 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/coin-bot/</link><description>Recent content in 비트코인 자동매매 봇 만들기 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/coin-bot/index.xml" rel="self" type="application/rss+xml"/><item><title>ccxt 라이브러리 사용</title><link>https://yera10.github.io/docs/mystudy/coin-bot/1_ccxt_api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/coin-bot/1_ccxt_api/</guid><description>1. API Key 발급 # Upbit 홈페이지 &amp;gt; 우측 하단 Open API &amp;gt; Open API 사용하기
-위 경로로 들어가 권한을 선택하고 IP주소를 등록하면 Key를 발급받을 수 있다.
-권한은 혹시 해킹당할 수 있을까봐 출금하기, 입금하기만 빼고 모든 권한을 선택했다. Access Key와 Secret Key를 upbit.key라는 이름으로 저장해 놓는다.
-2. 거래소 객체 생성 # import ccxt import pprint import pandas as pd # API Key 불러오기 with open(&amp;#34;./upbit.key&amp;#34;) as f: lines = f.</description></item><item><title>ccxt 웹소켓 사용</title><link>https://yera10.github.io/docs/mystudy/coin-bot/2_ccxt_websocket/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/coin-bot/2_ccxt_websocket/</guid><description> ccxt에서 웹소켓 사용해보기 # import ccxt.pro as ccxtpro import asyncio import pprint # 실시간 현재가 async def main(): exchanage = ccxtpro.upbit() while True: ticker = await exchanage.watch_ticker(symbol=&amp;#34;BTC/KRW&amp;#34;) pprint.pprint(ticker) asyncio.run(main())</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>비트코인 자동매매 봇 만들기 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/coin-bot/</link><description>Recent content in 비트코인 자동매매 봇 만들기 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/coin-bot/index.xml" rel="self" type="application/rss+xml"/><item><title>ccxt 라이브러리 사용</title><link>https://yera10.github.io/docs/mystudy/coin-bot/1_ccxt_api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/coin-bot/1_ccxt_api/</guid><description>&lt;h3 id="1-api-key-발급">
+ 1. API Key 발급
+ &lt;a class="anchor" href="#1-api-key-%eb%b0%9c%ea%b8%89">#&lt;/a>
+&lt;/h3>
+&lt;p>Upbit 홈페이지 &amp;gt; 우측 하단 Open API &amp;gt; Open API 사용하기&lt;br>
+위 경로로 들어가 권한을 선택하고 IP주소를 등록하면 Key를 발급받을 수 있다.&lt;br>
+권한은 혹시 해킹당할 수 있을까봐 출금하기, 입금하기만 빼고 모든 권한을 선택했다.
+Access Key와 Secret Key를 &lt;code>upbit.key&lt;/code>라는 이름으로 저장해 놓는다.&lt;/p>
+&lt;h3 id="2-거래소-객체-생성">
+ 2. 거래소 객체 생성
+ &lt;a class="anchor" href="#2-%ea%b1%b0%eb%9e%98%ec%86%8c-%ea%b0%9d%ec%b2%b4-%ec%83%9d%ec%84%b1">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> ccxt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pprint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pandas &lt;span style="color:#66d9ef">as&lt;/span> pd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># API Key 불러오기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;./upbit.key&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lines &lt;span style="color:#f92672">=&lt;/span> f&lt;span style="color:#f92672">.&lt;/span>readlines()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> api_key &lt;span style="color:#f92672">=&lt;/span> lines[&lt;span style="color:#ae81ff">0&lt;/span>]&lt;span style="color:#f92672">.&lt;/span>strip()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> api_secret &lt;span style="color:#f92672">=&lt;/span> lines[&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">.&lt;/span>strip()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 거래소 객체 생성&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exchange &lt;span style="color:#f92672">=&lt;/span> ccxt&lt;span style="color:#f92672">.&lt;/span>upbit(config&lt;span style="color:#f92672">=&lt;/span>dict(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apiKey &lt;span style="color:#f92672">=&lt;/span> api_key, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> secret &lt;span style="color:#f92672">=&lt;/span> api_secret, 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enableRateLiit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(exchange)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>API Key는 잔고조회, 매수, 매도를 사용할 때만 필요했고 현재가 조회나 티커 조회를 할 때는 없어도 됐었다.&lt;/p></description></item><item><title>ccxt 웹소켓 사용</title><link>https://yera10.github.io/docs/mystudy/coin-bot/2_ccxt_websocket/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/coin-bot/2_ccxt_websocket/</guid><description>&lt;h2 id="ccxt에서-웹소켓-사용해보기">
+ ccxt에서 웹소켓 사용해보기
+ &lt;a class="anchor" href="#ccxt%ec%97%90%ec%84%9c-%ec%9b%b9%ec%86%8c%ec%bc%93-%ec%82%ac%ec%9a%a9%ed%95%b4%eb%b3%b4%ea%b8%b0">#&lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> ccxt.pro &lt;span style="color:#66d9ef">as&lt;/span> ccxtpro
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> asyncio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pprint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 실시간 현재가&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exchanage &lt;span style="color:#f92672">=&lt;/span> ccxtpro&lt;span style="color:#f92672">.&lt;/span>upbit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ticker &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> exchanage&lt;span style="color:#f92672">.&lt;/span>watch_ticker(symbol&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;BTC/KRW&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pprint&lt;span style="color:#f92672">.&lt;/span>pprint(ticker)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>asyncio&lt;span style="color:#f92672">.&lt;/span>run(main())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

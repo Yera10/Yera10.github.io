@@ -1,7 +1,134 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="떡볶이 떡 만들기 # INPUT # 첫째줄: N, M = 떡의 개수, 요청한 떡의 길이
-($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$) 둘째줄: 떡의 개별 높이 떡의 개별 높이의 총합은 항상 M 이상. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0 OUTPUT # 적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값 Example # 문제 # 절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="떡볶이 떡 만들기 # INPUT # 첫째줄: N, M = 떡의 개수, 요청한 떡의 길이
-($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$) 둘째줄: 떡의 개별 높이 떡의 개별 높이의 총합은 항상 M 이상. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0 OUTPUT # 적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값 Example # 문제 # 절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/"><meta property="article:section" content="docs"><title>떡볶이떡만들기 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  떡볶이 떡 만들기
+  #
+
+
+  INPUT
+  #
+
+
+첫째줄:  N, M = 떡의 개수, 요청한 떡의 길이
+($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$)
+둘째줄: 떡의 개별 높이
+
+떡의 개별 높이의 총합은 항상 M 이상.
+높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0
+
+
+
+
+  OUTPUT
+  #
+
+
+적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값
+
+
+  Example
+  #
+
+
+  문제
+  #
+
+
+절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림.
+예) 19, 14, 14, 17cm 의 떡들을 15cm로 설정한 절단기로 자르면, 15, 14, 14, 15cm가 되고, 잘린 떡은 4, 0, 0, 2cm이며, 총 잘린 6cm의 떡을 가져갈 수 있다.
+
+
+  My Solution
+  #
+
+def binary_search(arr, target, s, e):
+    """이진탐색 코드의 변형
+    arr내에 target이 없을 때 없다고 반환하지 않고, 큰 값을 반환"""
+    if s > e:
+        return s
+    
+    m = (s+e)//2
+
+    if arr[m] < target:
+        return binary_search(arr, target, m+1, e)
+    elif arr[m] > target:
+        return binary_search(arr, target, s, m-1)
+    else:
+        return m
+
+def solution(arr, N, M):
+    """떡볶이 떡 길이 계산"""
+    arr.sort(reverse=True)
+
+    # diff & cnt 만들기
+    arr_dup = []
+    cnts = []
+    diffs = []
+    c = 0
+    for i in range(N-1):
+        d = arr[i] - arr[i+1]
+        c += 1
+        if d != 0:
+            arr_dup.append(arr[i])
+            cnts.append(c)
+            diffs.append(d)
+            
+    arr_dup.extend([arr[-1], 0])
+    cnts.append(c+1)
+    diffs.append(arr[-1])
+
+    # dduck_diff
+    dduk_diff = [d*c for d,c in zip(diffs, cnts)]
+
+    # dduck
+    s = 0
+    dduk = []
+    for dd in dduk_diff:
+        s += dd
+        dduk.append(s)
+
+    idx = binary_search(dduk, M, 0, len(dduk)-1)
+
+    return arr_dup[idx+1] + (dduk[idx] - M)//cnts[idx]
+
+    
+
+
+# TEST
+N, M = 4, 6
+arr = [19, 15, 10, 17]
+print(solution(arr, N, M))  # 15
+
+N, M = 5, 6
+arr = [19, 15, 10, 17, 17]
+print(solution(arr, N, M))  # 15
+
+N, M = 6, 6
+arr = [19, 15, 10, 17, 17, 19]
+print(solution(arr, N, M))  # 16
+
+N, M = 6, 30
+arr = [19, 15, 10, 17, 17, 19]
+print(solution(arr, N, M))  # 11
+
+N, M = 6, 50
+arr = [19, 15, 10, 17, 17, 19]
+print(solution(arr, N, M))  # 7
+
+N, M = 6, 97
+arr = [19, 15, 10, 17, 17, 19]
+print(solution(arr, N, M))  # 0
+
+시간복잡도 = $Nlog_2N + 7N + log_2N=O(Nlog_2N)$
+최악의 경우 대략 27,000,000번의 연산 필요
+
+
+  문제 해설
+  #
+
+
+
+전형적인 이진 탐색 문제, 파라메트릭 서치 유형의 문제'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/7_%EC%9D%B4%EC%A7%84%ED%83%90%EC%83%89/%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%96%A1%EB%A7%8C%EB%93%A4%EA%B8%B0/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=' 떡볶이 떡 만들기 # INPUT # 첫째줄: N, M = 떡의 개수, 요청한 떡의 길이
+($1\le N \le 1,000,000, 1\le M \le 2,000,000,000$) 둘째줄: 떡의 개별 높이 떡의 개별 높이의 총합은 항상 M 이상. 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0 OUTPUT # 적어도 M만큼 떡을 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값 Example # 문제 # 절단기에 높이 H를 설정하면, 높이가 H보다 긴 떡만 H 위의 부분이 잘림. 예) 19, 14, 14, 17cm 의 떡들을 15cm로 설정한 절단기로 자르면, 15, 14, 14, 15cm가 되고, 잘린 떡은 4, 0, 0, 2cm이며, 총 잘린 6cm의 떡을 가져갈 수 있다. My Solution # def binary_search(arr, target, s, e): """이진탐색 코드의 변형 arr내에 target이 없을 때 없다고 반환하지 않고, 큰 값을 반환""" if s > e: return s m = (s+e)//2 if arr[m] < target: return binary_search(arr, target, m+1, e) elif arr[m] > target: return binary_search(arr, target, s, m-1) else: return m def solution(arr, N, M): """떡볶이 떡 길이 계산""" arr.sort(reverse=True) # diff & cnt 만들기 arr_dup = [] cnts = [] diffs = [] c = 0 for i in range(N-1): d = arr[i] - arr[i+1] c += 1 if d != 0: arr_dup.append(arr[i]) cnts.append(c) diffs.append(d) arr_dup.extend([arr[-1], 0]) cnts.append(c+1) diffs.append(arr[-1]) # dduck_diff dduk_diff = [d*c for d,c in zip(diffs, cnts)] # dduck s = 0 dduk = [] for dd in dduk_diff: s += dd dduk.append(s) idx = binary_search(dduk, M, 0, len(dduk)-1) return arr_dup[idx+1] + (dduk[idx] - M)//cnts[idx] # TEST N, M = 4, 6 arr = [19, 15, 10, 17] print(solution(arr, N, M)) # 15 N, M = 5, 6 arr = [19, 15, 10, 17, 17] print(solution(arr, N, M)) # 15 N, M = 6, 6 arr = [19, 15, 10, 17, 17, 19] print(solution(arr, N, M)) # 16 N, M = 6, 30 arr = [19, 15, 10, 17, 17, 19] print(solution(arr, N, M)) # 11 N, M = 6, 50 arr = [19, 15, 10, 17, 17, 19] print(solution(arr, N, M)) # 7 N, M = 6, 97 arr = [19, 15, 10, 17, 17, 19] print(solution(arr, N, M)) # 0 시간복잡도 = $Nlog_2N + 7N + log_2N=O(Nlog_2N)$ 최악의 경우 대략 27,000,000번의 연산 필요 문제 해설 # 전형적인 이진 탐색 문제, 파라메트릭 서치 유형의 문제'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>떡볶이떡만들기 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle checked>

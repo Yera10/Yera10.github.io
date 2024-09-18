@@ -1,5 +1,185 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Part 2 3. 그리디 알고리즘 Greedy # 단순하지만 강력한 문제 해결 방법 현재 상황에서 지금 당장 좋은 것만 고르는 방법 현재의 선택이 나중에 미칠 영향에 대해서는 고려하지 않음 다익스트라 알고리즘은 엄밀히 말하면 Greedy 알고리즘 보통 코딩테스트에서 출제되는 Greedy 알고리즘 유형의 문제는 창의력, 문제를 풀기 위한 최소한의 아이디어를 떠올릴 수 있는 능력을 요구 Greedy 알고리즘의 정당성 # greedy 알고리즘을 모든 문제에 적용할 수 있는 것은 아니다. Greedy로 정확한 답을 찾을 수 있다는 보장이 있을 때는 매우 효과적이고 직관적 4."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content="알고리즘"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/"><title>알고리즘 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/mystudy/algorithm-note/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+
+  
+    Part 2
+  
+  
+    
+
+
+  
+    3. 그리디 알고리즘
+  
+  
+    
+  Greedy
+  #
+
+
+단순하지만 강력한 문제 해결 방법
+현재 상황에서 지금 당장 좋은 것만 고르는 방법
+현재의 선택이 나중에 미칠 영향에 대해서는 고려하지 않음
+다익스트라 알고리즘은 엄밀히 말하면 Greedy 알고리즘
+보통 코딩테스트에서 출제되는 Greedy 알고리즘 유형의 문제는 창의력, 문제를 풀기 위한 최소한의 아이디어를 떠올릴 수 있는 능력을 요구
+
+
+  Greedy 알고리즘의 정당성
+  #
+
+
+greedy 알고리즘을 모든 문제에 적용할 수 있는 것은 아니다.
+Greedy로 정확한 답을 찾을 수 있다는 보장이 있을 때는 매우 효과적이고 직관적
+(greedy로 정확한 답이 도출된다는 증명을 머릿속으로 빠르게 할 수 있어야 함)
+거스름돈 문제를 그리디 알고리즘으로 해결할 수 있는 이유:
+큰 단위의 동전이 항상 작은 단위 동전의 배수이므로 작은 단위의 동전들을 종합해 더 좋은 해가 나올 수 없기 때문이다.
+대부분의 그리디 알고리즘 문제에서는 이처럼 문제 풀이를 위한 최소한의 아이디어를 떠올리고, 이것이 정당한지 검토할 수 있어야 답을 도출할 수 있다.
+
+
+  문제
+  #
+
+
+큰 수의 법칙
+숫자 카드 게임
+1이 될 때까지
+
+
+
+  Reference
+  #
+
+
+책 : 이것이 취업을 위한 코딩테스트다 with 파이썬
+
+  
+  
+  
+    4. 구현
+  
+  
+    
+  Implementation
+  #
+
+
+구현? 머릿속에 있는 알고리즘을 소스코드로 바꾸는 과정
+어떤 문제를 풀든 소스코드를 작성하는 과정은 필수이기 때문에 구현 문제는 모든 범위의 문제 유형을 포함한다.
+취업 코딩테스트에서는 자주 출제됨
+문제에 대한 정확한 풀이 방법이 떠오르면, 프로그래밍 언어로 정확히 구현해내야 함.
+프로그래밍 언어의 문법을 정확히 알고 있어야 하며, 문제의 요구사항에 어긋나지 않는 답안 코드를 작성해야함
+구현 유형 문제 : 풀이를 떠올리는 것은 쉽지만, 소스코드로 옮기기 어려운 문제
+흔히 개발할 때 프로그래밍 언어의 문법에 능숙하고 코드 작성속도가 빠른 사람을 보고 &ldquo;피지컬이 좋다"고 한다. 
+그런 의미에서 구현 유형의 문제는 &ldquo;피지컬을 요구하는&rdquo; 문제라고도 할 수 있다.
+대체로 사소한 조건 설정이 많은 문제일수록 코드로 구현하기 까다로움
+문법을 정확하게 숙지하지 못했거나, 라이브러리 사용 경험이 부족하면 구현 유형에 불리
+&lsquo;구현&rsquo; 유형으로 풀 수 있는 문제
+
+완전탐색 : 모든 경우의 수를 주저 없이 다 계산하는 해결 방법
+시뮬레이션 : 문제에서 제시한 알고리즘을 한 단계씩 차례대로 직접 수행하는 방법
+
+
+C/C++/JAVA 보다 파이썬에서 상대적으로 쉽게 해결할 수 있다.
+
+
+  구현 시 고려해야 할 메모리 제약 사항
+  #
+
+
+  C/C++/JAVA 정수형 표현 범위
+  #
+
+
+  
+      
+          정수형 종류
+          자료형의 크기
+          자료형의 범위
+      
+  
+  
+      
+          int
+          4bytes
+          -2,147,483,648~2,147,438,647
+      
+      
+          long
+          8bytes
+          -9,223,372,036,854,775,808~9,223,372,036,854,775,807
+      
+      
+          BigInterger (클래스)
+          가변적
+          제한 없음
+      
+  
+
+
+대체로 long 에서 다룰 수 있는 수보다 더 큰 정수를 처리하는 문제는 잘 출제되지 않는다.
+python에서는 직접 자료형을 지정할 필요가 없고, 매우 큰 수의 연산을 기본으로 지원
+python에서 실수형 변수는 유효숫자에 따라서 연산 결과가 원하는 값이 나오지 않을 수 있다  (???)
+
+
+  Python에서 리스트 크기에 따른 메모리 사용량
+  #
+
+
+  
+      
+          리스트의 길이 (int 자료형일때)
+          메모리 사용량
+      
+  
+  
+      
+          1,000
+          약 4KB
+      
+      
+          1,000,000
+          약 4MB
+      
+      
+          10,000,000
+          약 40MB
+      
+  
+
+
+대체로 코딩테스트에서는 128~512MB로 메모리 제한
+리스트 중 크기가 1,000만 이상인 리스트가 있다면 메모리 용량 제한으로 문제를 풀 수 없을 수도 있다. (드뭄)
+
+
+  채점환경
+  #
+
+
+일반적으로 시간제한 및 메모리 제한 정보가 적혀있음.
+python3.7 기준으로 1초에 2,000만번의 연산을 수행한다고 가정하면 큰 무리 없음
+시간제한이 1초이고, 데이터 개수가 100만개인 문제가 있다면 시간 복잡도 $O(Nlog_2 N)$ 내에 풀어야 한다. ($log_2 1,000,000$)
+시간 제한과 데이터의 개수를 먼저 확인하고, 어느 정도의 시간복잡도 알고리즘을 작성해야할지 예측할 수 있어야 한다.
+
+
+  문제
+  #
+
+
+상하좌우
+게임개발
+시각
+왕실의나이트
+
+  
+  
+  
+    5. DFS & BFS
+  
+  
+    자료구조 기초'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="알고리즘"><meta property="og:description" content=' Part 2 3. 그리디 알고리즘 Greedy # 단순하지만 강력한 문제 해결 방법 현재 상황에서 지금 당장 좋은 것만 고르는 방법 현재의 선택이 나중에 미칠 영향에 대해서는 고려하지 않음 다익스트라 알고리즘은 엄밀히 말하면 Greedy 알고리즘 보통 코딩테스트에서 출제되는 Greedy 알고리즘 유형의 문제는 창의력, 문제를 풀기 위한 최소한의 아이디어를 떠올릴 수 있는 능력을 요구 Greedy 알고리즘의 정당성 # greedy 알고리즘을 모든 문제에 적용할 수 있는 것은 아니다. Greedy로 정확한 답을 찾을 수 있다는 보장이 있을 때는 매우 효과적이고 직관적
+(greedy로 정확한 답이 도출된다는 증명을 머릿속으로 빠르게 할 수 있어야 함) 거스름돈 문제를 그리디 알고리즘으로 해결할 수 있는 이유:
+큰 단위의 동전이 항상 작은 단위 동전의 배수이므로 작은 단위의 동전들을 종합해 더 좋은 해가 나올 수 없기 때문이다. 대부분의 그리디 알고리즘 문제에서는 이처럼 문제 풀이를 위한 최소한의 아이디어를 떠올리고, 이것이 정당한지 검토할 수 있어야 답을 도출할 수 있다. 문제 # 큰 수의 법칙 숫자 카드 게임 1이 될 때까지 Reference # 책 : 이것이 취업을 위한 코딩테스트다 with 파이썬 4. 구현 Implementation # 구현? 머릿속에 있는 알고리즘을 소스코드로 바꾸는 과정 어떤 문제를 풀든 소스코드를 작성하는 과정은 필수이기 때문에 구현 문제는 모든 범위의 문제 유형을 포함한다. 취업 코딩테스트에서는 자주 출제됨 문제에 대한 정확한 풀이 방법이 떠오르면, 프로그래밍 언어로 정확히 구현해내야 함.
+프로그래밍 언어의 문법을 정확히 알고 있어야 하며, 문제의 요구사항에 어긋나지 않는 답안 코드를 작성해야함 구현 유형 문제 : 풀이를 떠올리는 것은 쉽지만, 소스코드로 옮기기 어려운 문제 흔히 개발할 때 프로그래밍 언어의 문법에 능숙하고 코드 작성속도가 빠른 사람을 보고 “피지컬이 좋다"고 한다. 그런 의미에서 구현 유형의 문제는 “피지컬을 요구하는” 문제라고도 할 수 있다. 대체로 사소한 조건 설정이 많은 문제일수록 코드로 구현하기 까다로움 문법을 정확하게 숙지하지 못했거나, 라이브러리 사용 경험이 부족하면 구현 유형에 불리 ‘구현’ 유형으로 풀 수 있는 문제 완전탐색 : 모든 경우의 수를 주저 없이 다 계산하는 해결 방법 시뮬레이션 : 문제에서 제시한 알고리즘을 한 단계씩 차례대로 직접 수행하는 방법 C/C++/JAVA 보다 파이썬에서 상대적으로 쉽게 해결할 수 있다. 구현 시 고려해야 할 메모리 제약 사항 # C/C++/JAVA 정수형 표현 범위 # 정수형 종류 자료형의 크기 자료형의 범위 int 4bytes -2,147,483,648~2,147,438,647 long 8bytes -9,223,372,036,854,775,808~9,223,372,036,854,775,807 BigInterger (클래스) 가변적 제한 없음 대체로 long 에서 다룰 수 있는 수보다 더 큰 정수를 처리하는 문제는 잘 출제되지 않는다. python에서는 직접 자료형을 지정할 필요가 없고, 매우 큰 수의 연산을 기본으로 지원 python에서 실수형 변수는 유효숫자에 따라서 연산 결과가 원하는 값이 나오지 않을 수 있다 (???) Python에서 리스트 크기에 따른 메모리 사용량 # 리스트의 길이 (int 자료형일때) 메모리 사용량 1,000 약 4KB 1,000,000 약 4MB 10,000,000 약 40MB 대체로 코딩테스트에서는 128~512MB로 메모리 제한 리스트 중 크기가 1,000만 이상인 리스트가 있다면 메모리 용량 제한으로 문제를 풀 수 없을 수도 있다. (드뭄) 채점환경 # 일반적으로 시간제한 및 메모리 제한 정보가 적혀있음. python3.7 기준으로 1초에 2,000만번의 연산을 수행한다고 가정하면 큰 무리 없음 시간제한이 1초이고, 데이터 개수가 100만개인 문제가 있다면 시간 복잡도 $O(Nlog_2 N)$ 내에 풀어야 한다. ($log_2 1,000,000$) 시간 제한과 데이터의 개수를 먼저 확인하고, 어느 정도의 시간복잡도 알고리즘을 작성해야할지 예측할 수 있어야 한다. 문제 # 상하좌우 게임개발 시각 왕실의나이트 5. DFS & BFS 자료구조 기초'><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>알고리즘 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/mystudy/algorithm-note/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/ class=active>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -33,4 +213,60 @@
 <label for=section-d62e43e08089551fa5c3188ab2ea83ba class="flex justify-between"><a href=/docs/memo/commands/git/>Git 관련</a></label><ul><li><a href=/docs/memo/commands/git/clone/>clone 관련</a></li><li><a href=/docs/memo/commands/git/cancel/>commit 취소</a></li><li><a href=/docs/memo/commands/git/credential/>credential 관련</a></li><li><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></li><li><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></li></ul></li></ul></li><li><input type=checkbox id=section-232998b4ddb91b0de578d4b83588e89e class=toggle>
 <label for=section-232998b4ddb91b0de578d4b83588e89e class="flex justify-between"><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></label><ul><li><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></li><li><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></li><li><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></li><li><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></li><li><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></li><li><a href=/docs/memo/freq-used-code/file_open/>파일 읽기 python</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
 </label><strong>알고리즘</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/mystudy/algorithm-note/part2/>Part 2</a></dt><dd class=markdown-inner>3. 그리디 알고리즘 Greedy # 단순하지만 강력한 문제 해결 방법 현재 상황에서 지금 당장 좋은 것만 고르는 방법 현재의 선택이 나중에 미칠 영향에 대해서는 고려하지 않음 다익스트라 알고리즘은 엄밀히 말하면 Greedy 알고리즘 보통 코딩테스트에서 출제되는 Greedy 알고리즘 유형의 문제는 창의력, 문제를 풀기 위한 최소한의 아이디어를 떠올릴 수 있는 능력을 요구 Greedy 알고리즘의 정당성 # greedy 알고리즘을 모든 문제에 적용할 수 있는 것은 아니다. Greedy로 정확한 답을 찾을 수 있다는 보장이 있을 때는 매우 효과적이고 직관적 4.</dd><dt><a href=/docs/mystudy/algorithm-note/part3/>Part 3</a></dt><dd class=markdown-inner>그리디 알고리즘</dd><dt><a href=/docs/mystudy/algorithm-note/data_structure/>데이터 구조</a></dt><dd class=markdown-inner>데이터 구조 생각해보기 # 전화번호부 정보는 어떻게 저장하면 좋을까? 은행 번호표 정보는 어떻게 처리하면 좋을까? 서적 정보는 어떻게 관리하면 좋을까? 창고에 쌓인 수화물의 위치를 역순으로 찾을 땐? Python의 기본 데이터 구조 # 스택 & 큐 튜플 & 집합 사전 (dict) collections 모듈 Stack (스택) # 나중에 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조 Last In First Out (LIFO) - 리포구조 Data 입력을 push, 출력을 pop이라고 함 collections 모듈에서 deque 사용 예제 : 입력된 문자열을 역순으로 출력 Queue (큐) # 먼저 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조 First In First Out (FIFO) - 피포구조 Stack과 반대되는 개념 Tuple (튜플) # 값의 변경이 불가능한 리스트 선언시 &ldquo;[ ]&rdquo; 가 아닌 &ldquo;( )&ldquo;를 사용 프로그램이 작동하는 동안 변경되지 않는 데이터 저장할 때 사용</dd><dt><a href=/docs/mystudy/algorithm-note/prime_number_code/>소수 관련 코드</a></dt><dd class=markdown-inner>소수 여부 확인 # def is_prime(n): if n==1: return False for d in range(2, int(n**0.5)+1): if n%d==0: return False return True 약수 구하기 # def solution(n): answer = set() for d in range(1, int(n**0.5)+1): if n%d==0: answer.add(d) answer.add(n//d) return sorted(list(answer)) 최대공약수와 최소공배수 # math 사용 import math math.gcd(a, b) # 최대공약수 math.lcm(a, b) # 최소공배수 직접 구현 # 자연수 a, b의 최대공약수 구하는 함수 def gcd(a, b): if b==0: return a else: return gcd(b, a%b) # 자연수 a, b의 최소공배수 구하는 함수 def lcm(a, b): return a*b//gcd(a,b)</dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/mystudy/algorithm-note/part2/>Part 2</a></dt><dd class=markdown-inner><dl><dt><a href=/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/>3. 그리디 알고리즘</a></dt><dd class=markdown-inner><h1 id=greedy>Greedy
+<a class=anchor href=#greedy>#</a></h1><ul><li>단순하지만 강력한 문제 해결 방법</li><li>현재 상황에서 <strong>지금 당장 좋은 것만</strong> 고르는 방법</li><li><strong>현재의 선택이 나중에 미칠 영향에 대해서는 고려하지 않음</strong></li><li>다익스트라 알고리즘은 엄밀히 말하면 Greedy 알고리즘</li><li>보통 코딩테스트에서 출제되는 Greedy 알고리즘 유형의 문제는 창의력, 문제를 풀기 위한 최소한의 아이디어를 떠올릴 수 있는 능력을 요구</li></ul><h2 id=greedy-알고리즘의-정당성>Greedy 알고리즘의 정당성
+<a class=anchor href=#greedy-%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98%ec%9d%98-%ec%a0%95%eb%8b%b9%ec%84%b1>#</a></h2><ul><li>greedy 알고리즘을 모든 문제에 적용할 수 있는 것은 아니다.</li><li><strong>Greedy로 정확한 답을 찾을 수 있다는 보장이 있을 때</strong>는 매우 효과적이고 직관적<br>(greedy로 정확한 답이 도출된다는 증명을 머릿속으로 빠르게 할 수 있어야 함)</li><li>거스름돈 문제를 그리디 알고리즘으로 해결할 수 있는 이유:<br>큰 단위의 동전이 항상 작은 단위 동전의 배수이므로 작은 단위의 동전들을 종합해 더 좋은 해가 나올 수 없기 때문이다.</li><li>대부분의 그리디 알고리즘 문제에서는 이처럼 문제 풀이를 위한 <strong>최소한의 아이디어</strong>를 떠올리고, <strong>이것이 정당한지 검토할 수 있어야</strong> 답을 도출할 수 있다.</li></ul><h3 id=문제>문제
+<a class=anchor href=#%eb%ac%b8%ec%a0%9c>#</a></h3><ul><li><a href=%ed%81%b0%ec%88%98%ec%9d%98%eb%b2%95%ec%b9%99>큰 수의 법칙</a></li><li><a href=%ec%88%ab%ec%9e%90%ec%b9%b4%eb%93%9c%ea%b2%8c%ec%9e%84>숫자 카드 게임</a></li><li><a href=1%ec%9d%b4%eb%90%a0%eb%95%8c%ea%b9%8c%ec%a7%80>1이 될 때까지</a></li></ul><hr><h3 id=reference>Reference
+<a class=anchor href=#reference>#</a></h3><ul><li>책 : 이것이 취업을 위한 코딩테스트다 with 파이썬</li></ul></dd><dt><a href=/docs/mystudy/algorithm-note/part2/4_%EA%B5%AC%ED%98%84/>4. 구현</a></dt><dd class=markdown-inner><h1 id=implementation>Implementation
+<a class=anchor href=#implementation>#</a></h1><ul><li>구현? <strong>머릿속에 있는 알고리즘을 소스코드로 바꾸는 과정</strong></li><li>어떤 문제를 풀든 소스코드를 작성하는 과정은 필수이기 때문에 구현 문제는 모든 범위의 문제 유형을 포함한다.</li><li>취업 코딩테스트에서는 자주 출제됨</li><li>문제에 대한 정확한 풀이 방법이 떠오르면, 프로그래밍 언어로 정확히 구현해내야 함.<br>프로그래밍 언어의 문법을 정확히 알고 있어야 하며, 문제의 요구사항에 어긋나지 않는 답안 코드를 작성해야함</li><li>구현 유형 문제 : 풀이를 떠올리는 것은 쉽지만, 소스코드로 옮기기 어려운 문제</li><li>흔히 개발할 때 프로그래밍 언어의 문법에 능숙하고 코드 작성속도가 빠른 사람을 보고 &ldquo;피지컬이 좋다"고 한다.<br>그런 의미에서 구현 유형의 문제는 <strong>&ldquo;피지컬을 요구하는&rdquo;</strong> 문제라고도 할 수 있다.</li><li>대체로 사소한 조건 설정이 많은 문제일수록 코드로 구현하기 까다로움</li><li>문법을 정확하게 숙지하지 못했거나, 라이브러리 사용 경험이 부족하면 구현 유형에 불리</li><li>&lsquo;구현&rsquo; 유형으로 풀 수 있는 문제<ul><li>완전탐색 : 모든 경우의 수를 주저 없이 다 계산하는 해결 방법</li><li>시뮬레이션 : 문제에서 제시한 알고리즘을 한 단계씩 차례대로 직접 수행하는 방법</li></ul></li><li>C/C++/JAVA 보다 파이썬에서 상대적으로 쉽게 해결할 수 있다.</li></ul><h2 id=구현-시-고려해야-할-메모리-제약-사항>구현 시 고려해야 할 메모리 제약 사항
+<a class=anchor href=#%ea%b5%ac%ed%98%84-%ec%8b%9c-%ea%b3%a0%eb%a0%a4%ed%95%b4%ec%95%bc-%ed%95%a0-%eb%a9%94%eb%aa%a8%eb%a6%ac-%ec%a0%9c%ec%95%bd-%ec%82%ac%ed%95%ad>#</a></h2><h3 id=ccjava-정수형-표현-범위>C/C++/JAVA 정수형 표현 범위
+<a class=anchor href=#ccjava-%ec%a0%95%ec%88%98%ed%98%95-%ed%91%9c%ed%98%84-%eb%b2%94%ec%9c%84>#</a></h3><table><thead><tr><th style=text-align:left>정수형 종류</th><th style=text-align:left>자료형의 크기</th><th style=text-align:left>자료형의 범위</th></tr></thead><tbody><tr><td style=text-align:left>int</td><td style=text-align:left>4bytes</td><td style=text-align:left>-2,147,483,648~2,147,438,647</td></tr><tr><td style=text-align:left>long</td><td style=text-align:left>8bytes</td><td style=text-align:left>-9,223,372,036,854,775,808~9,223,372,036,854,775,807</td></tr><tr><td style=text-align:left>BigInterger (클래스)</td><td style=text-align:left>가변적</td><td style=text-align:left>제한 없음</td></tr></tbody></table><ul><li>대체로 long 에서 다룰 수 있는 수보다 더 큰 정수를 처리하는 문제는 잘 출제되지 않는다.</li><li>python에서는 직접 자료형을 지정할 필요가 없고, 매우 큰 수의 연산을 기본으로 지원</li><li>python에서 실수형 변수는 유효숫자에 따라서 연산 결과가 원하는 값이 나오지 않을 수 있다 (???)</li></ul><h3 id=python에서-리스트-크기에-따른-메모리-사용량>Python에서 리스트 크기에 따른 메모리 사용량
+<a class=anchor href=#python%ec%97%90%ec%84%9c-%eb%a6%ac%ec%8a%a4%ed%8a%b8-%ed%81%ac%ea%b8%b0%ec%97%90-%eb%94%b0%eb%a5%b8-%eb%a9%94%eb%aa%a8%eb%a6%ac-%ec%82%ac%ec%9a%a9%eb%9f%89>#</a></h3><table><thead><tr><th style=text-align:left>리스트의 길이 (int 자료형일때)</th><th style=text-align:left>메모리 사용량</th></tr></thead><tbody><tr><td style=text-align:left>1,000</td><td style=text-align:left>약 4KB</td></tr><tr><td style=text-align:left>1,000,000</td><td style=text-align:left>약 4MB</td></tr><tr><td style=text-align:left>10,000,000</td><td style=text-align:left>약 40MB</td></tr></tbody></table><ul><li>대체로 코딩테스트에서는 128~512MB로 메모리 제한</li><li>리스트 중 크기가 1,000만 이상인 리스트가 있다면 메모리 용량 제한으로 문제를 풀 수 없을 수도 있다. (드뭄)</li></ul><h3 id=채점환경>채점환경
+<a class=anchor href=#%ec%b1%84%ec%a0%90%ed%99%98%ea%b2%bd>#</a></h3><ul><li>일반적으로 시간제한 및 메모리 제한 정보가 적혀있음.</li><li>python3.7 기준으로 <strong>1초에 2,000만번의 연산</strong>을 수행한다고 가정하면 큰 무리 없음</li><li>시간제한이 1초이고, 데이터 개수가 100만개인 문제가 있다면 시간 복잡도 $O(Nlog_2 N)$ 내에 풀어야 한다. ($log_2 1,000,000$)</li><li>시간 제한과 데이터의 개수를 먼저 확인하고, 어느 정도의 <strong>시간복잡도</strong> 알고리즘을 작성해야할지 <strong>예측</strong>할 수 있어야 한다.</li></ul><h3 id=문제>문제
+<a class=anchor href=#%eb%ac%b8%ec%a0%9c>#</a></h3><ul><li><a href=%ec%83%81%ed%95%98%ec%a2%8c%ec%9a%b0>상하좌우</a></li><li><a href=%ea%b2%8c%ec%9e%84-%ea%b0%9c%eb%b0%9c>게임개발</a></li><li><a href=%ec%8b%9c%ea%b0%81>시각</a></li><li><a href=%ec%99%95%ec%8b%a4%ec%9d%98%eb%82%98%ec%9d%b4%ed%8a%b8>왕실의나이트</a></li></ul></dd><dt><a href=/docs/mystudy/algorithm-note/part2/5_dfs_bfs/>5. DFS & BFS</a></dt><dd class=markdown-inner><p><a href=DataStructure>자료구조 기초</a></p></dd><dt><a href=/docs/mystudy/algorithm-note/part3/>Part 3</a></dt><dd class=markdown-inner><dl><dt><a href=/docs/mystudy/algorithm-note/part3/11_greedy/>그리디 알고리즘</a></dt><dd class=markdown-inner></dd></dl></dd><dt><a href=/docs/mystudy/algorithm-note/data_structure/>데이터 구조</a></dt><dd class=markdown-inner><h3 id=데이터-구조-생각해보기>데이터 구조 생각해보기
+<a class=anchor href=#%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b5%ac%ec%a1%b0-%ec%83%9d%ea%b0%81%ed%95%b4%eb%b3%b4%ea%b8%b0>#</a></h3><ul><li>전화번호부 정보는 어떻게 저장하면 좋을까?</li><li>은행 번호표 정보는 어떻게 처리하면 좋을까?</li><li>서적 정보는 어떻게 관리하면 좋을까?</li><li>창고에 쌓인 수화물의 위치를 역순으로 찾을 땐?</li></ul><h1 id=python의-기본-데이터-구조>Python의 기본 데이터 구조
+<a class=anchor href=#python%ec%9d%98-%ea%b8%b0%eb%b3%b8-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b5%ac%ec%a1%b0>#</a></h1><ul><li>스택 & 큐</li><li>튜플 & 집합</li><li>사전 (dict)</li><li>collections 모듈</li></ul><h2 id=stack-스택>Stack (스택)
+<a class=anchor href=#stack-%ec%8a%a4%ed%83%9d>#</a></h2><ul><li>나중에 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조</li><li>Last In First Out (LIFO) - 리포구조</li><li>Data 입력을 push, 출력을 pop이라고 함</li><li>collections 모듈에서 deque 사용</li><li>예제 : 입력된 문자열을 역순으로 출력</li></ul><h2 id=queue-큐>Queue (큐)
+<a class=anchor href=#queue-%ed%81%90>#</a></h2><ul><li>먼저 넣은 데이터를 먼저 반환하도록 설계된 메모리 구조</li><li>First In First Out (FIFO) - 피포구조</li><li>Stack과 반대되는 개념</li></ul><h2 id=tuple-튜플>Tuple (튜플)
+<a class=anchor href=#tuple-%ed%8a%9c%ed%94%8c>#</a></h2><ul><li>값의 변경이 불가능한 리스트</li><li>선언시 &ldquo;[ ]&rdquo; 가 아닌 &ldquo;( )&ldquo;를 사용</li><li>프로그램이 작동하는 동안 변경되지 않는 데이터 저장할 때 사용<br>예) 학번, 이름, 우편번호 등등</li><li>함수의 반환 값 등 사용자의 실수에 의한 에러 사전에 방지</li></ul><h2 id=set-집합>Set (집합)
+<a class=anchor href=#set-%ec%a7%91%ed%95%a9>#</a></h2><ul><li>값의 순서없이 저장</li><li>중복 불허하는 자료형</li><li><code>set( [1,2,3,4,5] )</code> 혹은 <code>{1,2,3,4,5}</code> 로 선언</li></ul><h2 id=dict-사전>Dict (사전)
+<a class=anchor href=#dict-%ec%82%ac%ec%a0%84>#</a></h2><ul><li>구분을 위한 데이터 고유 값을 Identifier 또는 key라고 한다</li><li>Key값을 활용하여, 데이터 값 (Value)를 관리함</li><li>다른 언어에서는 Hash Table이라는 용어를 사용</li></ul><h2 id=collections-모듈>collections 모듈
+<a class=anchor href=#collections-%eb%aa%a8%eb%93%88>#</a></h2><ul><li>deque<ul><li>rotate, reverse등 Linked List의 특성을 지원함</li><li>기존 list 형태의 함수를 모두 지원함</li><li>pop, push 외에 다양한 method들: rotate, extend, extendleft</li><li>기존의 list보다 효율적인 자료구조 제공</li><li>효율적 메모리 구조로 처리속도 향상</li></ul></li><li>OrderedDict<ul><li>Dict와 달리 데이터를 입력한 순서대로 dict 반환</li><li>python 3.6버전 부터는 기본dict 도 순서를 보장하여 출력한다</li></ul></li><li>defaultdict<ul><li>Dict type의 값에 기본 값을 지정하여 초기값 정해줌</li></ul></li><li>Counter<ul><li>Sequence type의 데이터 원소의 갯수를 dict 형태로 반환</li><li>Set 의 연산들을 지원</li></ul></li><li>namedtuple<ul><li>Tuple 형태로 Data 구조체를 저장하는 방법</li><li>저장되는 data의 variable을 사전에 지정해서 저장(?)</li></ul></li></ul><h2 id=외-기타-알면-좋은-python>외 기타 알면 좋은 python
+<a class=anchor href=#%ec%99%b8-%ea%b8%b0%ed%83%80-%ec%95%8c%eb%a9%b4-%ec%a2%8b%ec%9d%80-python>#</a></h2><pre tabindex=0><code>%timeit &lt;FUNC_NAME&gt;()
+</code></pre><p>위 함수를 여러번 돌려봐서 평균소요시간과 분산까지 알려줌</p></dd><dt><a href=/docs/mystudy/algorithm-note/prime_number_code/>소수 관련 코드</a></dt><dd class=markdown-inner><h3 id=소수-여부-확인>소수 여부 확인
+<a class=anchor href=#%ec%86%8c%ec%88%98-%ec%97%ac%eb%b6%80-%ed%99%95%ec%9d%b8>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>is_prime</span>(n):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n<span style=color:#f92672>==</span><span style=color:#ae81ff>1</span>: 
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> d <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>2</span>, int(n<span style=color:#f92672>**</span><span style=color:#ae81ff>0.5</span>)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> n<span style=color:#f92672>%</span>d<span style=color:#f92672>==</span><span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span></code></pre></div><p> </p><h3 id=약수-구하기>약수 구하기
+<a class=anchor href=#%ec%95%bd%ec%88%98-%ea%b5%ac%ed%95%98%ea%b8%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>solution</span>(n):
+</span></span><span style=display:flex><span>    answer <span style=color:#f92672>=</span> set()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> d <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, int(n<span style=color:#f92672>**</span><span style=color:#ae81ff>0.5</span>)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> n<span style=color:#f92672>%</span>d<span style=color:#f92672>==</span><span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            answer<span style=color:#f92672>.</span>add(d)
+</span></span><span style=display:flex><span>            answer<span style=color:#f92672>.</span>add(n<span style=color:#f92672>//</span>d)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> sorted(list(answer))
+</span></span></code></pre></div><p> </p><h3 id=최대공약수와-최소공배수>최대공약수와 최소공배수
+<a class=anchor href=#%ec%b5%9c%eb%8c%80%ea%b3%b5%ec%95%bd%ec%88%98%ec%99%80-%ec%b5%9c%ec%86%8c%ea%b3%b5%eb%b0%b0%ec%88%98>#</a></h3><div class=book-tabs><input type=radio class=toggle name=tabs-gcd-lcm id=tabs-gcd-lcm-0 checked>
+<label for=tabs-gcd-lcm-0>math 사용</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> math
+</span></span><span style=display:flex><span>math<span style=color:#f92672>.</span>gcd(a, b)  <span style=color:#75715e># 최대공약수</span>
+</span></span><span style=display:flex><span>math<span style=color:#f92672>.</span>lcm(a, b)  <span style=color:#75715e># 최소공배수</span>
+</span></span></code></pre></div></div><input type=radio class=toggle name=tabs-gcd-lcm id=tabs-gcd-lcm-1>
+<label for=tabs-gcd-lcm-1>직접 구현</label><div class="book-tabs-content markdown-inner"><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 자연수 a, b의 최대공약수 구하는 함수</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>gcd</span>(a, b):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> b<span style=color:#f92672>==</span><span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> a
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> gcd(b, a<span style=color:#f92672>%</span>b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 자연수 a, b의 최소공배수 구하는 함수</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lcm</span>(a, b):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> a<span style=color:#f92672>*</span>b<span style=color:#f92672>//</span>gcd(a,b)
+</span></span></code></pre></div></div></div></dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

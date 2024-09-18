@@ -1,12 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo로 github 블로그 만들기 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/</link><description>Recent content in Hugo로 github 블로그 만들기 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/hugo-blog/index.xml" rel="self" type="application/rss+xml"/><item><title>셋팅 및 시작</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/1_%EC%84%A4%EC%B9%98/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hugo-blog/1_%EC%84%A4%EC%B9%98/</guid><description>Intro # Ref # https://github.com/Integerous/Integerous.github.io
-https://ialy1595.github.io/post/blog-construct-1/
-How to # 1. Hugo 설치 # hugo 공식깃헙에서 다운로드
-윈도우를 사용하고, 추가 기능이 필요할지 몰라 extended 버전인 hugo_extended_0.121.0_windows-amd64을 받았다. C:\Hugo\bin 디렉토리 생성해서 다운받은 압축파일 해제 환경변수에 Hugo 영구적으로 추가 $ setx PATH=%PATH%C:\Hugo\bin; hugo 실행 확인
-hugo version 또는 hugo help 명령어 2. Gihub 레포 셋팅 # Blog 저장소 Private으로 생성 (저장소명 다르게해도 됨) &amp;lt;USERNAME&amp;gt;.github.io 저장소 생성 Blog 레포를 로컬에 clone한다. git clone https://github.</description></item><item><title>컨텐츠 연결</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/2_%EC%BB%A8%ED%85%90%EC%B8%A0%EC%97%B0%EA%B2%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hugo-blog/2_%EC%BB%A8%ED%85%90%EC%B8%A0%EC%97%B0%EA%B2%B0/</guid><description> git 서브모듈 사용하여 컨텐츠 연결 # 나는 기존에 깃헙레포를 노트처럼 사용하면서 공부한 내용들을 적어두고 있었다 그래서 그 레포를 블로그에 연결하고자 submodule을 사용했다.
-1. 컨텐츠 디렉토리로 이동 # cd content/docs 2. 저장소 submodule로 추가 # git submodule add {저장소의 URL} 3. 변경내용 add, commit, push # cd Blog/ git add . git commit -m &amp;#34;{커밋메시지}&amp;#34; git push</description></item><item><title>자동 업로드</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/3_%EC%9E%90%EB%8F%99%EC%97%85%EB%A1%9C%EB%93%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hugo-blog/3_%EC%9E%90%EB%8F%99%EC%97%85%EB%A1%9C%EB%93%9C/</guid><description>Github Action을 사용하여 컨텐츠 업로드 자동화하기 # ref # 코드인용
-action 공부
-https://somaz.tistory.com/213#google_vignette
-https://fe-developers.kakaoent.com/2022/220106-github-actions/
-https://velog.io/@adam2/Github-Action-%EC%A3%BC%EC%9A%94-%EB%AC%B8%EB%B2%95
-https://kotlinworld.com/400
-1. 토큰 발급 # https://github.com 에서 우측 상단 프로필 클릭 Settings 클릭 좌측 바 하단의 Developer Settings 클릭 Personal access tockens 클릭 Generate new token 클릭 블로그 관련 모든 레포에 대한 권한을 부여한 토큰 생성 토큰 복사 2. Secret 등록 # github에서 Blog 저장소 접속 상단 바에서 Settings 클릭 좌측 네비게이션 바에서 Secrets and variables &amp;gt; Actions 클릭 New repository secret 클릭 NAME은 TOKEN으로 Secret에는 복사한 토큰을 붙여넣기 하여 등록 서브모듈 저장소들에도 위와 같은 방법으로 Secret 등록 2.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo로 github 블로그 만들기 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/</link><description>Recent content in Hugo로 github 블로그 만들기 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/hugo-blog/index.xml" rel="self" type="application/rss+xml"/><item><title>셋팅 및 시작</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/1_%EC%84%A4%EC%B9%98/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hugo-blog/1_%EC%84%A4%EC%B9%98/</guid><description>&lt;h2 id="intro">
+ Intro
+ &lt;a class="anchor" href="#intro">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="ref">
+ Ref
+ &lt;a class="anchor" href="#ref">#&lt;/a>
+&lt;/h3>
+&lt;p>&lt;a href="https://github.com/Integerous/Integerous.github.io">https://github.com/Integerous/Integerous.github.io&lt;/a>&lt;br>
+&lt;a href="https://ialy1595.github.io/post/blog-construct-1/">https://ialy1595.github.io/post/blog-construct-1/&lt;/a>&lt;/p>
+&lt;p> &lt;/p>
+&lt;h2 id="how-to">
+ How to
+ &lt;a class="anchor" href="#how-to">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="1-hugo-설치">
+ &lt;strong>1. Hugo 설치&lt;/strong>
+ &lt;a class="anchor" href="#1-hugo-%ec%84%a4%ec%b9%98">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/gohugoio/hugo/releases">hugo 공식깃헙&lt;/a>에서 다운로드&lt;br>
+윈도우를 사용하고, 추가 기능이 필요할지 몰라 extended 버전인 hugo_extended_0.121.0_windows-amd64을 받았다.&lt;/li>
+&lt;li>C:\Hugo\bin 디렉토리 생성해서 다운받은 압축파일 해제&lt;/li>
+&lt;li>환경변수에 Hugo 영구적으로 추가
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ setx PATH&lt;span style="color:#f92672">=&lt;/span>%PATH%C:&lt;span style="color:#ae81ff">\H&lt;/span>ugo&lt;span style="color:#ae81ff">\b&lt;/span>in;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>hugo 실행 확인&lt;br>
+&lt;code>hugo version&lt;/code> 또는 &lt;code>hugo help&lt;/code> 명령어&lt;/li>
+&lt;/ol>
+&lt;p> &lt;/p>
+&lt;h3 id="2-gihub-레포-셋팅">
+ &lt;strong>2. Gihub 레포 셋팅&lt;/strong>
+ &lt;a class="anchor" href="#2-gihub-%eb%a0%88%ed%8f%ac-%ec%85%8b%ed%8c%85">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>Blog 저장소 Private으로 생성 (저장소명 다르게해도 됨)&lt;/li>
+&lt;li>&lt;code>&amp;lt;USERNAME&amp;gt;.github.io&lt;/code> 저장소 생성&lt;/li>
+&lt;li>Blog 레포를 로컬에 clone한다.
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/&amp;lt;USERNAME&amp;gt;/Blog.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>&amp;lt;USERNAME&amp;gt;.github.io를 Blog의 서브모듈로 등록 (public 폴더로)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git submodule add -b master https://github.com/&amp;lt;USERNAME&amp;gt;/Blog.git public
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p> &lt;/p></description></item><item><title>컨텐츠 연결</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/2_%EC%BB%A8%ED%85%90%EC%B8%A0%EC%97%B0%EA%B2%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hugo-blog/2_%EC%BB%A8%ED%85%90%EC%B8%A0%EC%97%B0%EA%B2%B0/</guid><description>&lt;h2 id="git-서브모듈-사용하여-컨텐츠-연결">
+ git 서브모듈 사용하여 컨텐츠 연결
+ &lt;a class="anchor" href="#git-%ec%84%9c%eb%b8%8c%eb%aa%a8%eb%93%88-%ec%82%ac%ec%9a%a9%ed%95%98%ec%97%ac-%ec%bb%a8%ed%85%90%ec%b8%a0-%ec%97%b0%ea%b2%b0">#&lt;/a>
+&lt;/h2>
+&lt;p>나는 기존에 깃헙레포를 노트처럼 사용하면서 공부한 내용들을 적어두고 있었다
+그래서 그 레포를 블로그에 연결하고자 submodule을 사용했다.&lt;/p>
+&lt;h3 id="1-컨텐츠-디렉토리로-이동">
+ 1. 컨텐츠 디렉토리로 이동
+ &lt;a class="anchor" href="#1-%ec%bb%a8%ed%85%90%ec%b8%a0-%eb%94%94%eb%a0%89%ed%86%a0%eb%a6%ac%eb%a1%9c-%ec%9d%b4%eb%8f%99">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd content/docs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-저장소-submodule로-추가">
+ 2. 저장소 submodule로 추가
+ &lt;a class="anchor" href="#2-%ec%a0%80%ec%9e%a5%ec%86%8c-submodule%eb%a1%9c-%ec%b6%94%ea%b0%80">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git submodule add &lt;span style="color:#f92672">{&lt;/span>저장소의 URL&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-변경내용-add-commit-push">
+ 3. 변경내용 add, commit, push
+ &lt;a class="anchor" href="#3-%eb%b3%80%ea%b2%bd%eb%82%b4%ec%9a%a9-add-commit-push">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd Blog/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#e6db74">&amp;#34;{커밋메시지}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>자동 업로드</title><link>https://yera10.github.io/docs/mystudy/hugo-blog/3_%EC%9E%90%EB%8F%99%EC%97%85%EB%A1%9C%EB%93%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/hugo-blog/3_%EC%9E%90%EB%8F%99%EC%97%85%EB%A1%9C%EB%93%9C/</guid><description>&lt;h2 id="github-action을-사용하여-컨텐츠-업로드-자동화하기">
+ Github Action을 사용하여 컨텐츠 업로드 자동화하기
+ &lt;a class="anchor" href="#github-action%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%98%ec%97%ac-%ec%bb%a8%ed%85%90%ec%b8%a0-%ec%97%85%eb%a1%9c%eb%93%9c-%ec%9e%90%eb%8f%99%ed%99%94%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="ref">
+ ref
+ &lt;a class="anchor" href="#ref">#&lt;/a>
+&lt;/h3>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/64407333/using-github-actions-to-automatically-update-the-repos-submodules">코드인용&lt;/a>&lt;br>
+action 공부&lt;br>
+&lt;a href="https://somaz.tistory.com/213#google_vignette">https://somaz.tistory.com/213#google_vignette&lt;/a>&lt;br>
+&lt;a href="https://fe-developers.kakaoent.com/2022/220106-github-actions/">https://fe-developers.kakaoent.com/2022/220106-github-actions/&lt;/a>&lt;br>
+&lt;a href="https://velog.io/@adam2/Github-Action-%EC%A3%BC%EC%9A%94-%EB%AC%B8%EB%B2%95">https://velog.io/@adam2/Github-Action-%EC%A3%BC%EC%9A%94-%EB%AC%B8%EB%B2%95&lt;/a>&lt;br>
+&lt;a href="https://kotlinworld.com/400">https://kotlinworld.com/400&lt;/a>&lt;/p>
+&lt;p> &lt;/p>
+&lt;h3 id="1-토큰-발급">
+ 1. 토큰 발급
+ &lt;a class="anchor" href="#1-%ed%86%a0%ed%81%b0-%eb%b0%9c%ea%b8%89">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com">https://github.com&lt;/a> 에서 우측 상단 프로필 클릭&lt;/li>
+&lt;li>Settings 클릭&lt;/li>
+&lt;li>좌측 바 하단의 Developer Settings 클릭&lt;/li>
+&lt;li>Personal access tockens 클릭&lt;/li>
+&lt;li>Generate new token 클릭&lt;/li>
+&lt;li>블로그 관련 모든 레포에 대한 권한을 부여한 토큰 생성&lt;/li>
+&lt;li>토큰 복사&lt;/li>
+&lt;/ol>
+&lt;p> &lt;/p>
+&lt;h3 id="2-secret-등록">
+ 2. Secret 등록
+ &lt;a class="anchor" href="#2-secret-%eb%93%b1%eb%a1%9d">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>github에서 Blog 저장소 접속&lt;/li>
+&lt;li>상단 바에서 Settings 클릭&lt;/li>
+&lt;li>좌측 네비게이션 바에서 Secrets and variables &amp;gt; Actions 클릭&lt;/li>
+&lt;li>New repository secret 클릭&lt;/li>
+&lt;li>NAME은 TOKEN으로 Secret에는 복사한 토큰을 붙여넣기 하여 등록&lt;/li>
+&lt;li>서브모듈 저장소들에도 위와 같은 방법으로 Secret 등록&lt;/li>
+&lt;/ol>
+&lt;p> &lt;/p></description></item></channel></rss>

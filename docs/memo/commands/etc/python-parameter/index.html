@@ -1,5 +1,96 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="python 실행파일 인자값 받기 # 1. sys.argv # test.py 가 아래와 같은 파일이고, import sys print(sys.argv) 아래 명령어를 실행하면, $ python test.py abc hello name 출력은 아래와 같다. ['test.py', 'abc', 'hello', 'name'] sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감 2. configparser # 아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용 config file (확장자 .cfg) [SectionOne] # Section - 대괄호 Status: Single # 속성 - Key : Value Name: Derek Value: Yes Age: 30 [SectionTwo] FavoriteColor = Green # :(콜론)을 써도 되고, =(equal)을 써도 된다."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content="python 실행파일 인자값 받기"><meta property="og:description" content="python 실행파일 인자값 받기 # 1. sys.argv # test.py 가 아래와 같은 파일이고, import sys print(sys.argv) 아래 명령어를 실행하면, $ python test.py abc hello name 출력은 아래와 같다. ['test.py', 'abc', 'hello', 'name'] sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감 2. configparser # 아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용 config file (확장자 .cfg) [SectionOne] # Section - 대괄호 Status: Single # 속성 - Key : Value Name: Derek Value: Yes Age: 30 [SectionTwo] FavoriteColor = Green # :(콜론)을 써도 되고, =(equal)을 써도 된다."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/etc/python-parameter/"><meta property="article:section" content="docs"><title>python 실행파일 인자값 받기 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  python 실행파일 인자값 받기
+  #
+
+
+  1. sys.argv
+  #
+
+
+test.py 가 아래와 같은 파일이고,
+
+import sys
+print(sys.argv)
+
+아래 명령어를 실행하면,
+
+$ python test.py abc hello name
+
+출력은 아래와 같다.
+
+['test.py', 'abc', 'hello', 'name']
+
+sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감
+
+
+  2. configparser
+  #
+
+
+아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용
+config file (확장자 .cfg)
+
+[SectionOne]    # Section - 대괄호 
+Status: Single    # 속성 - Key : Value
+Name: Derek
+Value: Yes
+Age: 30
+
+[SectionTwo]
+FavoriteColor = Green    # :(콜론)을 써도 되고, =(equal)을 써도 된다. 
+
+[SectionThree]
+FamilyName: Johnson
+
+위 파일을 읽어들여 사용하는 아래 파일을 실행시키면 됨
+
+import configparser
+config = configparser.ConfigParser()
+config.sections()   # 빈 List
+
+config.read('example.cfg')
+config.sections()   # Section Name들 List
+
+for sec in config.sections():
+    print(f'---{sec}---')
+    for key in config[sec]:
+        value = config[sec][key]
+        print('{0} : {1}'.format(key, value))
+
+  3. argparse
+  #
+
+
+args_test.py 가 아래와 같은 파일일 때,
+
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='ArgumentParser Tutorial')
+    parser.add_argument('a', help='parameter description')
+    group_gpus.add_argument(&#34;-b&#34;, &#34;--bparam&#34;, type=int, default=0, help='b parameter description')
+
+    args = parser.parse_args()
+    return args
+
+def main():
+    args = parse_args()
+    print(args.a)
+    print(args.bparam)
+
+if __name__ == &#34;__main__&#34;:
+    main()
+
+아래와 같은 명령어를 실행하면
+
+$ python args_test.py &#34;hello&#34; -b &#34;world&#34;
+
+아래와 같이 출력됨
+
+hello
+world
+ref"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/commands/etc/python-parameter/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="python 실행파일 인자값 받기"><meta property="og:description" content=" python 실행파일 인자값 받기 # 1. sys.argv # test.py 가 아래와 같은 파일이고, import sys print(sys.argv) 아래 명령어를 실행하면, $ python test.py abc hello name 출력은 아래와 같다. ['test.py', 'abc', 'hello', 'name'] sys.argv는 리스트이고, [0]은 무조건 실행파일명, 그 다움 순서대로 입력받은 인자값이 리스트에 들어감 2. configparser # 아래와 같이 Section, Key, Value 값의 형태로 설정된 설정 파일을 사용 config file (확장자 .cfg) [SectionOne] # Section - 대괄호 Status: Single # 속성 - Key : Value Name: Derek Value: Yes Age: 30 [SectionTwo] FavoriteColor = Green # :(콜론)을 써도 되고, =(equal)을 써도 된다. [SectionThree] FamilyName: Johnson 위 파일을 읽어들여 사용하는 아래 파일을 실행시키면 됨 import configparser config = configparser.ConfigParser() config.sections() # 빈 List config.read('example.cfg') config.sections() # Section Name들 List for sec in config.sections(): print(f'---{sec}---') for key in config[sec]: value = config[sec][key] print('{0} : {1}'.format(key, value)) 3. argparse # args_test.py 가 아래와 같은 파일일 때, import argparse def parse_args(): parser = argparse.ArgumentParser(description='ArgumentParser Tutorial') parser.add_argument('a', help='parameter description') group_gpus.add_argument(&#34;-b&#34;, &#34;--bparam&#34;, type=int, default=0, help='b parameter description') args = parser.parse_args() return args def main(): args = parse_args() print(args.a) print(args.bparam) if __name__ == &#34;__main__&#34;: main() 아래와 같은 명령어를 실행하면 $ python args_test.py &#34;hello&#34; -b &#34;world&#34; 아래와 같이 출력됨 hello world ref"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>python 실행파일 인자값 받기 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>

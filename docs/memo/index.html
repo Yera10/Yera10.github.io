@@ -1,5 +1,74 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Pytorch Nn torch.nn # 공식문서 Convolutional Layers # Conv1d, Conv2d, Conv3d 차이 # 3D Convolution Ref Conv1d, Conv2d, Conv3d 차이 설명 파이토치 데이터 모듈 Dataset 관련 모듈 # torch.utils.data 데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈 파이토치 모델을 학습시키기 위한 데이터셋의 표준을 torch.utils.data.Datase에 정의 Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 torch.utils.data.DataLoader 인스턴스의 입력으로 사용할 수 있다 torchvision.dataset torch.utils.data.Dataset을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공 torchtext."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content="메모장"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://yera10.github.io/docs/memo/"><title>메모장 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+
+  
+    Pytorch
+  
+  
+    
+
+  
+    Nn
+  
+  
+    
+  torch.nn
+  #
+
+공식문서
+
+  Convolutional Layers
+  #
+
+
+  Conv1d, Conv2d, Conv3d 차이
+  #
+
+
+3D Convolution Ref
+Conv1d, Conv2d, Conv3d 차이 설명
+
+  
+  
+  
+    파이토치 데이터 모듈
+  
+  
+    
+  Dataset 관련 모듈
+  #
+
+
+torch.utils.data
+
+데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈
+파이토치 모델을 학습시키기 위한 데이터셋의 표준을 torch.utils.data.Datase에 정의
+Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 torch.utils.data.DataLoader 인스턴스의 입력으로 사용할 수 있다
+
+
+torchvision.dataset
+
+torch.utils.data.Dataset을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공
+
+
+torchtext.dataset
+
+torch.utils.data.Dataset을 상속하는 텍스트 데이터셋의 모음으로, 기본적으로 IMDb나 AG_NEWS와 같은 데이터셋을 제공
+
+
+torchvision.transforms
+
+이미지 데이터셋에 쓸 수 있는 여러 가지 변환 필터를 담고 있는 모듈
+
+
+torchvision.utils
+
+이미지 데이터를 저장하고 시각화하기 위한 도구가 들어있는 모듈
+
+
+
+ "><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/memo/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="메모장"><meta property="og:description" content=" Pytorch Nn torch.nn # 공식문서
+Convolutional Layers # Conv1d, Conv2d, Conv3d 차이 # 3D Convolution Ref Conv1d, Conv2d, Conv3d 차이 설명 파이토치 데이터 모듈 Dataset 관련 모듈 # torch.utils.data 데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈 파이토치 모델을 학습시키기 위한 데이터셋의 표준을 torch.utils.data.Datase에 정의 Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 torch.utils.data.DataLoader 인스턴스의 입력으로 사용할 수 있다 torchvision.dataset torch.utils.data.Dataset을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공 torchtext.dataset torch.utils.data.Dataset을 상속하는 텍스트 데이터셋의 모음으로, 기본적으로 IMDb나 AG_NEWS와 같은 데이터셋을 제공 torchvision.transforms 이미지 데이터셋에 쓸 수 있는 여러 가지 변환 필터를 담고 있는 모듈 torchvision.utils 이미지 데이터를 저장하고 시각화하기 위한 도구가 들어있는 모듈 "><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>메모장 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script><link rel=alternate type=application/rss+xml href=https://yera10.github.io/docs/memo/index.xml title="이세상의 모든 노트"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle>
@@ -33,25 +102,55 @@
 <label for=section-d62e43e08089551fa5c3188ab2ea83ba class="flex justify-between"><a href=/docs/memo/commands/git/>Git 관련</a></label><ul><li><a href=/docs/memo/commands/git/clone/>clone 관련</a></li><li><a href=/docs/memo/commands/git/cancel/>commit 취소</a></li><li><a href=/docs/memo/commands/git/credential/>credential 관련</a></li><li><a href=/docs/memo/commands/git/submodule/>서브모듈 관련</a></li><li><a href=/docs/memo/commands/git/initial_setup/>초기설정 관련</a></li></ul></li></ul></li><li><input type=checkbox id=section-232998b4ddb91b0de578d4b83588e89e class=toggle>
 <label for=section-232998b4ddb91b0de578d4b83588e89e class="flex justify-between"><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></label><ul><li><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></li><li><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></li><li><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></li><li><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></li><li><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></li><li><a href=/docs/memo/freq-used-code/file_open/>파일 읽기 python</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
 </label><strong>메모장</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/pytorch-study/>Pytorch</a></dt><dd class=markdown-inner>Nn torch.nn # 공식문서 Convolutional Layers # Conv1d, Conv2d, Conv3d 차이 # 3D Convolution Ref Conv1d, Conv2d, Conv3d 차이 설명 파이토치 데이터 모듈 Dataset 관련 모듈 # torch.utils.data 데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈 파이토치 모델을 학습시키기 위한 데이터셋의 표준을 torch.utils.data.Datase에 정의 Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 torch.utils.data.DataLoader 인스턴스의 입력으로 사용할 수 있다 torchvision.dataset torch.utils.data.Dataset을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공 torchtext.</dd><dt><a href=/docs/memo/omg-error/>오마이갓 에러극복</a></dt><dd class=markdown-inner>poetry 가상환경에 jupyter 설치 안됨 에러 발생 # poetry로 의존성을 관리하고 있었고, poetry의 가상환경으로 jupyter notebook을 작성하기 위해 poetry add jupyter ipykernel 을 입력했다. attrs라는 패키지를 설치하다가 failed. 또잉? 에러메세지를 검색해봤지만, 모르겠어서 일단 poetry 패키지를 살펴보려고 poetry show를입력했는데, 이러한 메세지가 뜨는 것.. 내 가상환경이 부러졌다고..? The currently activated Python version 3.9.13 is not supported by the project (^3.11). Trying to find and use a compatible version. Using python3.11 (3.11.5) The virtual environment found in C:\git\ddareung\.</dd><dt><a href=/docs/memo/commands/>자주 쓰는 명령어들</a></dt><dd class=markdown-inner>Git 관련 # commit 취소
-credentail 관련
-clone 관련
-최초 설정 관련
-Linux # 파일 생성/이동/복사/삭제
-백그라운드 관련 명령어
-Ubuntu Screen 명령어
-GPU 관련
-압축해제
-conda # 가상환경 관련
-Poetry # Poetry 시작하기
-가상환경 관련
-의존성 관련
-내보내기(requirements.txt)
-기타 # python3의 venv 사용법
-python3 서버열기
-python의 인자값 받기
-Docker 명령어
-VSCode 단축키
-터미널 테마</dd><dt><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></dt><dd class=markdown-inner>자주 찾아보는 도큐먼트들 # Pandas
-최신글 # 간단한 히스토그램 python import matplotlib.pyplot as plt plt.hist(data, bins=bin_num) import matplotlib.pyplot as plt import numpy as np cnts, bins = np.histogram(data, bin_num) plt.his(data, bins) 경고 무시 python python 경고 무시하기 # import warnings warnings.filterwarnings(action='ignore') 시간 측정 python 코드 시간 측정하기 # import time start = time.time() ### 실행코드 ### end = time.time() print(end-start) # 초단위 예쁘게 출력(pprint) python import pprint pprint.pprint(복잡한 json, dict 파일 등) 파일 압축 python 파일 압축 # import zipfile zf = zipfile.</dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/Yera10/Blog/commit/c0efe24bfb4fe8eea450f5e2ef5ccb5f56d6ecfc title='Last modified by Yera Lee | March 5, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><dl><dt><a href=/docs/memo/pytorch-study/>Pytorch</a></dt><dd class=markdown-inner><dl><dt><a href=/docs/memo/pytorch-study/nn/>Nn</a></dt><dd class=markdown-inner><h1 id=torchnn>torch.nn
+<a class=anchor href=#torchnn>#</a></h1><p><a href=https://pytorch.org/docs/stable/nn.html>공식문서</a></p><h2 id=convolutional-layers>Convolutional Layers
+<a class=anchor href=#convolutional-layers>#</a></h2><h3 id=conv1d-conv2d-conv3d-차이>Conv1d, Conv2d, Conv3d 차이
+<a class=anchor href=#conv1d-conv2d-conv3d-%ec%b0%a8%ec%9d%b4>#</a></h3><ul><li><a href=https://medium.com/@parkie0517/3d-convolution-%EC%99%84%EC%A0%84-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0-using-pytorch-conv3d-4fab52c527d6>3D Convolution Ref</a></li><li><a href=https://leeejihyun.tistory.com/37>Conv1d, Conv2d, Conv3d 차이 설명</a></li></ul></dd><dt><a href=/docs/memo/pytorch-study/dataset_module/>파이토치 데이터 모듈</a></dt><dd class=markdown-inner><h2 id=dataset-관련-모듈>Dataset 관련 모듈
+<a class=anchor href=#dataset-%ea%b4%80%eb%a0%a8-%eb%aa%a8%eb%93%88>#</a></h2><ol><li>torch.utils.data<ul><li>데이터셋의 표준을 정의하고 데이터셋을 불러오고 자르고 섞는데 쓰는 도구들이 들어있는 모듈</li><li>파이토치 모델을 학습시키기 위한 데이터셋의 표준을 <code>torch.utils.data.Datase</code>에 정의</li><li>Dataset 모듈을 상속하는 파생 클래스는 학습에 필요한 데이터를 로딩해주는 <code>torch.utils.data.DataLoader</code> 인스턴스의 입력으로 사용할 수 있다</li></ul></li><li>torchvision.dataset<ul><li><code>torch.utils.data.Dataset</code>을 상속하는 이미지 데이터셋의 모음으로, MNIST나 CIFAR-10과 같은 데이터셋을 제공</li></ul></li><li>torchtext.dataset<ul><li><code>torch.utils.data.Dataset</code>을 상속하는 텍스트 데이터셋의 모음으로, 기본적으로 IMDb나 AG_NEWS와 같은 데이터셋을 제공</li></ul></li><li>torchvision.transforms<ul><li>이미지 데이터셋에 쓸 수 있는 여러 가지 변환 필터를 담고 있는 모듈</li></ul></li><li>torchvision.utils<ul><li>이미지 데이터를 저장하고 시각화하기 위한 도구가 들어있는 모듈</li></ul></li></ol><p> </p></dd><dt><a href=/docs/memo/omg-error/>오마이갓 에러극복</a></dt><dd class=markdown-inner><dl><dt><a href=/docs/memo/omg-error/poetry_venv_broken/>poetry 가상환경에 jupyter 설치 안됨</a></dt><dd class=markdown-inner><h2 id=에러-발생>에러 발생
+<a class=anchor href=#%ec%97%90%eb%9f%ac-%eb%b0%9c%ec%83%9d>#</a></h2><p>poetry로 의존성을 관리하고 있었고, poetry의 가상환경으로 jupyter notebook을 작성하기 위해 <code>poetry add jupyter ipykernel</code> 을 입력했다.<br><code>attrs</code>라는 패키지를 설치하다가 failed.<br>또잉?<br>에러메세지를 검색해봤지만, 모르겠어서 일단 poetry 패키지를 살펴보려고 <code>poetry show</code>를입력했는데, 이러한 메세지가 뜨는 것..
+내 가상환경이 부러졌다고..?</p><pre tabindex=0><code>The currently activated Python version 3.9.13 is not supported by the project (^3.11).
+Trying to find and use a compatible version. 
+Using python3.11 (3.11.5)
+The virtual environment found in C:\git\ddareung\.venv seems to be broken.
+Recreating virtualenv ddareung in C:\git\ddareung\.venv
+certifi            (!) 2023.11.17 Python package for providing Mozilla&#39;s CA Bundle.
+charset-normalizer (!) 3.3.2      The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+idna               (!) 3.6        Internationalized Domain Names in Applications (IDNA)
+requests           (!) 2.31.0     Python HTTP for Humans.
+urllib3            (!) 2.1.0      HTTP library with thread-safe connection pooling, file post, and more.
+</code></pre><p>나중에 확인해보니, venv 가 부러진 게 문제가 아니었다. 다시 <code>poetry show</code> 해보니, 아무 문제 없었고, <code>poetry add jupyter</code>를 입력했을 때, 또 같은 문제 발생.</p></dd><dt><a href=/docs/memo/commands/>자주 쓰는 명령어들</a></dt><dd class=markdown-inner><h1 id=git-관련>Git 관련
+<a class=anchor href=#git-%ea%b4%80%eb%a0%a8>#</a></h1><p><a href=git/cancel>commit 취소</a><br><a href=git/credential>credentail 관련</a><br><a href=git/clone>clone 관련</a><br><a href=git/Initial_setup>최초 설정 관련</a></p><h1 id=linux>Linux
+<a class=anchor href=#linux>#</a></h1><p><a href=linux/file_dir>파일 생성/이동/복사/삭제</a><br><a href=linux/background>백그라운드 관련 명령어</a><br><a href=linux/screen>Ubuntu Screen 명령어</a><br><a href=linux/gpu>GPU 관련</a><br><a href=linux/zip_tar_gz>압축해제</a></p><h1 id=conda>conda
+<a class=anchor href=#conda>#</a></h1><p><a href=conda/virtual_env>가상환경 관련</a></p><h1 id=poetry>Poetry
+<a class=anchor href=#poetry>#</a></h1><p><a href=poetry/poetry_start>Poetry 시작하기</a><br><a href=poetry/virtual_env>가상환경 관련</a><br><a href=poetry/dependency>의존성 관련</a><br><a href=poetry/export>내보내기(requirements.txt)</a></p><h1 id=기타>기타
+<a class=anchor href=#%ea%b8%b0%ed%83%80>#</a></h1><p><a href=etc/python-venv>python3의 venv 사용법</a><br><a href=etc/python-server>python3 서버열기</a><br><a href=etc/python-parameter>python의 인자값 받기</a><br><a href=etc/docker>Docker 명령어</a><br><a href=etc/vscode_shortcuts>VSCode 단축키</a><br><a href=etc/terminal_theme>터미널 테마</a></p></dd><dt><a href=/docs/memo/freq-used-code/>자주 쓰는 코드들</a></dt><dd class=markdown-inner><h2 id=자주-찾아보는-도큐먼트들>자주 찾아보는 도큐먼트들
+<a class=anchor href=#%ec%9e%90%ec%a3%bc-%ec%b0%be%ec%95%84%eb%b3%b4%eb%8a%94-%eb%8f%84%ed%81%90%eb%a8%bc%ed%8a%b8%eb%93%a4>#</a></h2><p><a href=https://pandas.pydata.org/docs/reference/index.html>Pandas</a></p><h2 id=최신글>최신글
+<a class=anchor href=#%ec%b5%9c%ec%8b%a0%ea%b8%80>#</a></h2><dl><dt><a href=/docs/memo/freq-used-code/histogram/>간단한 히스토그램 python</a></dt><dd class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>hist(data, bins<span style=color:#f92672>=</span>bin_num)
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> matplotlib.pyplot <span style=color:#66d9ef>as</span> plt
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cnts, bins <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>histogram(data, bin_num)
+</span></span><span style=display:flex><span>plt<span style=color:#f92672>.</span>his(data, bins)
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/freq-used-code/warnings/>경고 무시 python</a></dt><dd class=markdown-inner><h2 id=python-경고-무시하기>python 경고 무시하기
+<a class=anchor href=#python-%ea%b2%bd%ea%b3%a0-%eb%ac%b4%ec%8b%9c%ed%95%98%ea%b8%b0>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> warnings
+</span></span><span style=display:flex><span>warnings<span style=color:#f92672>.</span>filterwarnings(action<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ignore&#39;</span>)
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/freq-used-code/time/>시간 측정 python</a></dt><dd class=markdown-inner><h2 id=코드-시간-측정하기>코드 시간 측정하기
+<a class=anchor href=#%ec%bd%94%eb%93%9c-%ec%8b%9c%ea%b0%84-%ec%b8%a1%ec%a0%95%ed%95%98%ea%b8%b0>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>start <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span><span style=color:#75715e>### 실행코드 ###</span>
+</span></span><span style=display:flex><span>end <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(end<span style=color:#f92672>-</span>start)  <span style=color:#75715e># 초단위</span>
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/freq-used-code/pretty_print/>예쁘게 출력(pprint) python</a></dt><dd class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> pprint
+</span></span><span style=display:flex><span>pprint<span style=color:#f92672>.</span>pprint(복잡한 json, dict 파일 등)
+</span></span></code></pre></div></dd><dt><a href=/docs/memo/freq-used-code/file_zip/>파일 압축 python</a></dt><dd class=markdown-inner><h2 id=파일-압축>파일 압축
+<a class=anchor href=#%ed%8c%8c%ec%9d%bc-%ec%95%95%ec%b6%95>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> zipfile
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>zf <span style=color:#f92672>=</span> zipfile<span style=color:#f92672>.</span>ZipFile(<span style=color:#e6db74>&#39;.//foldername//filename.zip&#39;</span>, <span style=color:#e6db74>&#39;w&#39;</span>)
+</span></span><span style=display:flex><span>zf<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#39;filepath&#39;</span>)      <span style=color:#75715e>#  compress_type=zipfile.ZIP_DEFLATED</span>
+</span></span><span style=display:flex><span>zf<span style=color:#f92672>.</span>close()
+</span></span></code></pre></div><p> </p></dd></dl></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/Yera10/Blog/commit/8253e1956a5cf41c229ec126b2883d3491284e08 title='Last modified by Yera10 | March 5, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
 <span>March 5, 2024</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

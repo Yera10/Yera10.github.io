@@ -1,7 +1,54 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="효율적인 화폐 구성 # N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
-INPUT # 화폐의 종류 수 N 1 <= N <= 100 만들려는 목표 금액 M 1 <= M <= 10,000 OUTPUT # M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution # def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c >= 0 and d[i-c] >= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="효율적인 화폐 구성 # N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
-INPUT # 화폐의 종류 수 N 1 <= N <= 100 만들려는 목표 금액 M 1 <= M <= 10,000 OUTPUT # M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution # def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c >= 0 and d[i-c] >= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!"><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/"><meta property="article:section" content="docs"><title>효율적인화폐구성 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  효율적인 화폐 구성
+  #
+
+N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
+
+  INPUT
+  #
+
+
+화폐의 종류 수 N
+1 <= N <= 100
+만들려는 목표 금액 M
+1 <= M <= 10,000
+
+
+  OUTPUT
+  #
+
+
+M원을 만들기 위한 최소한의 화폐 개수
+불가능할 때는 -1
+
+
+  My Solution
+  #
+
+def solution(M, coins):
+    d = [0] + [-1]*10000
+    
+    for i in range(1, M+1):
+        dmin = 10001
+        for c in coins:
+            if i-c >= 0 and d[i-c] >= 0:
+                dmin = min(dmin, d[i-c])
+        dmin = dmin + 1 if dmin!=10001 else -1
+        d[i] = dmin
+    
+    return d[M]
+
+# INPUT
+N, M = map(int, input().split())
+coins = []
+for _ in range(N):
+    coins.append(int(input()))
+
+# OUTPUT
+print(solution(M, coins))
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/8_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8%ED%99%94%ED%8F%90%EA%B5%AC%EC%84%B1/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" 효율적인 화폐 구성 # N가지 종류의 화폐로 최소한의 갯수를 사용해서 M원 만들기.
+INPUT # 화폐의 종류 수 N 1 <= N <= 100 만들려는 목표 금액 M 1 <= M <= 10,000 OUTPUT # M원을 만들기 위한 최소한의 화폐 개수 불가능할 때는 -1 My Solution # def solution(M, coins): d = [0] + [-1]*10000 for i in range(1, M+1): dmin = 10001 for c in coins: if i-c >= 0 and d[i-c] >= 0: dmin = min(dmin, d[i-c]) dmin = dmin + 1 if dmin!=10001 else -1 d[i] = dmin return d[M] # INPUT N, M = map(int, input().split()) coins = [] for _ in range(N): coins.append(int(input())) # OUTPUT print(solution(M, coins)) "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>효율적인화폐구성 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle checked>

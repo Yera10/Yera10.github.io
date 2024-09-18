@@ -1,5 +1,90 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="숫자 카드 게임 # Input # N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐 1 <= N, M <= 100 각 카드에 적힌 숫자들, 둘째줄부터 주어짐 1 <= 각 숫자 <= 10,000 Output # 게임의 룰에 맞게 선택한 카드에 적힌 숫자 Rule # 숫자카드들이 N x M 형태로 놓여있음 뽑고자 하는 카드가 포함되어 있는 행 선택 선택된 행에서 가장 작은 숫자카드를 뽑음 어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까?"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="숫자 카드 게임 # Input # N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐 1 <= N, M <= 100 각 카드에 적힌 숫자들, 둘째줄부터 주어짐 1 <= 각 숫자 <= 10,000 Output # 게임의 룰에 맞게 선택한 카드에 적힌 숫자 Rule # 숫자카드들이 N x M 형태로 놓여있음 뽑고자 하는 카드가 포함되어 있는 행 선택 선택된 행에서 가장 작은 숫자카드를 뽑음 어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까?"><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/"><meta property="article:section" content="docs"><title>숫자카드게임 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  숫자 카드 게임
+  #
+
+
+  Input
+  #
+
+
+N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐
+1 <= N, M <= 100
+각 카드에 적힌 숫자들, 둘째줄부터 주어짐
+1 <= 각 숫자 <= 10,000
+
+
+  Output
+  #
+
+
+게임의 룰에 맞게 선택한 카드에 적힌 숫자
+
+
+  Rule
+  #
+
+
+숫자카드들이 N x M 형태로 놓여있음
+뽑고자 하는 카드가 포함되어 있는 행 선택
+선택된 행에서 가장 작은 숫자카드를 뽑음
+어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까?
+
+
+  Example
+  #
+
+
+  
+      
+          입력
+          출력
+      
+  
+  
+      
+          3 3  3 1 2  4 1 4  2 2 2
+          2
+      
+      
+          2 4  7 3 1 8  3 3 3 4
+          3
+      
+  
+
+
+  My Solution
+  #
+
+
+행의 최솟값들 중 최댓값 출력
+
+# INPUT
+N, M = map(int, input().split())
+arr = []
+for _ in range(N):
+    arr.append( list(map(int, input().split())) )
+
+# SOLUTION
+def solution(N, M, arr):
+    return max([min(a) for a in arr])
+
+# OUTPUT
+print(solution(N, M, arr))
+
+  정답코드
+  #
+
+n, m = map(int, input().split())
+
+result = 0
+for i in range(n):
+    data = list(map(int, input().split()))
+    min_value = min(data)
+    result = max(result, min_value)
+
+print(result)
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/3_%EA%B7%B8%EB%A6%AC%EB%94%94/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=" 숫자 카드 게임 # Input # N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐 1 <= N, M <= 100 각 카드에 적힌 숫자들, 둘째줄부터 주어짐 1 <= 각 숫자 <= 10,000 Output # 게임의 룰에 맞게 선택한 카드에 적힌 숫자 Rule # 숫자카드들이 N x M 형태로 놓여있음 뽑고자 하는 카드가 포함되어 있는 행 선택 선택된 행에서 가장 작은 숫자카드를 뽑음 어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까? Example # 입력 출력 3 3 3 1 2 4 1 4 2 2 2 2 2 4 7 3 1 8 3 3 3 4 3 My Solution # 행의 최솟값들 중 최댓값 출력 # INPUT N, M = map(int, input().split()) arr = [] for _ in range(N): arr.append( list(map(int, input().split())) ) # SOLUTION def solution(N, M, arr): return max([min(a) for a in arr]) # OUTPUT print(solution(N, M, arr)) 정답코드 # n, m = map(int, input().split()) result = 0 for i in range(n): data = list(map(int, input().split())) min_value = min(data) result = max(result, min_value) print(result) "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>숫자카드게임 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle checked>
@@ -38,7 +123,7 @@
 <a class=anchor href=#input>#</a></h3><ul><li>N, M : 숫자카드들의 행, 열의 개수, 첫째줄에 주어짐</li><li>1 &lt;= N, M &lt;= 100</li><li>각 카드에 적힌 숫자들, 둘째줄부터 주어짐</li><li>1 &lt;= 각 숫자 &lt;= 10,000</li></ul><h3 id=output>Output
 <a class=anchor href=#output>#</a></h3><ul><li>게임의 룰에 맞게 선택한 카드에 적힌 숫자</li></ul><h3 id=rule>Rule
 <a class=anchor href=#rule>#</a></h3><ol><li>숫자카드들이 N x M 형태로 놓여있음</li><li>뽑고자 하는 카드가 포함되어 있는 행 선택</li><li>선택된 행에서 가장 작은 숫자카드를 뽑음</li><li>어떤 행을 선택해야 가장 높은 숫자의 카드를 뽑을 수 있을까?</li></ol><h3 id=example>Example
-<a class=anchor href=#example>#</a></h3><table><thead><tr><th>입력</th><th>출력</th></tr></thead><tbody><tr><td>3 3 3 1 2 4 1 4 2 2 2</td><td>2</td></tr><tr><td>2 4 7 3 1 8 3 3 3 4</td><td>3</td></tr></tbody></table><h3 id=my-solution><strong>My Solution</strong>
+<a class=anchor href=#example>#</a></h3><table><thead><tr><th style=text-align:left>입력</th><th style=text-align:left>출력</th></tr></thead><tbody><tr><td style=text-align:left>3 3 3 1 2 4 1 4 2 2 2</td><td style=text-align:left>2</td></tr><tr><td style=text-align:left>2 4 7 3 1 8 3 3 3 4</td><td style=text-align:left>3</td></tr></tbody></table><h3 id=my-solution><strong>My Solution</strong>
 <a class=anchor href=#my-solution>#</a></h3><ul><li>행의 최솟값들 중 최댓값 출력</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># INPUT</span>
 </span></span><span style=display:flex><span>N, M <span style=color:#f92672>=</span> map(int, input()<span style=color:#f92672>.</span>split())
 </span></span><span style=display:flex><span>arr <span style=color:#f92672>=</span> []

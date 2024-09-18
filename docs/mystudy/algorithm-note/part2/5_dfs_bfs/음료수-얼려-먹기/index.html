@@ -1,5 +1,125 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="음료수 얼려 먹기 # Input # 얼음 틀의 세로길이 N, 가로길이 M (1 <= N, M <= 1,000) 두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐 구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1 Output # 한 번에 만들 수 있는 아이스크림의 갯수 구하기 Example # 입력 출력 15 14 00000111100000 11111101111110 11011101101110 11011101100000 11011111111111 11011111111100 11000000011111 01111111111111 00000000011111 01111111111000 00011111111000 00000001111000 11111111110011 1110001111111111100011111111 8 My Solution # # INPUT n, m = map(int, input()."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="음료수 얼려 먹기 # Input # 얼음 틀의 세로길이 N, 가로길이 M (1 <= N, M <= 1,000) 두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐 구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1 Output # 한 번에 만들 수 있는 아이스크림의 갯수 구하기 Example # 입력 출력 15 14 00000111100000 11111101111110 11011101101110 11011101100000 11011111111111 11011111111100 11000000011111 01111111111111 00000000011111 01111111111000 00011111111000 00000001111000 11111111110011 1110001111111111100011111111 8 My Solution # # INPUT n, m = map(int, input()."><meta property="og:type" content="article"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/"><meta property="article:section" content="docs"><title>음료수 얼려 먹기 | 이세상의 모든 노트</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.80e0793f764d43c10a825d0fa4c570979f2a6b66bcc911f8ae7b4d6c48c3b419.js integrity="sha256-gOB5P3ZNQ8EKgl0PpMVwl58qa2a8yRH4rntNbEjDtBk=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9",{anonymize_ip:!1})}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  음료수 얼려 먹기
+  #
+
+
+  Input
+  #
+
+
+얼음 틀의 세로길이 N, 가로길이 M (1 <= N, M <= 1,000)
+두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐
+구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1
+
+
+  Output
+  #
+
+
+한 번에 만들 수 있는 아이스크림의 갯수 구하기
+
+
+  Example
+  #
+
+
+  
+      
+          입력
+          출력
+      
+  
+  
+      
+          15 14  00000111100000 11111101111110 11011101101110  11011101100000  11011111111111  11011111111100  11000000011111  01111111111111  00000000011111  01111111111000  00011111111000  00000001111000 11111111110011  1110001111111111100011111111
+          8
+      
+  
+
+
+  My Solution
+  #
+
+# INPUT
+n, m = map(int, input().split())
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+# SOLUTION
+from collections import deque
+def bfs(graph, start, N, M):
+    """
+    start 지점에서 시작하여 0인 영역을 모두 탐색하는 함수
+    """
+    q = deque([start])
+    graph[start[0]][start[1]] = 0
+
+    while q:
+        vi, vj = q.popleft()
+        for i, j in [[vi+1, vj], [vi-1, vj], [vi, vj+1], [vi, vj-1]]:
+            if i < 0 or i >= N or j < 0 or j >= M:
+                continue
+            if graph[i][j]==0:
+                q.append([i, j])
+                graph[i][j] = 1
+
+def solution(N, M, frame):
+    i, j = 0, 0
+    res = 0
+
+    for i in range(N):
+        for j in range(M):
+            if frame[i][j] == 0:
+                bfs(frame, [i, j], N, M)
+                res += 1
+            else:
+                continue
+    
+    return res
+
+# OUTPUT
+print( solution(N, M, frame) )
+
+  Solution
+  #
+
+# N, M을 공백을 기준으로 구분하여 입력 받기
+n, m = map(int, input().split())
+
+# 2차원 리스트의 맵 정보 입력 받기
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+# DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문
+def dfs(x, y):
+    # 주어진 범위를 벗어나는 경우에는 즉시 종료
+    if x <= -1 or x >= n or y <= -1 or y >= m:
+        return False
+    # 현재 노드를 아직 방문하지 않았다면
+    if graph[x][y] == 0:
+        # 해당 노드 방문 처리
+        graph[x][y] = 1
+        # 상, 하, 좌, 우의 위치들도 모두 재귀적으로 호출
+        dfs(x - 1, y)
+        dfs(x, y - 1)
+        dfs(x + 1, y)
+        dfs(x, y + 1)
+        return True
+    return False
+
+# 모든 노드(위치)에 대하여 음료수 채우기
+result = 0
+for i in range(n):
+    for j in range(m):
+        # 현재 위치에서 DFS 수행
+        if dfs(i, j) == True:
+            result += 1
+
+print(result) # 정답 출력
+'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yera10.github.io/docs/mystudy/algorithm-note/part2/5_dfs_bfs/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4-%EB%A8%B9%EA%B8%B0/"><meta property="og:site_name" content="이세상의 모든 노트"><meta property="og:title" content="이세상의 모든 노트"><meta property="og:description" content=' 음료수 얼려 먹기 # Input # 얼음 틀의 세로길이 N, 가로길이 M (1 <= N, M <= 1,000) 두번째 줄부터 N+1번째 줄까지 얼음 틀의 형태가 주어짐 구멍이 뚫려있는 부분은 0, 그렇지 않은 부분은 1 Output # 한 번에 만들 수 있는 아이스크림의 갯수 구하기 Example # 입력 출력 15 14 00000111100000 11111101111110 11011101101110 11011101100000 11011111111111 11011111111100 11000000011111 01111111111111 00000000011111 01111111111000 00011111111000 00000001111000 11111111110011 1110001111111111100011111111 8 My Solution # # INPUT n, m = map(int, input().split()) graph = [] for i in range(n): graph.append(list(map(int, input()))) # SOLUTION from collections import deque def bfs(graph, start, N, M): """ start 지점에서 시작하여 0인 영역을 모두 탐색하는 함수 """ q = deque([start]) graph[start[0]][start[1]] = 0 while q: vi, vj = q.popleft() for i, j in [[vi+1, vj], [vi-1, vj], [vi, vj+1], [vi, vj-1]]: if i < 0 or i >= N or j < 0 or j >= M: continue if graph[i][j]==0: q.append([i, j]) graph[i][j] = 1 def solution(N, M, frame): i, j = 0, 0 res = 0 for i in range(N): for j in range(M): if frame[i][j] == 0: bfs(frame, [i, j], N, M) res += 1 else: continue return res # OUTPUT print( solution(N, M, frame) ) Solution # # N, M을 공백을 기준으로 구분하여 입력 받기 n, m = map(int, input().split()) # 2차원 리스트의 맵 정보 입력 받기 graph = [] for i in range(n): graph.append(list(map(int, input()))) # DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문 def dfs(x, y): # 주어진 범위를 벗어나는 경우에는 즉시 종료 if x <= -1 or x >= n or y <= -1 or y >= m: return False # 현재 노드를 아직 방문하지 않았다면 if graph[x][y] == 0: # 해당 노드 방문 처리 graph[x][y] = 1 # 상, 하, 좌, 우의 위치들도 모두 재귀적으로 호출 dfs(x - 1, y) dfs(x, y - 1) dfs(x + 1, y) dfs(x, y + 1) return True return False # 모든 노드(위치)에 대하여 음료수 채우기 result = 0 for i in range(n): for j in range(m): # 현재 위치에서 DFS 수행 if dfs(i, j) == True: result += 1 print(result) # 정답 출력 '><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>음료수 얼려 먹기 | 이세상의 모든 노트</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=stylesheet href=/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz+OQteg=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.443e0f646fc718b3bd77d0ebaf54a73fa183d3ce8de9d7340919fd780949b241.js integrity="sha256-RD4PZG/HGLO9d9Drr1SnP6GD086N6dc0CRn9eAlJskE=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B1LML6H5K9"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-B1LML6H5K9")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>이세상의 모든 노트</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-4408670ce68d5480e0ac700006be2fbe class=toggle checked>
 <label for=section-4408670ce68d5480e0ac700006be2fbe class="flex justify-between"><a href=/docs/mystudy/>My Study</a></label><ul><li><input type=checkbox id=section-43609ff8ade5f49a9a42f6c75dfa8b7c class=toggle checked>
 <label for=section-43609ff8ade5f49a9a42f6c75dfa8b7c class="flex justify-between"><a href=/docs/mystudy/algorithm-note/>알고리즘</a></label><ul><li><input type=checkbox id=section-87f5a5aba3a2eaef9e324cd61b28b682 class=toggle checked>

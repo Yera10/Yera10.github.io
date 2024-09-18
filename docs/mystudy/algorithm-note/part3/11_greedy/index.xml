@@ -1,1 +1,301 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>그리디 알고리즘 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/</link><description>Recent content in 그리디 알고리즘 on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</guid><description>곱하기 혹은 더하기 # Input # S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 &amp;lt;= S의 길이 &amp;lt;= 20) Output # 만들어질 수 있는 가장 큰 수 Rule # 왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &amp;ldquo;x&amp;rdquo; 혹은 &amp;ldquo;+&amp;rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기 연산 순서는 &amp;ldquo;x&amp;rdquo;, &amp;ldquo;+&amp;rdquo; 상관 없이 무조건 왼쪽부터 순서대로 Example # 입력 출력 02984 576 567 210 My Solution # def solution(S): S = list(S) res = int(S.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</guid><description>만들 수 없는 금액 # Input # 첫째 줄: 에 입력되는 동전의 개수 N (1 &amp;lt;= N &amp;lt;= 1,000) 둘째 줄: 각 동전의 화폐 단위를 나타나는 N개의 자연수, Output # 첫째 줄에 주어진 동전들로 만들 수 없는 양의 정수 금액 중 최솟값 Rule # N개의 동전을 이용하여 만들 수 없는 양의 정수 금액 중 최솟값을 구하는 프로그램 작성 Example # 입력 출력 5 3 2 1 1 9 8 My Solution # import heapq def solution(coins): coins.</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</guid><description> 모험가 길드 # Input # N : 첫째 줄에 주어지는 모험가의 수 1 &amp;lt;= N &amp;lt;= 100,000 각 모험가의 공포도 : 둘째 줄에 주어지는 N이하의 자연수 값들, 공백으로 구분됨 Output # 여행을 떠날 수 있는 그룹 수의 최대값 Rule # 공포도가 X인 모험가는 반드시 X명 이상으로 구성한 모험가 그룹에 참여해야 여행을 떠날 수 있음 최대로 만들 수 있는 모험감의 그룹? Example # 입력 출력 5 2 3 1 2 2 2</description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</guid><description>볼링공 고르기 # Input # 첫째줄 N, M : 볼링공의 갯수 N, 공의 최대 무게 M 둘째줄 각 볼링공의 무게 K : 순서대로 자연수 1 &amp;lt;= N &amp;lt;= 1,000, 1 &amp;lt;= M &amp;lt;=10 1 &amp;lt;= K &amp;lt;= M Output # 두 사람이 볼링공을 고르는 경우의 수 출력 Rule # 두 사람이 서로 다른 무게의 볼링공을 고르도록 한다. Example # 입력 출력 5 3 1 3 2 3 2 8 8 5 1 5 4 3 2 4 5 2 25 My Solution # from collections import Counter def solution(N, data): cnt = Counter(data) res = N * (N-1) for k,v in cnt.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>그리디 알고리즘 on 이세상의 모든 노트</title><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/</link><description>Recent content in 그리디 알고리즘 on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EA%B3%B1%ED%95%98%EA%B8%B0-%ED%98%B9%EC%9D%80-%EB%8D%94%ED%95%98%EA%B8%B0/</guid><description>&lt;h1 id="곱하기-혹은-더하기">
+ 곱하기 혹은 더하기
+ &lt;a class="anchor" href="#%ea%b3%b1%ed%95%98%ea%b8%b0-%ed%98%b9%ec%9d%80-%eb%8d%94%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>S : 첫째 줄에 주어지는 여러 개의 숫자로 구성된 문자열 (1 &amp;lt;= S의 길이 &amp;lt;= 20)&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>만들어질 수 있는 가장 큰 수&lt;/li>
+&lt;/ul>
+&lt;h3 id="rule">
+ Rule
+ &lt;a class="anchor" href="#rule">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>왼쪽부터 오른쪽으로 하나씩 모든 숫자 사이에 &amp;ldquo;x&amp;rdquo; 혹은 &amp;ldquo;+&amp;rdquo; 연산자를 넣어 만들어질 수 있는 가장 큰 수 구하기&lt;/li>
+&lt;li>연산 순서는 &amp;ldquo;x&amp;rdquo;, &amp;ldquo;+&amp;rdquo; 상관 없이 무조건 왼쪽부터 순서대로&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">02984&lt;/td>
+ &lt;td style="text-align: left">576&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">567&lt;/td>
+ &lt;td style="text-align: left">210&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(S):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> S &lt;span style="color:#f92672">=&lt;/span> list(S)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> int(S&lt;span style="color:#f92672">.&lt;/span>pop(&lt;span style="color:#ae81ff">0&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> n &lt;span style="color:#f92672">in&lt;/span> S:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> max(res&lt;span style="color:#f92672">+&lt;/span>int(n), res&lt;span style="color:#f92672">*&lt;/span>int(n))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>S &lt;span style="color:#f92672">=&lt;/span> input()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(S))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="answer">
+ Answer
+ &lt;a class="anchor" href="#answer">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> input()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 첫 번째 문자를 숫자로 변경하여 대입&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result &lt;span style="color:#f92672">=&lt;/span> int(data[&lt;span style="color:#ae81ff">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">1&lt;/span>, len(data)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 두 수 중에서 하나라도 &amp;#39;0&amp;#39; 혹은 &amp;#39;1&amp;#39;인 경우, 곱하기보다는 더하기 수행&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num &lt;span style="color:#f92672">=&lt;/span> int(data[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> num &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">or&lt;/span> result &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">+=&lt;/span> num
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">*=&lt;/span> num
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(result)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%A7%8C%EB%93%A4%EC%88%98%EC%97%86%EB%8A%94%EA%B8%88%EC%95%A1/</guid><description>&lt;h1 id="만들-수-없는-금액">
+ 만들 수 없는 금액
+ &lt;a class="anchor" href="#%eb%a7%8c%eb%93%a4-%ec%88%98-%ec%97%86%eb%8a%94-%ea%b8%88%ec%95%a1">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>첫째 줄: 에 입력되는 동전의 개수 N (1 &amp;lt;= N &amp;lt;= 1,000)&lt;/li>
+&lt;li>둘째 줄: 각 동전의 화폐 단위를 나타나는 N개의 자연수,&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>첫째 줄에 주어진 동전들로 만들 수 없는 양의 정수 금액 중 최솟값&lt;/li>
+&lt;/ul>
+&lt;h3 id="rule">
+ Rule
+ &lt;a class="anchor" href="#rule">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>N개의 동전을 이용하여 만들 수 없는 양의 정수 금액 중 최솟값을 구하는 프로그램 작성&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">5 &lt;!-- raw HTML omitted --> 3 2 1 1 9&lt;/td>
+ &lt;td style="text-align: left">8&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> heapq
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(coins):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> coins&lt;span style="color:#f92672">.&lt;/span>sort(reverse &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums &lt;span style="color:#f92672">=&lt;/span> set()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n &lt;span style="color:#f92672">in&lt;/span> sums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> &lt;span style="color:#f92672">not&lt;/span> coins &lt;span style="color:#f92672">or&lt;/span> (coins[&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">&amp;gt;&lt;/span> n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> n 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#f92672">=&lt;/span> coins&lt;span style="color:#f92672">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums &lt;span style="color:#f92672">=&lt;/span> sums&lt;span style="color:#f92672">.&lt;/span>union({s&lt;span style="color:#f92672">+&lt;/span>c &lt;span style="color:#66d9ef">for&lt;/span> s &lt;span style="color:#f92672">in&lt;/span> sums})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums&lt;span style="color:#f92672">.&lt;/span>add(c)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>_ &lt;span style="color:#f92672">=&lt;/span> input()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>coins &lt;span style="color:#f92672">=&lt;/span> list(map(int, coins&lt;span style="color:#f92672">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(solution(coins))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="answer">
+ Answer
+ &lt;a class="anchor" href="#answer">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>n &lt;span style="color:#f92672">=&lt;/span> int(input())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> list(map(int, input()&lt;span style="color:#f92672">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data&lt;span style="color:#f92672">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> x &lt;span style="color:#f92672">in&lt;/span> data:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> target &lt;span style="color:#f92672">&amp;lt;&lt;/span> x:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> target &lt;span style="color:#f92672">+=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(target)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>data에서 $x_i$까지 탐색했을 때, $T$원 까지 만들 수 있었다고 하자. &lt;br>
+다음 $x_{i+1}$을 볼 때, &lt;br>
+$x_{i+1} \leq T \Rightarrow T+1$ ~ $T+x_{i+1}$원까지도 모두 만들 수 있음. &lt;br>
+$x_{i+1} &amp;gt; T \Rightarrow T+1$원을 만들 수 없음.&lt;/li>
+&lt;/ul></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%AA%A8%ED%97%98%EA%B0%80%EA%B8%B8%EB%93%9C/</guid><description>&lt;h1 id="모험가-길드">
+ 모험가 길드
+ &lt;a class="anchor" href="#%eb%aa%a8%ed%97%98%ea%b0%80-%ea%b8%b8%eb%93%9c">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>N : 첫째 줄에 주어지는 모험가의 수&lt;/li>
+&lt;li>1 &amp;lt;= N &amp;lt;= 100,000&lt;/li>
+&lt;li>각 모험가의 공포도 : 둘째 줄에 주어지는 N이하의 자연수 값들, 공백으로 구분됨&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>여행을 떠날 수 있는 그룹 수의 최대값&lt;/li>
+&lt;/ul>
+&lt;h3 id="rule">
+ Rule
+ &lt;a class="anchor" href="#rule">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>공포도가 X인 모험가는 반드시 X명 이상으로 구성한 모험가 그룹에 참여해야 여행을 떠날 수 있음&lt;/li>
+&lt;li>최대로 만들 수 있는 모험감의 그룹?&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">5 &lt;!-- raw HTML omitted --> 2 3 1 2 2&lt;/td>
+ &lt;td style="text-align: left">2&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/mystudy/algorithm-note/part3/11_greedy/%EB%B3%BC%EB%A7%81%EA%B3%B5%EA%B3%A0%EB%A5%B4%EA%B8%B0/</guid><description>&lt;h1 id="볼링공-고르기">
+ 볼링공 고르기
+ &lt;a class="anchor" href="#%eb%b3%bc%eb%a7%81%ea%b3%b5-%ea%b3%a0%eb%a5%b4%ea%b8%b0">#&lt;/a>
+&lt;/h1>
+&lt;h3 id="input">
+ Input
+ &lt;a class="anchor" href="#input">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>첫째줄 N, M : 볼링공의 갯수 N, 공의 최대 무게 M&lt;/li>
+&lt;li>둘째줄 각 볼링공의 무게 K : 순서대로 자연수&lt;/li>
+&lt;li>1 &amp;lt;= N &amp;lt;= 1,000, 1 &amp;lt;= M &amp;lt;=10&lt;/li>
+&lt;li>1 &amp;lt;= K &amp;lt;= M&lt;/li>
+&lt;/ul>
+&lt;h3 id="output">
+ Output
+ &lt;a class="anchor" href="#output">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>두 사람이 볼링공을 고르는 경우의 수 출력&lt;/li>
+&lt;/ul>
+&lt;h3 id="rule">
+ Rule
+ &lt;a class="anchor" href="#rule">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>두 사람이 서로 다른 무게의 볼링공을 고르도록 한다.&lt;/li>
+&lt;/ul>
+&lt;h3 id="example">
+ Example
+ &lt;a class="anchor" href="#example">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">입력&lt;/th>
+ &lt;th style="text-align: left">출력&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">5 3 &lt;!-- raw HTML omitted --> 1 3 2 3 2&lt;/td>
+ &lt;td style="text-align: left">8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">8 5 &lt;!-- raw HTML omitted --> 1 5 4 3 2 4 5 2&lt;/td>
+ &lt;td style="text-align: left">25&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="my-solution">
+ My Solution
+ &lt;a class="anchor" href="#my-solution">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> collections &lt;span style="color:#f92672">import&lt;/span> Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">solution&lt;/span>(N, data):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cnt &lt;span style="color:#f92672">=&lt;/span> Counter(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> N &lt;span style="color:#f92672">*&lt;/span> (N&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> k,v &lt;span style="color:#f92672">in&lt;/span> cnt&lt;span style="color:#f92672">.&lt;/span>items():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> v &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">-=&lt;/span> (v&lt;span style="color:#f92672">*&lt;/span>(v&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> res&lt;span style="color:#f92672">//&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>N, M &lt;span style="color:#f92672">=&lt;/span> map(int, input()&lt;span style="color:#f92672">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> list(map(int, input()&lt;span style="color:#f92672">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(N, data)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="answer">
+ Answer
+ &lt;a class="anchor" href="#answer">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>n, m &lt;span style="color:#f92672">=&lt;/span> map(int, input()&lt;span style="color:#f92672">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> list(map(int, input()&lt;span style="color:#f92672">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 1부터 10까지의 무게를 담을 수 있는 리스트&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>array &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">11&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> x &lt;span style="color:#f92672">in&lt;/span> data:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 각 무게에 해당하는 볼링공의 개수 카운트&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[x] &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 1부터 m까지의 각 무게에 대하여 처리&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">1&lt;/span>, m &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#f92672">-=&lt;/span> array[i] &lt;span style="color:#75715e"># 무게가 i인 볼링공의 개수(A가 선택할 수 있는 개수) 제외&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">+=&lt;/span> array[i] &lt;span style="color:#f92672">*&lt;/span> n &lt;span style="color:#75715e"># B가 선택하는 경우의 수와 곱해주기&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(result)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

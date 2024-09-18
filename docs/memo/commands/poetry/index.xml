@@ -1,5 +1,139 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/commands/poetry/</link><description>Recent content on 이세상의 모든 노트</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/commands/poetry/index.xml" rel="self" type="application/rss+xml"/><item><title>Poetry 시작하기</title><link>https://yera10.github.io/docs/memo/commands/poetry/poetry_start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/poetry_start/</guid><description>poetry 설치 (Windows) # pip으로 설치
-pip install --user poetry powershell에서 아래 명령어로 설치
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py - poetry 환경변수 등록 # windows
-C:\Users\SEJONG\AppData\Roaming\Python\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\Python\Python311\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\pypoetry\venv\Scripts\ 에 poetry 가 있는지 확인 poetry가 있는 주소를 환경변수에 등록 poetry 시작 # poetry init 각 입력사항에 맞게 입력하면, pyproject.toml 생성됨
-poetry config # # poetry 설정값 확인 poetry config --list # 프로젝트 폴더 내에 가상환경을 저장 poetry config virtualenvs.</description></item><item><title>가상환경 관련</title><link>https://yera10.github.io/docs/memo/commands/poetry/virtual_env/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/virtual_env/</guid><description> 가상환경 비활성화 # deactivate exit poetry 가상환경 확인 # poetry env list 프로젝트 폴더 내에 가상환경을 저장 # poetry config virtualenvs.in-project true 가상환경 모두 삭제 # poetry env remove --all poetry 로 가상환경(virtualenv)을 관리 # poetry env use {파이썬경로}</description></item><item><title>내보내기 (requirements.txt)</title><link>https://yera10.github.io/docs/memo/commands/poetry/export/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/export/</guid><description> poetry 환경 requirements.txt로 내보내기 # # 기본 활용 방식 poetry export -f requirements.txt --output requirements.txt # 해시 정보 없이 export 하기 poetry export -f requirements.txt --output requirements.txt --without-hashes</description></item><item><title>의존성 관련</title><link>https://yera10.github.io/docs/memo/commands/poetry/dependency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/dependency/</guid><description>poetry 그룹에 의존성 추가 # poetry add {패키지} --group {그룹명} poetry 버전 지정하여 의존성 추가 # poetry add &amp;#34;&amp;lt;패키지&amp;gt;&amp;lt;버전표기&amp;gt;&amp;#34; # 예 poetry add &amp;#34;selenium^4.10.0&amp;#34; # 가장 최신 버전 설치할 때 poetry add {패키지}@latest 버전 표기법 # ^1.2.3 : &amp;gt;=1.2.3 &amp;lt;2.0.0 ^1.2 : &amp;gt;=1.2.0 &amp;lt;2.0.0 ~2.0.5 : &amp;gt;=2.0.5, &amp;lt;2.1.0 &amp;gt;=2.0.5 ==2.0.5 설치된 모든 패키지 확인 # poetry show # 특정패키지를 지정 poetry show {패키지} # 의존성 트리 poetry show --tree 의존성 꼬였을 때 # 가상환경 삭제 poetry env remove --all pyproject.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>이세상의 모든 노트</title><link>https://yera10.github.io/docs/memo/commands/poetry/</link><description>Recent content on 이세상의 모든 노트</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://yera10.github.io/docs/memo/commands/poetry/index.xml" rel="self" type="application/rss+xml"/><item><title>Poetry 시작하기</title><link>https://yera10.github.io/docs/memo/commands/poetry/poetry_start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/poetry_start/</guid><description>&lt;h3 id="poetry-설치-windows">
+ poetry 설치 (Windows)
+ &lt;a class="anchor" href="#poetry-%ec%84%a4%ec%b9%98-windows">#&lt;/a>
+&lt;/h3>
+&lt;p>pip으로 설치&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>pip install --user poetry
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>powershell에서 아래 명령어로 설치&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>(Invoke-WebRequest -Uri https&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>//install.python-poetry.org -UseBasicParsing).Content | py -
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="poetry-환경변수-등록">
+ poetry 환경변수 등록
+ &lt;a class="anchor" href="#poetry-%ed%99%98%ea%b2%bd%eb%b3%80%ec%88%98-%eb%93%b1%eb%a1%9d">#&lt;/a>
+&lt;/h3>
+&lt;p>windows&lt;/p>
+&lt;ul>
+&lt;li>C:\Users\SEJONG\AppData\Roaming\Python\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\Python\Python311\Scripts\ 또는 C:\Users\SEJONG\AppData\Roaming\pypoetry\venv\Scripts\ 에 poetry 가 있는지 확인&lt;/li>
+&lt;li>poetry가 있는 주소를 환경변수에 등록&lt;/li>
+&lt;/ul>
+&lt;h3 id="poetry-시작">
+ poetry 시작
+ &lt;a class="anchor" href="#poetry-%ec%8b%9c%ec%9e%91">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>poetry init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>각 입력사항에 맞게 입력하면, pyproject.toml 생성됨&lt;/p>
+&lt;h3 id="poetry-config">
+ poetry config
+ &lt;a class="anchor" href="#poetry-config">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span># poetry 설정값 확인
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry config --list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 프로젝트 폴더 내에 가상환경을 저장
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry config virtualenvs.in-project true 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="poetry-의존성-추가">
+ poetry 의존성 추가
+ &lt;a class="anchor" href="#poetry-%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%b6%94%ea%b0%80">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#e6db74">&amp;#34;&amp;lt;패키지&amp;gt;&amp;lt;버전표기&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 예&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#e6db74">&amp;#34;selenium^4.10.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 가장 최신 버전 설치할 때 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#f92672">{&lt;/span>패키지&lt;span style="color:#f92672">}&lt;/span>@latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="스크립트-실행">
+ 스크립트 실행
+ &lt;a class="anchor" href="#%ec%8a%a4%ed%81%ac%eb%a6%bd%ed%8a%b8-%ec%8b%a4%ed%96%89">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry run python &lt;span style="color:#f92672">{&lt;/span>실행파일&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="ref">
+ Ref
+ &lt;a class="anchor" href="#ref">#&lt;/a>
+&lt;/h3>
+&lt;p>&lt;a href="https://python-poetry.org/docs/cli/">https://python-poetry.org/docs/cli/&lt;/a>&lt;/p></description></item><item><title>가상환경 관련</title><link>https://yera10.github.io/docs/memo/commands/poetry/virtual_env/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/virtual_env/</guid><description>&lt;h3 id="가상환경-비활성화">
+ 가상환경 비활성화
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%eb%b9%84%ed%99%9c%ec%84%b1%ed%99%94">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>deactivate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="poetry-가상환경-확인">
+ poetry 가상환경 확인
+ &lt;a class="anchor" href="#poetry-%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%ed%99%95%ec%9d%b8">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry env list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="프로젝트-폴더-내에-가상환경을-저장">
+ 프로젝트 폴더 내에 가상환경을 저장
+ &lt;a class="anchor" href="#%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8-%ed%8f%b4%eb%8d%94-%eb%82%b4%ec%97%90-%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd%ec%9d%84-%ec%a0%80%ec%9e%a5">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry config virtualenvs.in-project true 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="가상환경-모두-삭제">
+ 가상환경 모두 삭제
+ &lt;a class="anchor" href="#%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bd-%eb%aa%a8%eb%91%90-%ec%82%ad%ec%a0%9c">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry env remove --all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="poetry-로-가상환경virtualenv을-관리">
+ poetry 로 가상환경(virtualenv)을 관리
+ &lt;a class="anchor" href="#poetry-%eb%a1%9c-%ea%b0%80%ec%83%81%ed%99%98%ea%b2%bdvirtualenv%ec%9d%84-%ea%b4%80%eb%a6%ac">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry env use &lt;span style="color:#f92672">{&lt;/span>파이썬경로&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>내보내기 (requirements.txt)</title><link>https://yera10.github.io/docs/memo/commands/poetry/export/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/export/</guid><description>&lt;h3 id="poetry-환경-requirementstxt로-내보내기">
+ poetry 환경 requirements.txt로 내보내기
+ &lt;a class="anchor" href="#poetry-%ed%99%98%ea%b2%bd-requirementstxt%eb%a1%9c-%eb%82%b4%eb%b3%b4%eb%82%b4%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span># 기본 활용 방식
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry export -f requirements.txt --output requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 해시 정보 없이 export 하기
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry export -f requirements.txt --output requirements.txt --without-hashes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>의존성 관련</title><link>https://yera10.github.io/docs/memo/commands/poetry/dependency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/poetry/dependency/</guid><description>&lt;h3 id="poetry-그룹에-의존성-추가">
+ poetry 그룹에 의존성 추가
+ &lt;a class="anchor" href="#poetry-%ea%b7%b8%eb%a3%b9%ec%97%90-%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%b6%94%ea%b0%80">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#f92672">{&lt;/span>패키지&lt;span style="color:#f92672">}&lt;/span> --group &lt;span style="color:#f92672">{&lt;/span>그룹명&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="poetry-버전-지정하여-의존성-추가">
+ poetry 버전 지정하여 의존성 추가
+ &lt;a class="anchor" href="#poetry-%eb%b2%84%ec%a0%84-%ec%a7%80%ec%a0%95%ed%95%98%ec%97%ac-%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%b6%94%ea%b0%80">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#e6db74">&amp;#34;&amp;lt;패키지&amp;gt;&amp;lt;버전표기&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 예&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#e6db74">&amp;#34;selenium^4.10.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 가장 최신 버전 설치할 때 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry add &lt;span style="color:#f92672">{&lt;/span>패키지&lt;span style="color:#f92672">}&lt;/span>@latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="버전-표기법">
+ 버전 표기법
+ &lt;a class="anchor" href="#%eb%b2%84%ec%a0%84-%ed%91%9c%ea%b8%b0%eb%b2%95">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>^1.2.3 : &amp;gt;=1.2.3 &amp;lt;2.0.0&lt;/li>
+&lt;li>^1.2 : 	&amp;gt;=1.2.0 &amp;lt;2.0.0&lt;/li>
+&lt;li>~2.0.5 : &amp;gt;=2.0.5, &amp;lt;2.1.0&lt;/li>
+&lt;li>&amp;gt;=2.0.5&lt;/li>
+&lt;li>==2.0.5&lt;/li>
+&lt;/ul>
+&lt;h3 id="설치된-모든-패키지-확인">
+ 설치된 모든 패키지 확인
+ &lt;a class="anchor" href="#%ec%84%a4%ec%b9%98%eb%90%9c-%eb%aa%a8%eb%93%a0-%ed%8c%a8%ed%82%a4%ec%a7%80-%ed%99%95%ec%9d%b8">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>poetry show
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 특정패키지를 지정&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry show &lt;span style="color:#f92672">{&lt;/span>패키지&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 의존성 트리&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>poetry show --tree
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="의존성-꼬였을-때">
+ 의존성 꼬였을 때
+ &lt;a class="anchor" href="#%ec%9d%98%ec%a1%b4%ec%84%b1-%ea%bc%ac%ec%98%80%ec%9d%84-%eb%95%8c">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>가상환경 삭제 &lt;code>poetry env remove --all&lt;/code>&lt;/li>
+&lt;li>&lt;code>pyproject.toml&lt;/code> 삭제&lt;/li>
+&lt;li>재설치 &lt;code>poetry install&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="ref">
+ Ref
+ &lt;a class="anchor" href="#ref">#&lt;/a>
+&lt;/h3>
+&lt;p>&lt;a href="https://python-poetry.org/docs/cli/">https://python-poetry.org/docs/cli/&lt;/a>&lt;/p></description></item></channel></rss>
