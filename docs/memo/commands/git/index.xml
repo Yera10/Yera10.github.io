@@ -38,6 +38,32 @@
  &lt;a class="anchor" href="#credential-%ec%a0%95%eb%b3%b4%eb%a5%bc-%eb%b0%98%ec%98%81%ea%b5%ac-%ec%a0%80%ec%9e%a5">#&lt;/a>
 &lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git config credential.helper store
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://pinedance.github.io/blog/2019/05/29/Git-Credential">[참고]&lt;/a>&lt;/p>
+&lt;h3 id="모든-설정값-확인">
+ 모든 설정값 확인
+ &lt;a class="anchor" href="#%eb%aa%a8%eb%93%a0-%ec%84%a4%ec%a0%95%ea%b0%92-%ed%99%95%ec%9d%b8">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git config --list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git 기본 명령어</title><link>https://yera10.github.io/docs/memo/commands/git/basic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/git/basic/</guid><description>&lt;h3 id="git-상태-확인하기">
+ git 상태 확인하기
+ &lt;a class="anchor" href="#git-%ec%83%81%ed%83%9c-%ed%99%95%ec%9d%b8%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git status -s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stage에-올리기">
+ stage에 올리기
+ &lt;a class="anchor" href="#stage%ec%97%90-%ec%98%ac%eb%a6%ac%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone &lt;span style="color:#f92672">{&lt;/span>File_Path&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="commit-하기">
+ commit 하기
+ &lt;a class="anchor" href="#commit-%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#e6db74">&amp;#34;커밋메세지&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="push-하기">
+ push 하기
+ &lt;a class="anchor" href="#push-%ed%95%98%ea%b8%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git push
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>서브모듈 관련</title><link>https://yera10.github.io/docs/memo/commands/git/submodule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yera10.github.io/docs/memo/commands/git/submodule/</guid><description>&lt;p>&lt;a href="https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88">ref - git doc&lt;/a>&lt;/p>
 &lt;h3 id="서브모듈-추가">
  서브모듈 추가
